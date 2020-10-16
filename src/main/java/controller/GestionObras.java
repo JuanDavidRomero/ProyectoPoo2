@@ -1,9 +1,6 @@
 package controller;
 
-import model.Artista;
-import model.Cliente;
-import model.Compra;
-import model.Obra;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -185,7 +182,7 @@ public class GestionObras
         System.out.print("\npid: ");
         long pid = ingreso.nextLong();
         ingreso = new Scanner(System.in);
-        Obra temp =new  Obra();
+        Obra temp =new Instalacion();
         temp.setPid(pid);
         boolean respuesta = checkpid(pid,listaObras);
         if(!respuesta)
@@ -212,7 +209,7 @@ public class GestionObras
 
         // se crea el objeto Obra
         fecha.set(Calendar.YEAR,ano);
-        Obra nueva = new Obra(pid,titulo,fecha,precioRef,dimensiones);
+        Obra nueva = new Instalacion(pid,titulo,fecha,precioRef,dimensiones,"plaza sol");//------->
 
         boolean artistaDone=false;
 
@@ -502,25 +499,25 @@ public class GestionObras
 
         //Obras
         fechaAgregar1.set(Calendar.YEAR,1922);
-        Obra o1 = new Obra(1234567,"antes del baile de mascaras",fechaAgregar1,40000.0,"grande");
+        Obra o1 = new Instalacion(1234567,"antes del baile de mascaras",fechaAgregar1,40000.0,"grande", "plaza sol");
         fechaAgregar2.set(Calendar.YEAR,1950);
-        Obra o2 = new Obra(2345671,"autorretrado con chaqueta azul",fechaAgregar2,80000.0,"normal");
+        Obra o2 = new Instalacion(2345671,"autorretrado con chaqueta azul",fechaAgregar2,80000.0,"normal","plaza sol");
         fechaAgregar3.set(Calendar.YEAR,1877);
-        Obra o3 = new Obra(3456712,"remeros en el yernes",fechaAgregar3,60000.0,"normal");
+        Obra o3 = new Instalacion(3456712,"remeros en el yernes",fechaAgregar3,60000.0,"normal","plaza sol");
         fechaAgregar4.set(Calendar.YEAR,1931);
-        Obra o4 = new Obra(4567123,"la persistencia de la memoria",fechaAgregar4,1000000.0,"grande");
+        Obra o4 = new Instalacion(4567123,"la persistencia de la memoria",fechaAgregar4,1000000.0,"grande","plaza sol");
         fechaAgregar5.set(Calendar.YEAR,1651);
-        Obra o5 = new Obra(5671234,"cristo de san juan de la cruz",fechaAgregar5,2000000.0,"grande");
+        Obra o5 = new Instalacion(5671234,"cristo de san juan de la cruz",fechaAgregar5,2000000.0,"grande","plaza sol");
         fechaAgregar6.set(Calendar.YEAR,1946);
-        Obra o6 = new Obra(6712345,"la tentacion de San Anotonio",fechaAgregar6,50000000.0,"normal");
+        Obra o6 = new Instalacion(6712345,"la tentacion de San Anotonio",fechaAgregar6,50000000.0,"normal","plaza sol");
         fechaAgregar7.set(Calendar.YEAR,1800);
-        Obra o7 = new Obra(7123456,"la maja desnuda ",fechaAgregar7,3480000.0,"pequeña");
+        Obra o7 = new Instalacion(7123456,"la maja desnuda ",fechaAgregar7,3480000.0,"pequeña","plaza sol");
         fechaAgregar8.set(Calendar.YEAR,1901);
-        Obra o8 = new Obra(2345678,"goldfish",fechaAgregar8,30000000.0,"normal");
+        Obra o8 = new Instalacion(2345678,"goldfish",fechaAgregar8,30000000.0,"normal","plaza sol");
         fechaAgregar9.set(Calendar.YEAR,1907);
-        Obra o9 = new Obra(3456789,"el beso",fechaAgregar9,88000.0,"grande");
+        Obra o9 = new Instalacion(3456789,"el beso",fechaAgregar9,88000.0,"grande","plaza sol");
         fechaAgregar16.set(Calendar.YEAR,1888);
-        Obra o10 = new Obra(4567890,"los girasoles",fechaAgregar16,23400000.0,"pequeña");
+        Obra o10 = new Instalacion(4567890,"los girasoles",fechaAgregar16,23400000.0,"pequeña","plaza sol");
 
         // Artista
         fechaAgregar10.set(1884,1,12);
