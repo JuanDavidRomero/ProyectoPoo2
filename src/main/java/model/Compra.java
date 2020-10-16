@@ -10,7 +10,7 @@ public class Compra
     private boolean pagado;
     private String nombreRepartidor;
     private Cliente compraCliente = new Cliente();
-    private Obra compraObra = new Obra();
+    private Obra compraObra /*= new Obra()*/;
 
     // Construcutores
     public Compra(){}

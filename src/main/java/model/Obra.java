@@ -3,13 +3,13 @@ package model;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Obra {
-    private long pid;
-    private String titulo;
-    private Calendar fecha;
-    private double precioRef;
-    private String dimenciones;
-    private ArrayList<Artista> artista= new ArrayList<>();
+public abstract class Obra {
+    protected long pid;
+    protected String titulo;
+    protected Calendar fecha;
+    protected double precioRef;
+    protected String dimenciones;
+    protected ArrayList<Artista> artista= new ArrayList<>();
 
     // CONSTRUCTORES
     public Obra()
@@ -65,6 +65,8 @@ public class Obra {
                 "\n  Dimencion: "+dimenciones;
     }
 
+    //metodos
+    public abstract double calcularPrecio();
 
 
 }
