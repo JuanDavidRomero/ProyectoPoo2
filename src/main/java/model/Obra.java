@@ -46,12 +46,13 @@ public class Obra {
     // toString
     public String toString()
     {
-        return  ", Titulo='" + titulo + '\'' +
-                ", Fecha=" + fecha.get(Calendar.YEAR) +
-                ", PrecioRef=" + precioRef +
-                ", Dimensiones='" + dimenciones + '\'' +
+        return  ", Titulo= " + titulo + '\'' +
+                ", Pid= " + pid +
+                ", Fecha= " + fecha.get(Calendar.YEAR) +
+                ", PrecioRef= " + precioRef +
+                ", Dimensiones= " + dimenciones + '\'' +
                 ",Autor= "+artista.get(0).getNombres()+
-                ", Foto=" + "todavia no hay foto sorry, pero en la entrega 3 si abra" +
+                ", Foto= " + "todavia no hay foto sorry, pero en la entrega 3 si abra" +
                 '}';
     }
 

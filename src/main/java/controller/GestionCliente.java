@@ -76,10 +76,11 @@ public class GestionCliente
 
     public Cliente eliminarUnCliente(ArrayList<Cliente>  eliminar, Cliente clientE)
     {
-        System.out.print("¿Esta seguro de borrar el cliente? si/no: ");
+        System.out.print("¿Esta seguro de borrar el cliente? s/n: ");
 
-        String borrar = scan.nextLine();
-        if(borrar.equals("si"))
+        String borra = scan.nextLine();
+        char borrar = borra.charAt(0);
+        if(borrar == 's')
         {
             Cliente eliminado = eliminar.remove(eliminar.indexOf(clientE));
             System.out.println("Cliente eliminado exitosamente");
@@ -98,13 +99,13 @@ public class GestionCliente
         }
     }
 
-    public Cliente buscarCliente(long codigo, ArrayList<Cliente> listaClientes)
+    public Cliente buscarCliente(long cedula, ArrayList<Cliente> listaClientes)
     {
         for (Cliente recorrer: listaClientes)
         {
-            if (recorrer.getCodigoCliente() == codigo)
+            if (recorrer.getCedula() == cedula)
             {
-                System.out.println("\n***Datos cliente con cedula "+codigo+"***");
+                System.out.println("\n***Datos cliente con cedula "+cedula+"***");
                 System.out.println("Cedula: "+recorrer.getCedula());
                 System.out.println("Nombre completo: "+recorrer.getNombres()+" "+recorrer.getApellidos());
                 System.out.println("Telefono: "+recorrer.getTelefono()+"\n");

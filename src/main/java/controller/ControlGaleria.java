@@ -288,7 +288,7 @@ public class ControlGaleria
                     int Mes = scan.nextInt()-1;
                     System.out.print("Año: ");
                     int Anio = scan.nextInt();
-                    Calendar fecha = new GregorianCalendar(Dia, Mes, Anio);
+                    Calendar fecha = new GregorianCalendar(Anio, Mes, Dia);
                     System.out.print("¿La obra esta pagada?(si/no):");
                     scan.nextLine();
                     String estado = scan.nextLine();
