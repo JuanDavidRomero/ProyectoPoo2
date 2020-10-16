@@ -63,6 +63,7 @@ public class PantallaGaleria
             }
         }while(seguir);
         System.out.println("Un gusto haberle ayudado");
+        System.out.println("MALPARIDO GONORREA TIPLEHIJUEPUTA JUANDA");
     }
 }
 
