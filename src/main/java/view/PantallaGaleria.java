@@ -9,6 +9,7 @@ public class PantallaGaleria
     public static void main(String[] args)
     {
         System.out.println("HOLA GONORREITAS");
+        System.out.println("perra socialista");
         ControlGaleria galeria = new ControlGaleria();
         galeria.datosPrueba();
 
