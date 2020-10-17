@@ -8,8 +8,6 @@ public class PantallaGaleria
 
     public static void main(String[] args)
     {
-        System.out.println("HOLA GONORREITAS");
-        System.out.println("perra socialista");
         ControlGaleria galeria = new ControlGaleria();
         galeria.datosPrueba();
 
@@ -66,7 +64,6 @@ public class PantallaGaleria
             }
         }while(seguir);
         System.out.println("Un gusto haberle ayudado");
-        System.out.println("MALPARIDO GONORREA TIPLEHIJUEPUTA JUANDA");
     }
 }
 
