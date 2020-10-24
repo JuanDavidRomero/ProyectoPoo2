@@ -414,13 +414,9 @@ public class ControlGaleria
                 }
             }
         }
-
         if(!encontro)
         {
             System.out.println("No se ha encontrado compras con esa fecha");
         }
-
     }
-
-
 }
