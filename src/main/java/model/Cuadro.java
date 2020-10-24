@@ -1,6 +1,8 @@
 package model;
 
-public class Cuadro {
+import java.util.Calendar;
+
+public class Cuadro extends Obra {
     private String tema;
     private String tecnica;
     private Clasificacion clasificacion;
@@ -27,5 +29,17 @@ public class Cuadro {
 
     public void setClasificacion(Clasificacion clasificacion) {
         this.clasificacion = clasificacion;
+    }
+
+    public Cuadro(long pid, String titulo, Calendar fecha, Double precioRef, String dimensiones, String tema, String tecnica, Clasificacion clasificacion) {
+        super(pid, titulo, fecha, precioRef, dimensiones);
+        this.tema = tema;
+        this.tecnica = tecnica;
+        this.clasificacion = clasificacion;
+    }
+
+    @Override
+    public double calcularPrecio() {
+        return 0;
     }
 }

@@ -3,13 +3,14 @@ package controller;
 import model.Cliente;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 public class GestionCliente
 {
     Scanner scan = new Scanner(System.in);
     private Cliente cliente = new Cliente();
 
-    public void modificarDatosDeCliente(Cliente cliente,ArrayList<Cliente> listaClientes)
+    public void modificarDatosDeCliente(Cliente cliente,Map<Long, Cliente> listaClientes)
     {
 
         System.out.println("\n1. Codigo de indentificacion: " + cliente.getCodigoCliente());
@@ -74,7 +75,7 @@ public class GestionCliente
         }
     }
 
-    public Cliente eliminarUnCliente(ArrayList<Cliente>  eliminar, Cliente clientE)
+    public Cliente eliminarUnCliente(Map<Long, Cliente> eliminar , Cliente clientE)
     {
         System.out.print("¿Esta seguro de borrar el cliente? s/n: ");
 
@@ -82,7 +83,7 @@ public class GestionCliente
         char borrar = borra.charAt(0);
         if(borrar == 's')
         {
-            Cliente eliminado = eliminar.remove(eliminar.indexOf(clientE));
+            Cliente eliminado = eliminar.remove(eliminar.get(clientE.getCodigoCliente()));
             System.out.println("Cliente eliminado exitosamente");
             return eliminado;
         }
@@ -90,46 +91,46 @@ public class GestionCliente
 
     }
 
-    public void listarClientes(ArrayList<Cliente> listaClientes)
+    public void listarClientes(Map<Long, Cliente> listaClientes)
     {
-        for(Cliente recorrer: listaClientes)
+        for(Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
         {
-            System.out.println("- "+recorrer.toString(1));
+            System.out.println("- "+recorrer.getValue().toString(1));
             System.out.println();
         }
     }
 
-    public Cliente buscarCliente(long cedula, ArrayList<Cliente> listaClientes)
+    public Cliente buscarCliente(long cedula, Map<Long, Cliente> listaClientes)
     {
-        for (Cliente recorrer: listaClientes)
+        for (Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
         {
-            if (recorrer.getCedula() == cedula)
+            if (recorrer.getValue().getCedula() == cedula)
             {
                 System.out.println("\n***Datos cliente con cedula "+cedula+"***");
-                System.out.println("Cedula: "+recorrer.getCedula());
-                System.out.println("Nombre completo: "+recorrer.getNombres()+" "+recorrer.getApellidos());
-                System.out.println("Telefono: "+recorrer.getTelefono()+"\n");
-                return recorrer;
+                System.out.println("Cedula: "+recorrer.getValue().getCedula());
+                System.out.println("Nombre completo: "+recorrer.getValue().getNombres()+" "+recorrer.getValue().getApellidos());
+                System.out.println("Telefono: "+recorrer.getValue().getTelefono()+"\n");
+                return (Cliente) recorrer;
             }
         }
         System.out.println("El cliente no existe");
         return null;
     }
 
-    public Cliente buscasClienteNI(long codigo, ArrayList<Cliente> listaClientes)
+    public Cliente buscasClienteNI(long codigo, Map<Long, Cliente> listaClientes)
     {
-        for (Cliente recorrer: listaClientes)
+        for (Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
         {
-            if (recorrer.getCodigoCliente() == codigo)
+            if (recorrer.getValue().getCedula() == codigo)
             {
-                return recorrer;
+                return (Cliente) recorrer;
             }
         }
         System.out.println("El cliente no existe");
         return null;
     }
 
-    public void agregarCliente(ArrayList<Cliente> listaClientes)
+    public void agregarCliente(Map<Long, Cliente> listaClientes)
     {
         System.out.println("\n***Ingrese los datos del nuevo cliente***\n");
         System.out.print("Codigo: ");
@@ -138,7 +139,7 @@ public class GestionCliente
         Cliente temp = new Cliente();
         temp.setCodigoCliente(codigoCliente);
 
-        if(!listaClientes.contains(temp))
+        if(!listaClientes.containsValue(temp))
         {
             System.out.print("Cedula: ");
             long cedula=scan.nextLong();
@@ -152,7 +153,7 @@ public class GestionCliente
             System.out.print("Telefono: ");
             long telefono=scan.nextLong();
             Cliente clienteNuevo=new Cliente(codigoCliente,cedula,nombres,apellidos,direccion,telefono);
-            listaClientes.add(clienteNuevo);
+            listaClientes.put(codigoCliente,clienteNuevo);
             System.out.println("Cliente ingresado");
         }
         else
@@ -162,16 +163,16 @@ public class GestionCliente
         }
     }
 
-    public void listaClientes(ArrayList<Cliente> listaClientes)
+    public void listaClientes(Map<Long, Cliente> listaClientes)
     {
         //Clientes
         Cliente c1 = new Cliente(1111111, 876543210, "wu", "zetian" , "avenida 13", 311585424);
         Cliente c2 = new Cliente(2222222, 765432109, "charles", "talleyrand", "avenida 14", 311585422);
         Cliente c3 = new Cliente(3333333,543210987,"victor","lustig","avenida 15",311585423);
 
-        listaClientes.add(c1);
-        listaClientes.add(c2);
-        listaClientes.add(c3);
+        listaClientes.put((long) 1111111,c1);
+        listaClientes.put((long) 2222222, c2);
+        listaClientes.put((long) 3333333, c3);
 
     }
 

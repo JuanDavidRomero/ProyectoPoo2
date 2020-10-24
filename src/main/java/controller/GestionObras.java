@@ -4,6 +4,7 @@ import model.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Map;
 import java.util.Scanner;
 
 public class GestionObras
@@ -171,7 +172,7 @@ public class GestionObras
         return null;
     }
 
-    public void InsertarObra(ArrayList<Obra>listaObras, ArrayList<Artista> listaArtistas)
+    public void InsertarObra(ArrayList<Obra>listaObras, Map<Long, Artista> listaArtistas)
     {
         Scanner ingreso = new Scanner(System.in);
         Calendar fecha = Calendar.getInstance();
@@ -219,9 +220,9 @@ public class GestionObras
             int numero=1;
             // se muestran la opcion de artistas
             System.out.println("0.Ingresar artista");
-            for(Artista mostrar: listaArtistas)
+            for(Map.Entry<Long, Artista> mostrar: listaArtistas.entrySet())
             {
-                System.out.println(numero+"."+mostrar.toString(1));
+                System.out.println(numero+"."+mostrar.getValue().toString(1));
                 numero+=1;
             }
             System.out.print("Para agregarle un Artista seleccione a uno de la lista: ");
@@ -256,7 +257,7 @@ public class GestionObras
         }while(!artistaDone);
     }
 
-    public void modifiObra(long codigo, ArrayList<Obra> listaObras,ArrayList<Artista> listaArtista)
+    public void modifiObra(long codigo, ArrayList<Obra> listaObras,Map<Long, Artista> listaArtista)
     {
         Obra trabajo =buscarObraCodigo(codigo,listaObras);
         // condicion para ver si se encontro la obra con el codigo
@@ -342,9 +343,9 @@ public class GestionObras
                         int orden=1;
                         System.out.println("0.Ingresar nuevo artista");
                         // se presenta lista de artistas
-                        for(Artista impri: listaArtista)
+                        for(Map.Entry<Long, Artista> impri: listaArtista.entrySet())
                         {
-                            System.out.println(orden+"."+impri.toString(1));
+                            System.out.println(orden+"."+impri.getValue().toString(1));
                             orden+=1;
                         }
                         entrada = new Scanner((System.in));
@@ -382,7 +383,7 @@ public class GestionObras
         }
     }
 
-    public void InserArtista(ArrayList<Artista> listaArtistas)
+    public void InserArtista(Map<Long, Artista> listaArtistas)
     {
         System.out.println("Ingrese los datos del artista\n");
 
@@ -420,7 +421,7 @@ public class GestionObras
 
         // se crea el objeto Artista y se añade a la lista
         Artista nuevo = new Artista(ultimoCod,cedula,nombre,apellidos,fechaNacimineto,telefono);
-        listaArtistas.add(nuevo);
+        listaArtistas.put(nuevo.getCodigoArtista(), nuevo);
     }
 
     private boolean checkpid(long pid, ArrayList<Obra> listaObras)
@@ -478,7 +479,7 @@ public class GestionObras
         }
     }
 
-    public void listaObras(ArrayList<Obra> listaObras, ArrayList<Artista> listaArtistas)
+    public void listaObras(ArrayList<Obra> listaObras, Map<Long, Artista> listaArtistas)
     {
         Calendar fechaAgregar1 = Calendar.getInstance();
         Calendar fechaAgregar2 = Calendar.getInstance();
@@ -499,25 +500,28 @@ public class GestionObras
 
         //Obras
         fechaAgregar1.set(Calendar.YEAR,1922);
-        Obra o1 = new Instalacion(1234567,"antes del baile de mascaras",fechaAgregar1,40000.0,"grande", "plaza sol");
+        Obra o1 = new Instalacion(1234567,"Galerie Bruno Bishofberger",fechaAgregar1,40000.0,"grande", "plaza sol");
         fechaAgregar2.set(Calendar.YEAR,1950);
-        Obra o2 = new Instalacion(2345671,"autorretrado con chaqueta azul",fechaAgregar2,80000.0,"normal","plaza sol");
+        Material m1 = new Material("madera", "Los árboles son una creación asombrosa de la naturaleza");
+        Obra o2 = new Escultura(2345671,"autorretrado con chaqueta azul",fechaAgregar2,80000.0,"grande",m1, 15.1);
         fechaAgregar3.set(Calendar.YEAR,1877);
-        Obra o3 = new Instalacion(3456712,"remeros en el yernes",fechaAgregar3,60000.0,"normal","plaza sol");
+        Obra o3 = new Cuadro(3456712,"remeros en el yernes",fechaAgregar3,60000.0,"normal","Marlborough", "Óleo",Clasificacion.OBRA_MAESTRA);
         fechaAgregar4.set(Calendar.YEAR,1931);
-        Obra o4 = new Instalacion(4567123,"la persistencia de la memoria",fechaAgregar4,1000000.0,"grande","plaza sol");
+        Obra o4 = new Cuadro(4567123,"la persistencia de la memoria",fechaAgregar4,1000000.0,"grande","Los relojes blandos o Los relojes derretidos", "Oleo", Clasificacion.OBRA_MAESTRA);
         fechaAgregar5.set(Calendar.YEAR,1651);
-        Obra o5 = new Instalacion(5671234,"cristo de san juan de la cruz",fechaAgregar5,2000000.0,"grande","plaza sol");
+        Obra o5 = new Instalacion(5671234,"Esther Arias Galerías de Arte y Taller",fechaAgregar5,200000000.0,"grande","Situado en un antiguo edificio del siglo XVIII");
         fechaAgregar6.set(Calendar.YEAR,1946);
-        Obra o6 = new Instalacion(6712345,"la tentacion de San Anotonio",fechaAgregar6,50000000.0,"normal","plaza sol");
+        Obra o6 = new Instalacion(6712345,"Hans Mayer",fechaAgregar6,50000000.0,"grande","famoso por ser un espacio que abre sus puertas a otros tipos de arte");
         fechaAgregar7.set(Calendar.YEAR,1800);
-        Obra o7 = new Instalacion(7123456,"la maja desnuda ",fechaAgregar7,3480000.0,"pequeña","plaza sol");
+        Material m2 = new Material("marmol", "es una roca metamorfica compacta formada a partir de rocas calizas");
+        Obra o7 = new Escultura(7123456,"La Piedad ",fechaAgregar7,34800000.0,"grande",m2,25.7);
         fechaAgregar8.set(Calendar.YEAR,1901);
-        Obra o8 = new Instalacion(2345678,"goldfish",fechaAgregar8,30000000.0,"normal","plaza sol");
+        Obra o8 = new Instalacion(2345678,"Annely Juda Fine Art ",fechaAgregar8,3000000000.0,"grande"," Artistas de todo el mundo se unen en una composición armónica y delicada que tienes que vivir");
         fechaAgregar9.set(Calendar.YEAR,1907);
-        Obra o9 = new Instalacion(3456789,"el beso",fechaAgregar9,88000.0,"grande","plaza sol");
+        Material m3 = new Material("marmol", "es una roca metamorfica compacta formada a partir de rocas calizas");
+        Obra o9 = new Escultura(3456789,"Venus de Milo",fechaAgregar9,88000.0,"grande",m3, 34.8);
         fechaAgregar16.set(Calendar.YEAR,1888);
-        Obra o10 = new Instalacion(4567890,"los girasoles",fechaAgregar16,23400000.0,"pequeña","plaza sol");
+        Obra o10 = new Instalacion(4567890,"Marlborough Fine Art",fechaAgregar16,23400000.0,"grande","está llena de los más reconocidos artistas contemporáneos.");
 
         // Artista
         fechaAgregar10.set(1884,1,12);
@@ -566,12 +570,12 @@ public class GestionObras
         listaObras.add(o8);
         listaObras.add(o9);
         listaObras.add(o10);
-        listaArtistas.add(a1);
-        listaArtistas.add(a2);
-        listaArtistas.add(a3);
-        listaArtistas.add(a4);
-        listaArtistas.add(a5);
-        listaArtistas.add(a6);
+        listaArtistas.get(a1);
+        listaArtistas.put(a2.getCodigoArtista(), a2);
+        listaArtistas.put(a3.getCodigoArtista(), a3);
+        listaArtistas.put(a4.getCodigoArtista(), a4);
+        listaArtistas.put(a5.getCodigoArtista(), a5);
+        listaArtistas.put(a6.getCodigoArtista(), a6);
 
     }
 

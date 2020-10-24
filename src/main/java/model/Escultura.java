@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Calendar;
+
 public class Escultura extends Obra
 {
     private Material material;
@@ -20,6 +22,16 @@ public class Escultura extends Obra
     }
 
     public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public Escultura() {
+
+    }
+
+    public Escultura(long pid, String titulo, Calendar fecha, Double precioRef, String dimensiones, Material material, double peso) {
+        super(pid, titulo, fecha, precioRef, dimensiones);
+        this.material = material;
         this.peso = peso;
     }
 

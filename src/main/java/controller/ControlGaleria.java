@@ -5,20 +5,20 @@ import model.Cliente;
 import model.Compra;
 import model.Obra;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Scanner;
+import java.util.*;
 
 public class ControlGaleria
 {
     Scanner ingreso = new Scanner(System.in);
 
+    //Mapas
+    private Map<Long, Cliente> listaClientes = new HashMap<>();
+    private Map<Long, Artista> listaArtistas = new HashMap<>();
+
     // listas
-    private ArrayList<Cliente> listaClientes=new ArrayList<>();
     private ArrayList<Compra> listaCompras = new ArrayList<>();
     private ArrayList<Obra> listaObras= new ArrayList<>();
-    private ArrayList<Artista> listaArtistas= new ArrayList<>();
+    //private ArrayList<Artista> listaArtistas= new ArrayList<>();
 
     // controladores
     private GestionCliente controlClientes = new GestionCliente();
@@ -29,8 +29,15 @@ public class ControlGaleria
     {  }
 
     // Acessors
-    public ArrayList<Cliente> getListaClientes(){return listaClientes;}
-    public void setListaClientes(ArrayList<Cliente> listaClientes){this.listaClientes = listaClientes;}
+
+
+    public Map<Long, Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
+    public void setListaClientes(Map<Long, Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
+    }
 
     public ArrayList<Compra> getListaCompras(){return listaCompras;}
     public void setListaCompras(ArrayList<Compra> listaCompras){this.listaCompras = listaCompras;}
@@ -38,8 +45,13 @@ public class ControlGaleria
     public ArrayList<Obra> getListaObras(){return listaObras;}
     public void setListaObras(ArrayList<Obra> listaObras){this.listaObras = listaObras;}
 
-    public ArrayList<Artista> getListaArtistas(){return listaArtistas;}
-    public void setListaArtistas(ArrayList<Artista> listaArtistas){this.listaArtistas = listaArtistas;}
+    public Map<Long, Artista> getListaArtistas() {
+        return listaArtistas;
+    }
+
+    public void setListaArtistas(Map<Long, Artista> listaArtistas) {
+        this.listaArtistas = listaArtistas;
+    }
 
     public GestionCliente getControlClientes(){return controlClientes;}
     public void setControlClientes(GestionCliente controlClientes){this.controlClientes = controlClientes;}
@@ -343,11 +355,11 @@ public class ControlGaleria
             vector[posicion_vector] = 0;
         }
 
-        for(Artista artista : this.listaArtistas){
+        for(Map.Entry<Long, Artista> artista : this.listaArtistas.entrySet()){
             for(Compra compra : this.listaCompras){
                 for(Artista artista2 : compra.getCompraObra().getArtista()){
-                    if(artista.getCedula() == artista2.getCedula())
-                        vector[listaArtistas.indexOf(artista)]++;
+                    if(artista.getValue().getCedula() == artista2.getCedula())
+/*------>*/                        vector[listaArtistas.indexOf(artista)]++;
                 }
             }
         }

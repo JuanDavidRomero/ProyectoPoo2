@@ -1,6 +1,6 @@
 package model;
 
-public class Material {
+public class Material{
     private String nombre;
     private String descripion;
 
@@ -17,6 +17,13 @@ public class Material {
     }
 
     public void setDescripion(String descripion) {
+        this.descripion = descripion;
+    }
+
+    public Material() {}
+
+    public Material(String nombre, String descripion) {
+        this.nombre = nombre;
         this.descripion = descripion;
     }
 }
