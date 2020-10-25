@@ -473,7 +473,7 @@ public class GestionObras
         listaArtistas.put(nuevo.getCedula(), nuevo);
     }
 
-    private boolean checkpid(long pid, ArrayList<Obra> listaObras)
+    public boolean checkpid(long pid, ArrayList<Obra> listaObras)
     {
         if((pid/1000000<=0))
         {
