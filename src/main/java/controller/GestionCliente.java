@@ -102,28 +102,22 @@ public class GestionCliente
 
     public Cliente buscarCliente(long cedula, Map<Long, Cliente> listaClientes)
     {
-        // ESTAMOS TRABAJANDO EN ESTA
         if(listaClientes.containsKey(cedula))
         {
             System.out.println("entra");
             for(long llave : listaClientes.keySet())
             {
-
-            }
-            for (Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
-            {
-                if (recorrer.getValue().getCedula() == cedula)
+                if(listaClientes.get(llave).getCedula()==cedula)
                 {
                     System.out.println("\n***Datos cliente con cedula "+cedula+"***");
-                    System.out.println("Cedula: "+recorrer.getValue().getCedula());
-                    System.out.println("Nombre completo: "+recorrer.getValue().getNombres()+" "+recorrer.getValue().getApellidos());
-                    System.out.println("Telefono: "+recorrer.getValue().getTelefono()+"\n");
-                    return (Cliente) recorrer;
+                    System.out.println("Cedula: "+listaClientes.get(llave).getCedula()+"\n");
+                    System.out.println("Nombre completo: "+listaClientes.get(llave).getNombres()+" "+listaClientes.get(llave).getApellidos()+"\n");
+                    System.out.println("Telefono: "+listaClientes.get(llave).getTelefono()+"\n");
+                    return listaClientes.get(llave);
                 }
             }
             System.out.println("El cliente no existe");
         }
-
         return null;
     }
 
@@ -163,7 +157,7 @@ public class GestionCliente
             System.out.print("Telefono: ");
             long telefono=scan.nextLong();
             Cliente clienteNuevo=new Cliente(codigoCliente,cedula,nombres,apellidos,direccion,telefono);
-            listaClientes.put(codigoCliente,clienteNuevo);
+            listaClientes.put(cedula,clienteNuevo);
             System.out.println("Cliente ingresado");
         }
         else

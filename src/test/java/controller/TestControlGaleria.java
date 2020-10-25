@@ -327,6 +327,29 @@ public class TestControlGaleria
     public void opcion8Test()
     {
         System.out.println("-Realizando la prueba 8");
+
+        Cliente c1 = new Cliente(4444444, 8665242, "Pablo", "el patron del mal" , "avenida napoles", 311586424);
+
+
+        Cliente temp = new Cliente();
+        temp.setCodigoCliente(c1.getCodigoCliente());
+
+        if(!controlador.getListaClientes().containsValue(temp))
+        {
+            Cliente clienteNuevo=new Cliente(c1.getCodigoCliente(),c1.getCedula(),c1.getNombres(),c1.getApellidos(),c1.getDireccionEntrega(),c1.getTelefono());
+            controlador.getListaClientes().put(c1.getCedula(),clienteNuevo);
+            System.out.println("Cliente ingresado");
+        }
+        else
+        {
+            System.out.println("El codigo ya lo tiene registrado otro cliente");
+            System.out.println("No se pudo añadir cliente");
+        }
+
+        Assert.assertTrue("El cliente con cedula 8665242 no ha sido agregado ",controlador.getListaClientes().containsKey(8665242));
+        Assert.assertTrue("El cliente con cedula 1765242 no ha sido agregado ",controlador.getListaClientes().containsKey(1765242));
+
+
     }
 
     @Test
