@@ -32,11 +32,12 @@ public class GestionObras
                 disponibles.add(compara);
             }
         }
+
         //imprime
         System.out.println("***Obras Disponibles***\n");
         for(Obra impri: disponibles)
         {
-            System.out.println("- "+impri.toString(0));
+            //System.out.println("- "+impri.toString(0));
             System.out.println();
         }
 
@@ -76,7 +77,7 @@ public class GestionObras
         System.out.println("\n***Resultados busqueda***\n");
         for(Obra mostar: resultadoBusqueda)
         {
-            System.out.println("- "+mostar.toString(1));
+           // System.out.println("- "+mostar.toString(1));
             System.out.println();
         }
         if(!hayResultado)
@@ -97,10 +98,13 @@ public class GestionObras
         for(Obra obraBuscadora : listaObras)
         {
             // ciclo para mirar los artistas de las obras
-            for(Artista comparar: obraBuscadora.getArtista())
+          for(long llave: obraBuscadora.getArtistas().keySet())
             {
+
+                Artista comparar = obraBuscadora.getArtistas().get(llave);
                 // se une en un string el nombre y apellido del artista
                 String nombre= comparar.getNombres()+" "+comparar.getApellidos();
+
                 if(nombre.contains(artista))
                 {
                     encontro=true;
@@ -115,7 +119,7 @@ public class GestionObras
             System.out.println("\n***Resultados busqueda***\n");
             for(Obra mostar: resultadoBusqueda)
             {
-                System.out.println("- "+mostar.toString(1));
+               // System.out.println("- "+mostar.toString(1));
                 System.out.println();
             }
         }
@@ -123,6 +127,7 @@ public class GestionObras
         {
             System.out.println("\n"+"No hay ninguna obra que coincida con la busqueda");
         }
+
     }
 
     public void buscarObraAno(ArrayList<Obra> listaObras)
@@ -150,7 +155,7 @@ public class GestionObras
             System.out.println("\n***Resultados busqueda***\n");
             for(Obra mostar: resultadoBusqueda)
             {
-                System.out.println("- "+mostar.toString(1)+"\n");
+               // System.out.println("- "+mostar.toString(1)+"\n");
             }
         }
         else
@@ -269,13 +274,13 @@ public class GestionObras
                     "1.Titulo:"+trabajo.getTitulo()+
                             "\n2.Pid: "+trabajo.getPid()+
                             "\n3.Fecha: " +trabajo.getFecha().get(Calendar.YEAR)+
-                            "\n4.PrecioRef: " +trabajo.getPrecioRef()+
-                            "\n5.Dimensiones: " +trabajo.getDimensiones());
+                            "\n4.PrecioRef: " +trabajo.getPrecioRef());
+                          //  "\n5.Dimensiones: " +trabajo.getDimensiones());
 
             System.out.print("6.Artista: " );
-            for(Artista impri: trabajo.getArtista())
+           // for(Artista impri: trabajo.getArtista())
             {
-                System.out.print(impri.toString(1,1)+".");
+            //    System.out.print(impri.toString(1,1)+".");
             }
 
             System.out.print("\n\nDigite el numero de la opcion que quiera modificar: ");
@@ -332,7 +337,7 @@ public class GestionObras
                     System.out.print("Ingrese las nuevas dimensiones:");
                     entrada= new Scanner(System.in);
                     String nuevoD= entrada.nextLine();
-                    trabajo.setDimensiones(nuevoD);
+                    //trabajo.setDimensiones(nuevoD);
                 }break;
 
                 case 6:
@@ -360,12 +365,12 @@ public class GestionObras
                         {
                             esta=true;
                             // quitarle la obra al artista anterior
-                            for(Artista viejo: trabajo.getArtista())
+                           // for(Artista viejo: trabajo.getArtista())
                             {
-                                viejo.getObras().remove(trabajo);
+                               // viejo.getObras().remove(trabajo);
                             }
                             // quitarle el artista a la obra
-                            trabajo.getArtista().clear();
+                           // trabajo.getArtista().clear();
                             //asignarle el nuevo artista
                             Artista nuevo = listaArtista.get(selec-1);
                             trabajo.setArtista(nuevo);
@@ -525,7 +530,7 @@ public class GestionObras
 
         // Artista
         fechaAgregar10.set(1884,1,12);
-        Artista a1 = new Artista(001,123456789,"max","beckmann" ,fechaAgregar10,311585421);
+        Artista a1 = new Artista(023,123456789,"max","beckmann" ,fechaAgregar10,311585421);
         fechaAgregar11.set(1848,7, 19);
         Artista a2 = new Artista(002,234567890,"gustave","caillebotte",fechaAgregar11,311585422);
         fechaAgregar12.set(1904,4,11);

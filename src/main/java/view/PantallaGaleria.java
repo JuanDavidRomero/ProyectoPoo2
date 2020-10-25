@@ -11,7 +11,6 @@ public class PantallaGaleria
         ControlGaleria galeria = new ControlGaleria();
         galeria.datosPrueba();
 
-
         System.out.println("esta vivo!! esta vivo");
 
         boolean seguir = true;

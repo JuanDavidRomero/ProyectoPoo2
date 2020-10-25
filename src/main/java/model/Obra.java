@@ -2,19 +2,23 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
-public abstract class Obra {
+public abstract class Obra
+{
     protected long pid;
     protected String titulo;
     protected Calendar fecha;
     protected double precioRef;
     protected String dimenciones;
-    protected ArrayList<Artista> artista= new ArrayList<>();
+    protected HashMap<Long,Artista> artistas= new HashMap<>();
 
-    // CONSTRUCTORES
+
+    // Constructores
     public Obra()
-    { }
+    {
 
+    }
     public Obra(long pid, String titulo, Calendar fecha, Double precioRef, String dimensiones)
     {
         this.pid = pid;
@@ -24,48 +28,60 @@ public abstract class Obra {
         this.dimenciones = dimensiones;
     }
 
-    // ACCESORS
-    public long getPid(){return pid;}
-    public void setPid(long pid){this.pid = pid;}
+    // Accessors
 
-    public String getTitulo(){return titulo;}
-    public void setTitulo(String titulo){this.titulo = titulo;}
 
-    public Calendar getFecha(){return fecha;}
-    public void setFecha(Calendar fecha){this.fecha = fecha;}
-
-    public Double getPrecioRef(){return precioRef;}
-    public void setPrecioRef(Double precioRef){this.precioRef = precioRef;}
-
-    public String getDimensiones(){return dimenciones;}
-    public void setDimensiones(String dimensiones){this.dimenciones = dimensiones;}
-
-    public ArrayList<Artista> getArtista(){return artista;}
-    public void setArtista(Artista artista){this.artista.add(artista);}
-
-    // toString
-    public String toString()
-    {
-        return  ", Titulo= " + titulo + '\'' +
-                ", Pid= " + pid +
-                ", Fecha= " + fecha.get(Calendar.YEAR) +
-                ", PrecioRef= " + precioRef +
-                ", Dimensiones= " + dimenciones + '\'' +
-                ",Autor= "+artista.get(0).getNombres()+
-                ", Foto= " + "todavia no hay foto sorry, pero en la entrega 3 si abra" +
-                '}';
+    public long getPid() {
+        return pid;
     }
 
-    public String toString(int o)
-    {
-        int ano = fecha.get(Calendar.YEAR);
-        return  "Titulo: "+titulo+
-                "\n  Año: "+ano+
-                "\n  Precio: "+precioRef+
-                "\n  Dimencion: "+dimenciones;
+    public void setPid(long pid) {
+        this.pid = pid;
     }
 
-    //metodos
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public Calendar getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Calendar fecha) {
+        this.fecha = fecha;
+    }
+
+    public double getPrecioRef() {
+        return precioRef;
+    }
+
+    public void setPrecioRef(double precioRef) {
+        this.precioRef = precioRef;
+    }
+
+    public String getDimenciones() {
+        return dimenciones;
+    }
+
+    public void setDimenciones(String dimenciones) {
+        this.dimenciones = dimenciones;
+    }
+
+    public HashMap<Long, Artista> getArtistas()
+    {
+        return artistas;
+    }
+
+    public void setArtista(Artista artistas)
+    {
+        this.artistas.put(artistas.getCedula(),artistas);
+    }
+
+    //Metodos
     public abstract double calcularPrecio();
 
 

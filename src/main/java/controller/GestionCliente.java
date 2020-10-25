@@ -102,18 +102,28 @@ public class GestionCliente
 
     public Cliente buscarCliente(long cedula, Map<Long, Cliente> listaClientes)
     {
-        for (Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
+        // ESTAMOS TRABAJANDO EN ESTA
+        if(listaClientes.containsKey(cedula))
         {
-            if (recorrer.getValue().getCedula() == cedula)
+            System.out.println("entra");
+            for(long llave : listaClientes.keySet())
             {
-                System.out.println("\n***Datos cliente con cedula "+cedula+"***");
-                System.out.println("Cedula: "+recorrer.getValue().getCedula());
-                System.out.println("Nombre completo: "+recorrer.getValue().getNombres()+" "+recorrer.getValue().getApellidos());
-                System.out.println("Telefono: "+recorrer.getValue().getTelefono()+"\n");
-                return (Cliente) recorrer;
+
             }
+            for (Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
+            {
+                if (recorrer.getValue().getCedula() == cedula)
+                {
+                    System.out.println("\n***Datos cliente con cedula "+cedula+"***");
+                    System.out.println("Cedula: "+recorrer.getValue().getCedula());
+                    System.out.println("Nombre completo: "+recorrer.getValue().getNombres()+" "+recorrer.getValue().getApellidos());
+                    System.out.println("Telefono: "+recorrer.getValue().getTelefono()+"\n");
+                    return (Cliente) recorrer;
+                }
+            }
+            System.out.println("El cliente no existe");
         }
-        System.out.println("El cliente no existe");
+
         return null;
     }
 
@@ -170,9 +180,9 @@ public class GestionCliente
         Cliente c2 = new Cliente(2222222, 765432109, "charles", "talleyrand", "avenida 14", 311585422);
         Cliente c3 = new Cliente(3333333,543210987,"victor","lustig","avenida 15",311585423);
 
-        listaClientes.put((long) 1111111,c1);
-        listaClientes.put((long) 2222222, c2);
-        listaClientes.put((long) 3333333, c3);
+        listaClientes.put((long) 876543210,c1);
+        listaClientes.put((long) 765432109, c2);
+        listaClientes.put((long) 543210987, c3);
 
     }
 
