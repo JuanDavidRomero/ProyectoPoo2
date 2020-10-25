@@ -290,46 +290,29 @@ public class TestControlGaleria
         Calendar fechaAgregar2 = Calendar.getInstance();
         Calendar fechaAgregar3 = Calendar.getInstance();
 
-        System.out.println("pero si entra");
-
         // escultura
         fechaAgregar1.set(Calendar.YEAR,1950);
         Material m1 = new Material("lagrimas de ingenieros", "El sudor y esfuerzo de este grupo que llevo a ser esta obra lo que es hoy en dia");
         Obra o1 = new Escultura(6546543,"prueba escultura idk",fechaAgregar1,100000.0,"grande",m1, (double)30.6);
         o1.setArtistas(controlador.getListaArtistas().get((long)123456789));
-        System.out.println("que esta pasando");
         // instalacion
         fechaAgregar2.set(Calendar.YEAR,1922);
         Obra o2 = new Instalacion(1234567,"esta deberia fallar el codigo pib se repite",fechaAgregar2,40000.0,"grande", "avenida cali");
         o2.setArtistas(controlador.getListaArtistas().get((long)123456789));
-        System.out.println("puta");
-        // instalacion
         // cuadro
         fechaAgregar3.set(Calendar.YEAR,1877);
         Obra o3 = new Cuadro(2226665,"cafe aguila roja",fechaAgregar3,60000.0,"pequeño","sur america", "Óleo",Clasificacion.OBRA_MAESTRA);
         o3.setArtistas(controlador.getListaArtistas().get((long)123456789));
-        System.out.println("aTF");
-        // instalacion
 
         ArrayList<Obra> listaO= controlador.getListaObras();
         Map<Long,Artista> listaA = controlador.getListaArtistas();
 
-        System.out.println("aww WTF");
-       Obra expect1= controlador.getControlObras().insertarObraEscultura(listaO,listaA,123456789,o1.getPid(),o1.getTitulo(),o1.getFecha(),o1.getPrecioRef(),o1.getDimenciones(),m1,(double)30.6);
-        System.out.println("cute");
-       Obra expect2= controlador.getControlObras().insertarObraInstalacion(listaO,listaA,123456789,o2.getPid(),o2.getTitulo(),o2.getFecha(),o2.getPrecioRef(),o2.getDimenciones(),"avenida cali");
-       System.out.println("boo");
-       Obra expect3= controlador.getControlObras().insertarObraCuadro(listaO,listaA,123456789,o3.getPid(),o3.getTitulo(),o3.getFecha(),o3.getPrecioRef(),o3.getDimenciones(),"sur america","Óleo",1);
+        Obra expect1= controlador.getControlObras().insertarObraEscultura(listaO,listaA,123456789,o1.getPid(),o1.getTitulo(),o1.getFecha(),o1.getPrecioRef(),o1.getDimenciones(),m1,(double)30.6);
+        Obra expect2= controlador.getControlObras().insertarObraInstalacion(listaO,listaA,123456789,o2.getPid(),o2.getTitulo(),o2.getFecha(),o2.getPrecioRef(),o2.getDimenciones(),"avenida cali");
+        Obra expect3= controlador.getControlObras().insertarObraCuadro(listaO,listaA,123456789,o3.getPid(),o3.getTitulo(),o3.getFecha(),o3.getPrecioRef(),o3.getDimenciones(),"sur america","Óleo",1);
 
-       System.out.println("hey");
-       System.out.println(o1.equals(listaO.get(listaO.indexOf(o1))));
-
-       Assert.assertTrue("La obra o1 no esta en la lista de obras",listaO.contains(o1));
-       Assert.assertTrue("La obra o2 no esta en la lista de obras",listaO.contains(o2));
-       Assert.assertEquals("Validando ingreso datos",o1.getTitulo(),listaO.get(listaO.indexOf(o1)).getTitulo());
-
-
-
+       Assert.assertTrue("La obra o1 no esta en la lista de obras",listaO.contains(expect1));
+       Assert.assertTrue("La obra o2 no esta en la lista de obras",listaO.contains(expect2));
 
     }
 
