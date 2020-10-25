@@ -179,132 +179,188 @@ public class GestionObras
     public void InsertarObra(ArrayList<Obra>listaObras, Map<Long, Artista> listaArtistas)
     {
         Scanner ingreso = new Scanner(System.in);
-        Calendar fecha = Calendar.getInstance();
+
         // ingreso de datos nueva obra
+
         System.out.println("\n***Ingrese los datos de la nueva obra***");
-
-        System.out.println("¿Que tipo de obra va a ingresar?");
-        System.out.println("1. Escultura ");
-        System.out.println("2. Instalacion ");
-        System.out.println("3. Cuadro ");
-        int tipo = ingreso.nextInt();
-
-        // se valida el pid con las codiciones de arriba
-        System.out.print("\npid: ");
+        System.out.println("Ingrese el pid:");
         long pid = ingreso.nextLong();
-        ingreso = new Scanner(System.in);
-        Obra temp =new Instalacion();
-        temp.setPid(pid);
-        boolean respuesta = checkpid(pid,listaObras);
-        if(!respuesta)
+        ingreso= new Scanner(System.in);
+
+        // primero se valia que el pid sea el correcto
+        if(checkpid(pid,listaObras))
         {
-            System.out.println("no se pudo crear la nueva obra");
-            return;
-        }
-        // ingreso titulo
-        System.out.print("\nTitulo: ");
-        String titulo = ingreso.nextLine();
-        ingreso = new Scanner(System.in);
-        // ingreso año
-        System.out.print("\nFecha año :");
-        int ano = ingreso.nextInt();
-        ingreso = new Scanner(System.in);
-        // ingreso precio
-        System.out.print("\nPrecioRef: ");
-        double precioRef = ingreso.nextDouble();
-        ingreso = new Scanner(System.in);
-        // ingreso dimensiones
-        System.out.print("\nDimenciones: ");
-        String dimensiones = ingreso.nextLine();
-        ingreso = new Scanner(System.in);
-        Obra nueva = new Instalacion();
+            // ingreso titulo
+            System.out.print("\nIngrese el titulo: ");
+            String titulo = ingreso.nextLine();
+            ingreso = new Scanner(System.in);
+            // ingreso año
+            System.out.print("\nIngre el  año : ");
+            int ano = ingreso.nextInt();
+            ingreso = new Scanner(System.in);
+            // ingreso precio
+            System.out.print("\nIngrese el precio de referencia: ");
+            double precioRef = ingreso.nextDouble();
+            ingreso = new Scanner(System.in);
+            // ingreso dimensiones
+            System.out.print("\nIngrese las dimenciones: ");
+            String dimensiones = ingreso.nextLine();
+            ingreso = new Scanner(System.in);
+            Calendar fecha = Calendar.getInstance();
+            fecha.set(Calendar.YEAR,ano);
 
-
-        // se crea el objeto Obra
-        fecha.set(Calendar.YEAR,ano);
-        if(tipo == 1){
-            System.out.println("¿Con que tipo de material fue hecha la escultura?");
-            String nE = ingreso.nextLine();
-            System.out.println("De una descripcion del material");
-            String descripcion = ingreso.nextLine();
-            Material material = new Material(nE, descripcion);
-            System.out.println("Ingrese el peso de la escultura");
-            double peso = ingreso.nextDouble();
-            nueva = new Escultura(pid,titulo,fecha,precioRef,dimensiones, material,peso);
-        }
-        else if(tipo == 2){
-            System.out.println("De una breve descripcion del la instalacion");
-            String descripcion = ingreso.nextLine();
-            nueva = new Instalacion(pid,titulo,fecha,precioRef,dimensiones,descripcion);
-        }
-        else if(tipo == 3){
-            System.out.println("Ecriba el tema del cuadro");
-            String tema = ingreso.nextLine();
-            System.out.println("Describa la tecnica del cuadro");
-            String tecnica = ingreso.nextLine();
-            System.out.println("Clasifique el cuadro");
-            System.out.println("1. Obra maestra");
-            System.out.println("2. Obra representativa");
-            int clasificacion = ingreso.nextInt();
-            if(clasificacion == 1){
-                nueva = new Cuadro(pid,titulo,fecha,precioRef,dimensiones, tema, tecnica, Clasificacion.OBRA_MAESTRA);
-            }
-            if(clasificacion == 2){
-                nueva = new Cuadro(pid,titulo,fecha,precioRef,dimensiones, tema, tecnica, Clasificacion.OBRA_MAESTRA);
-            }
-        }
-        else{
-            System.out.println("valor no valido");
-        }
-
-
-        boolean artistaDone=false;
-
-        // proceso para añadir un artista a la obra
-        do{
-            System.out.println("\n***Lista Artistas***");
-            int numero=1;
-            // se muestran la opcion de artistas
-            System.out.println("0.Ingresar artista");
-            for(Map.Entry<Long, Artista> mostrar: listaArtistas.entrySet())
+            System.out.println("Registre un artista a la obra\n");
+            boolean artistaDone=false;
+            // proceso para añadir un artista a la obra
+            do
             {
-                System.out.println(numero+"."+mostrar.getValue().toString(1));
-                numero+=1;
-            }
-            System.out.print("Para agregarle un Artista seleccione a uno de la lista: ");
-            int selec = ingreso.nextInt();
+                ArrayList<Long> listaLlaves = new ArrayList<>();
 
-            // se ingresa un nuevo artista a la lista
-            if(selec==0)
-            {
-                this.InserArtista(listaArtistas);
+                System.out.println("\n***Lista Artistas***");
+                // se muestran la opcion de artistas
+                System.out.println("0.Ingresar artista");
 
-            }
-            // se seleciona un artista de la lista
-            else if (selec<=listaArtistas.size())
-            {
-                artistaDone=true;
-                selec-=1;
-                if(selec != 0) {
-                    //System.out.println("entro");
-                    Artista elnuevo = listaArtistas.get(selec);
-                    nueva.setArtistas(elnuevo);
-                    elnuevo.setObras(nueva);
-                    listaObras.add(nueva);
-                    System.out.println("Obra ingresada\n");
+                int numero=1;
+                for(long llaves: listaArtistas.keySet())
+                {
+                    listaLlaves.add(llaves);
+                    System.out.println(numero+"."+listaArtistas.get(llaves).toString(1));
+                    numero+=1;
                 }
-            }
 
-            else
-            {
-                System.out.println("Opcion no disponible");
-            }
+                System.out.print("Selecion el artista que le desea registrar a la Obra:  ");
+                int selec = ingreso.nextInt();
 
-        }while(!artistaDone);
-        for(Obra recorrer: listaObras){
-            System.out.println("titulo: " + recorrer.getTitulo());
+                // se ingresa un nuevo artista a la lista
+                if(selec==0)
+                {
+                    this.InserArtista(listaArtistas);
+
+                }
+                // se seleciona un artista de la lista
+                else if (selec<=listaArtistas.size())
+                {
+                    artistaDone=true;
+                    selec-=1;
+                    if(selec != 0)
+                    {
+                       Artista nuevo = listaArtistas.get(listaLlaves.indexOf(selec)-1);
+
+                        System.out.println("\n\n¿Que tipo de obra va a ingresar?");
+                        System.out.println("1. Escultura ");
+                        System.out.println("2. Instalacion ");
+                        System.out.println("3. Cuadro ");
+                        int tipo = ingreso.nextInt();
+
+                        switch (tipo)
+                        {
+                            // escultura
+                            case 1:
+                            {
+                                System.out.println("¿Con que tipo de material fue hecha la escultura?");
+                                String nE = ingreso.nextLine();
+                                System.out.println("De una descripcion del material");
+                                String descripcion = ingreso.nextLine();
+                                Material material = new Material(nE, descripcion);
+                                System.out.println("Ingrese el peso de la escultura");
+                                double peso = ingreso.nextDouble();
+                                insertarObraEscultura(listaObras,listaArtistas,nuevo.getCedula(),pid,titulo,fecha,precioRef,dimensiones,material,peso);
+                            }break;
+
+                            //Instalacion
+                            case 2:
+                            {
+                                System.out.println("De una breve descripcion del la instalacion");
+                                String descripcion = ingreso.nextLine();
+                                insertarObraInstalacion(listaObras,listaArtistas,nuevo.getCedula(),pid,titulo,fecha,precioRef,dimensiones,descripcion);
+                            }break;
+
+                            //Cuadro
+                            case 3:
+                            {
+                                System.out.println("Ecriba el tema del cuadro");
+                                String tema = ingreso.nextLine();
+                                System.out.println("Describa la tecnica del cuadro");
+                                String tecnica = ingreso.nextLine();
+                                System.out.println("Clasifique el cuadro");
+                                System.out.println("1. Obra maestra");
+                                System.out.println("2. Obra representativa");
+                                int clasificacion = ingreso.nextInt();
+
+                                if(clasificacion<=2)
+                                {
+                                    insertarObraCuadro(listaObras,listaArtistas,nuevo.getCedula(),pid,titulo,fecha,precioRef,dimensiones,tema,tecnica,clasificacion);
+                                }
+                                else
+                                {
+                                    System.out.println("Opcion no disponible");
+                                }
+
+                            }break;
+
+                            default:
+                            System.out.println("Opcion no disponible");
+                            break;
+                        }
+                        System.out.println("Obra ingresada\n");
+                    }
+                }
+
+            }while(!artistaDone);
         }
+        else{System.out.println("No se pudo crear la nueva obra ");}
+
     }
+
+    public Obra insertarObraCuadro(ArrayList<Obra>listaObras,Map<Long,Artista>listaArtistas,long llaveArtista,long pid, String titulo, Calendar fecha, Double precioRef, String dimensiones, String tema, String tecnica, int clasificacion)
+    {
+        if(checkpid(pid,listaObras))
+        {
+            if(clasificacion==0)
+            {
+                Obra temp = new Cuadro(pid,titulo,fecha,precioRef,dimensiones,tema,tecnica,Clasificacion.OBRA_MAESTRA);
+                temp.setArtistas(listaArtistas.get(llaveArtista));
+                listaObras.add(temp);
+                return temp;
+            }
+            if(clasificacion==1)
+            {
+                Obra temp = new Cuadro(pid,titulo,fecha,precioRef,dimensiones,tema,tecnica,Clasificacion.OBRA_REPRESENTATIVA);
+                temp.setArtistas(listaArtistas.get(llaveArtista));
+                listaObras.add(temp);
+                return temp;
+            }
+        }
+
+        return null;
+
+    }
+
+    public Obra insertarObraEscultura(ArrayList<Obra>listaObras,Map<Long,Artista>listaArtistas,long llaveArtista,long pid, String titulo, Calendar fecha, Double precioRef, String dimensiones, Material material, double peso)
+    {
+        if(checkpid(pid,listaObras))
+        {
+            Obra temp = new Escultura(pid,titulo,fecha,precioRef,dimensiones,material,peso);
+            temp.setArtistas(listaArtistas.get(llaveArtista));
+            listaObras.add(temp);
+            return temp;
+        }
+       return null;
+    }
+
+    public Obra insertarObraInstalacion(ArrayList<Obra>listaObras,Map<Long,Artista>listaArtistas,long llaveArtista,long pid, String titulo, Calendar fecha, Double precioRef, String dimensiones, String descripcion)
+    {
+        if(checkpid(pid,listaObras))
+        {
+            Obra temp = new Instalacion(pid,titulo,fecha,precioRef,dimensiones,descripcion);
+            temp.setArtistas(listaArtistas.get(llaveArtista));
+            listaObras.add(temp);
+            return temp;
+        }
+        return null;
+
+    }
+
 
     public void modifiObra(long codigo, ArrayList<Obra> listaObras,Map<Long, Artista> listaArtista)
     {
