@@ -79,8 +79,8 @@ public class TestControlGaleria
         // Compras
         //crea objetos
         Calendar C1= new GregorianCalendar(2020,11,12);
-        Calendar C2= new GregorianCalendar(2012,11,13);
-        Calendar C3= new GregorianCalendar(2018,4,23);
+        Calendar C2= new GregorianCalendar(2020,11,12);
+        Calendar C3= new GregorianCalendar(2020,10,23);
 
         Compra cp1 = new Compra(1000, C1, true, "andres", c1, o1);
         Compra cp2 = new Compra(1001, C2, false, "santi", c2, o3);
@@ -472,18 +472,24 @@ public class TestControlGaleria
 
     }
 
-    @Test
-    public void opcion13Test()
-    {
-        //13.Ver listado de Compras existentes
-        System.out.println("-Realizando la prueba 13");
-    }
 
     @Test
     public void opcion14Test()
     {
         //14.Ver listado de Compras para un mes y año específico insertado por el usuario
         System.out.println("-Realizando la prueba 14");
+
+        ArrayList<Compra> listaE= controlador.verListadoDeComprasParaUnAñoDirecto(2020,11);
+        Compra temp = controlador.getListaCompras().get(0);
+
+        Assert.assertEquals("Tamaña esperado del arreglo",2,listaE.size());
+        Assert.assertEquals("Primera Compra",temp.getNumeroPedido(),listaE.get(0).getNumeroPedido());
+        temp = controlador.getListaCompras().get(1);
+        Assert.assertEquals("Segunda Compra",temp.getNumeroPedido(),listaE.get(1).getNumeroPedido());
+
+        temp = controlador.getListaCompras().get(2);
+        Assert.assertEquals("Compra no incluida",temp.getNumeroPedido(),listaE.get(0).getNumeroPedido());
+
 
     }
 

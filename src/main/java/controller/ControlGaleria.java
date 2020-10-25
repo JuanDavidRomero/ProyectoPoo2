@@ -405,6 +405,26 @@ public class ControlGaleria
         }
     }
 
+    public ArrayList<Compra> verListadoDeComprasParaUnAñoDirecto(int anno, int mes)
+    {
+        ArrayList<Compra> encontradas = new ArrayList<>();
+        Calendar aux = Calendar.getInstance();
+        aux.set(Calendar.YEAR, anno);
+        aux.set(Calendar.MONTH, mes);
+
+        for(Compra compra : listaCompras)
+        {
+            if(compra.getFechaRecibido().get(Calendar.YEAR) == anno)
+            {
+                if(compra.getFechaRecibido().get(Calendar.MONTH)== mes)
+                {
+                    encontradas.add(compra);
+                }
+            }
+        }
+        return encontradas;
+    }
+
 
     public ArrayList<Long> verListadoDeArtistasMasVendidos()
     {
