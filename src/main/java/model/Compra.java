@@ -10,12 +10,13 @@ public class Compra
     private boolean pagado;
     private String nombreRepartidor;
     private Cliente compraCliente = new Cliente();
-    private Obra compraObra /*= new Obra()*/;
+    private Obra compraObra;
 
     // Construcutores
     public Compra(){}
 
-    public Compra(long numeroPedido, Calendar fechaRecibido, boolean pagado, String nombreRepartidor, Cliente compraCliente, Obra compraObra) {
+    public Compra(long numeroPedido, Calendar fechaRecibido, boolean pagado, String nombreRepartidor, Cliente compraCliente, Obra compraObra)
+    {
         this.numeroPedido = numeroPedido;
         this.fechaRecibido = fechaRecibido;
         this.pagado = pagado;

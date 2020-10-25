@@ -12,7 +12,6 @@ public class GestionCliente
 
     public void modificarDatosDeCliente(Cliente cliente,Map<Long, Cliente> listaClientes)
     {
-
         System.out.println("\n1. Codigo de indentificacion: " + cliente.getCodigoCliente());
         System.out.println("2. Nombres: " + cliente.getNombres());
         System.out.println("3. Apellidos : " + cliente.getApellidos());
@@ -75,17 +74,22 @@ public class GestionCliente
         }
     }
 
-    public Cliente eliminarUnCliente(Map<Long, Cliente> eliminar , Cliente clientE)
+    public Cliente eliminarUnCliente(Map<Long, Cliente> eliminar , Cliente cliente)
     {
         System.out.print("¿Esta seguro de borrar el cliente? s/n: ");
 
         String borra = scan.nextLine();
         char borrar = borra.charAt(0);
+
         if(borrar == 's')
         {
-            Cliente eliminado = eliminar.remove(eliminar.get(clientE.getCodigoCliente()));
-            System.out.println("Cliente eliminado exitosamente");
-            return eliminado;
+            if(eliminar.containsKey(cliente.getCedula()))
+            {
+                Cliente eliminado = eliminar.remove(cliente.getCedula());
+                System.out.println("Cliente eliminado exitosamente");
+                return eliminado;
+            }
+
         }
         return null;
 

@@ -109,12 +109,12 @@ public class TestControlGaleria
                 a2.setObras(o5);
                 a3.setObras(o6);
 
-                o1.setArtistas(a1);
-                o2.setArtistas(a1);
-                o3.setArtistas(a1);
-                o4.setArtistas(a2);
-                o5.setArtistas(a2);
-                o6.setArtistas(a3);
+                o1.setArtista(a1);
+                o2.setArtista(a1);
+                o3.setArtista(a1);
+                o4.setArtista(a2);
+                o5.setArtista(a2);
+                o6.setArtista(a3);
 
             //añade a lista
                 listaArtistas.put(a1.getCodigoArtista(), a1);
@@ -212,9 +212,9 @@ public class TestControlGaleria
           for(Obra obraBuscadora : controlador.getListaObras())
           {
               // ciclo para mirar los artistas de las obras
-              for(Artista  llave: obraBuscadora.getArtistas())
+              for(long  llave: obraBuscadora.getArtistas().keySet())
               {
-                  Artista comparar = obraBuscadora.getArtistas().get(obraBuscadora.getArtistas().indexOf(llave));
+                  Artista comparar = obraBuscadora.getArtistas().get(llave);
                   // se une en un string el nombre y apellido del artista
                   String nombre= comparar.getNombres()+" "+comparar.getApellidos();
 

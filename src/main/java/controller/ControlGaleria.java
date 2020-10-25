@@ -286,8 +286,8 @@ public class ControlGaleria
             {
                 for(Compra recorrer: listaCompras)
                 {
-
-                    if(recorrer.getCompraObra().getPid() == pid){
+                    if(recorrer.getCompraObra().getPid() == pid)
+                    {
                         salir = true;
                         System.out.println("Esta compra ya se encuentra registrada");
                     }
