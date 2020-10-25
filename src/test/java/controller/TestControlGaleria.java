@@ -118,9 +118,9 @@ public class TestControlGaleria
         o6.setArtistas(a3);
 
         //añade a lista
-        listaArtistas.put(a1.getCodigoArtista(), a1);
-        listaArtistas.put(a2.getCodigoArtista(), a2);
-        listaArtistas.put(a3.getCodigoArtista(), a3);
+        listaArtistas.put(a1.getCedula(), a1);
+        listaArtistas.put(a2.getCedula(), a2);
+        listaArtistas.put(a3.getCedula(), a3);
 
         controlador.setListaArtistas(listaArtistas);
         controlador.setListaCompras(listaCompras);
@@ -281,7 +281,6 @@ public class TestControlGaleria
 
     }
 
-
     @Test
     public void opcion3Test()
     {
@@ -359,12 +358,13 @@ public class TestControlGaleria
     @Test
     public void opcion4Test()
     {
-
+        //4.Modificar una Obra
     }
 
     @Test
     public void opcion5Test()
     {
+        //5.Eliminar una Obra
         Obra busqueda1 = controlador.getControlObras().buscarObraCodigo(1234567, controlador.getListaObras());
         Obra result1 = controlador.getControlObras().eliminarObra(controlador.getListaObras(),controlador.getListaCompras(),busqueda1);
 
@@ -381,6 +381,7 @@ public class TestControlGaleria
     @Test
     public void opcion7Test()
     {
+        //7.Buscar un Cliente
         System.out.println("-Realizando la prueba 7");
         Cliente result1 = controlador.getControlClientes().buscarCliente(876543210,controlador.getListaClientes());
         Cliente result2 = controlador.getControlClientes().buscarCliente(879685746,controlador.getListaClientes());
@@ -392,6 +393,7 @@ public class TestControlGaleria
     @Test
     public void opcion8Test()
     {
+        //8.Insertar Cliente
         System.out.println("-Realizando la prueba 8");
 
         Cliente c1 = new Cliente(4444444, 8665242, "Pablo", "el patron del mal" , "avenida napoles", 311586424);
@@ -421,43 +423,80 @@ public class TestControlGaleria
     @Test
     public void opcion9Test()
     {
+        //9.Modificar datos de Cliente
         System.out.println("-Realizando la prueba 9");
     }
 
     @Test
     public void opcion10Test()
     {
+        //10.Eliminar un Cliente
         System.out.println("-Realizando la prueba 10");
     }
 
     @Test
     public void opcion11Test()
     {
+        //11.Realizar compra de una Obra
         System.out.println("-Realizando la prueba 11");
+
+        Cliente cli = controlador.getListaClientes().get((long)765432109);
+        Obra obra = controlador.getControlObras().buscarObraCodigo(7123456, controlador.getListaObras());
+        Calendar fecha = Calendar.getInstance();
+        fecha.set(Calendar.YEAR,1990);
+        long numeroP = controlador.compraDeUnaObraDirecto((long)1003,fecha,true,"alonzo",cli,obra);
+
+        Compra buscar = controlador.getListaCompras().get(3);
+
+        Assert.assertEquals("El precio esperadado y el actual",1003,buscar.getNumeroPedido());
+        Assert.assertEquals("La fecha esperadada y la actual",fecha,buscar.getFechaRecibido());
+        Assert.assertEquals("Pago esperado y el actual",true,buscar.isPagado());
+        Assert.assertEquals("Nombre del repatidor esperado y el actual","alonzo",buscar.getNombreRepartidor());
+        Assert.assertEquals("El nombre del cliente esperado y el actual",cli.getNombres(),buscar.getCompraCliente().getNombres());
+        Assert.assertEquals("El titulo de la obra esperado y el actual",obra.getTitulo(),buscar.getCompraObra().getTitulo());
+        Assert.assertEquals("El titulo de la obra esperado y el actual","Un titulo de error",buscar.getCompraObra().getTitulo());
+
     }
 
     @Test
     public void opcion12Test()
     {
+        //12.Eliminar compra de obra
         System.out.println("-Realizando la prueba 12");
     }
 
     @Test
     public void opcion13Test()
     {
+        //13.Ver listado de Compras existentes
         System.out.println("-Realizando la prueba 13");
     }
 
     @Test
     public void opcion14Test()
     {
+        //14.Ver listado de Compras para un mes y año específico insertado por el usuario
         System.out.println("-Realizando la prueba 14");
+
     }
 
     @Test
     public void opcion15Test()
     {
-        System.out.println("-Realizando la prueba 15");
+        System.out.println("-Realizando la prueba 14");
+        ArrayList<Long> llave = controlador.verListadoDeArtistasMasVendidos();
+
+        Artista temp1 = controlador.getListaArtistas().get((long)123456789);
+        Artista result = controlador.getListaArtistas().get(llave.get(0));
+        Assert.assertEquals("La cedula del artista con mas ventas es ",temp1.getCedula(),result.getCedula());
+
+        temp1 = controlador.getListaArtistas().get((long)234567890);
+        result = controlador.getListaArtistas().get(llave.get(1));
+        Assert.assertEquals("La cedula del artista en segundo lugar con mas ventas  es ",temp1.getCedula(),result.getCedula());
+
+        temp1 = controlador.getListaArtistas().get((long)345678901);
+        result = controlador.getListaArtistas().get(llave.get(0));
+        Assert.assertEquals("La cedula del artista con mas ventas es ",temp1.getCedula(),result.getCedula());
     }
 
 
