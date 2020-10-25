@@ -332,8 +332,10 @@ public class ControlGaleria
         Compra eliminado;
         System.out.print("Digite el numero de compra a eliminar:");
         long borrar = scan.nextLong();
-        for(Compra recorrer: listaCompras){
-            if(recorrer.getNumeroPedido() == borrar){
+        for(Compra recorrer: listaCompras)
+        {
+            if(recorrer.getNumeroPedido() == borrar)
+            {
                 System.out.print("¿Esta seguro de borrar la compra?(s/n): ");
                 scan = new Scanner(System.in);
                 String confirmacion = scan.nextLine();
@@ -348,6 +350,20 @@ public class ControlGaleria
         }
         System.out.println("El numero de compra no existe");
         return null;
+    }
+
+    public Compra eliminiarCompraObraDirecta(long numeroBorrar)
+    {
+        Compra eliminado= new Compra();
+        for(Compra recorrer: listaCompras)
+        {
+            if(recorrer.getNumeroPedido() == numeroBorrar)
+            {
+                    eliminado = listaCompras.remove(listaCompras.indexOf(recorrer));
+                    return eliminado;
+            }
+        }
+        return eliminado;
     }
 
 

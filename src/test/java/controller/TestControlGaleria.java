@@ -463,6 +463,13 @@ public class TestControlGaleria
     {
         //12.Eliminar compra de obra
         System.out.println("-Realizando la prueba 12");
+
+        Compra elimi= controlador.eliminiarCompraObraDirecta((long)1000);
+        Compra activa = controlador.getListaCompras().get(1);
+
+        Assert.assertFalse("La obra de numero 1000 no ha sido eliminada",controlador.getListaCompras().contains(elimi));
+        Assert.assertFalse("La obra de numero 1001 no ha sido eliminada",controlador.getListaCompras().contains(activa));
+
     }
 
     @Test
