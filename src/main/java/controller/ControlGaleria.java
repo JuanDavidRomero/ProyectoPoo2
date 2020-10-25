@@ -1,9 +1,6 @@
 package controller;
 
-import model.Artista;
-import model.Cliente;
-import model.Compra;
-import model.Obra;
+import model.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -230,7 +227,7 @@ public class ControlGaleria
         {
             if(auxiliar.isPagado())
             {
-                System.out.println("- "+auxiliar.toString(1));
+                System.out.println("- "+auxiliar.toString());
                 System.out.println();
             }
         }
@@ -245,7 +242,7 @@ public class ControlGaleria
     //15.Ver listado de Artistas más vendidos
     public void opcion15()
     {
-        VerListadoDeArtistasMasVendidos();
+        verListadoDeArtistasMasVendidos();
         System.out.println();
         espacio();
     }
@@ -383,4 +380,86 @@ public class ControlGaleria
             System.out.println("No se ha encontrado compras con esa fecha");
         }
     }
+
+
+    public void verListadoDeArtistasMasVendidos(){
+
+        long [] codigosArtista = new long [listaArtistas.size()];
+        int [] repeticiones = new int[listaArtistas.size()];
+
+        this.datosPrueba();
+        int contador = 0;
+        for(Map.Entry< Long, Artista> entrada_mapa : listaArtistas.entrySet()){
+            codigosArtista[contador] = entrada_mapa.getValue().getCodigoArtista();
+            contador++;
+        }
+        for(int posicion = 0; posicion < listaArtistas.size(); posicion++){
+            repeticiones[posicion] = 0;
+        }
+
+
+        for(int posicion_codigos = 0; posicion_codigos < listaArtistas.size(); posicion_codigos++){
+            for(Compra compra: listaCompras){
+                for(Artista artista: compra.getCompraObra().getArtistas()){
+                    if(artista.getCodigoArtista() == codigosArtista[posicion_codigos]){
+                        repeticiones[posicion_codigos]++;
+                    }
+                }
+            }
+        }
+
+        int maximo = 0;
+        for(int posicion_repeticiones = 0; posicion_repeticiones < listaArtistas.size(); posicion_repeticiones++){
+            if(repeticiones[posicion_repeticiones] > maximo){
+                maximo = repeticiones[posicion_repeticiones];
+            }
+        }
+
+        Artista masVendido;
+        int contadorArtistas = listaArtistas.size();
+
+        do{
+            for(int posicion_codigos = 0; posicion_codigos < listaArtistas.size(); posicion_codigos++){
+                if(maximo == repeticiones[posicion_codigos]){
+                    for(Map.Entry<Long, Artista> mapa : listaArtistas.entrySet()){
+                        if(mapa.getValue().getCodigoArtista() == codigosArtista[posicion_codigos]){
+                            masVendido = mapa.getValue();
+                            System.out.println("Artista: "+ masVendido.getNombres()+" "+masVendido.getApellidos()+"\tNumero Compras: "+maximo);
+                        }
+                    }
+                    contadorArtistas--;
+                }
+            }
+            maximo--;
+        }while(contadorArtistas > 0);
+    }
+
+    public ArrayList<Obra> generarObrasEscultura(){
+        ArrayList <Obra> auxiliar = new ArrayList<>();
+        for(Obra unaObra : this.listaObras){
+            if(unaObra instanceof Escultura){
+                auxiliar.add(unaObra);
+            }
+        }
+        return auxiliar;
+    }
+
+    public ArrayList <Compra> filtrarCompraCuadro(){
+        ArrayList <Compra> auxiliar = new ArrayList<>();
+        for(Compra compra: this.listaCompras){
+            if(compra.getCompraObra() instanceof Cuadro){
+                auxiliar.add(compra);
+            }
+        }
+        return auxiliar;
+    }
+
+    public int gananciaTotalObtenida(){
+        int acumulador = 0;
+        for(Compra compra: this.listaCompras){
+            acumulador += compra.getCompraObra().getPrecioRef();
+        }
+        return acumulador;
+    }
 }
+
