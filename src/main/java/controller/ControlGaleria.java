@@ -169,23 +169,23 @@ public class ControlGaleria
     //9.Modificar datos de Cliente
     public void opcion9()
     {
-        System.out.print("Digite el codigo de identificacion del cliente:");
-        long codId = ingreso.nextLong();
-        Cliente clienteaux = controlClientes.buscasClienteNI(codId, listaClientes);
-        if(clienteaux != null)
-            controlClientes.modificarDatosDeCliente(clienteaux,listaClientes);
-
+        System.out.print("Digite el numero de Cedula del Cliente: ");
+        long cedula = ingreso.nextLong();
+        Cliente clienteaux = controlClientes.buscasClienteNI(cedula, listaClientes);
+        if(clienteaux != null) {
+            controlClientes.modificarDatosDeCliente(clienteaux, listaClientes);
+        }
         espacio();
     }
     //10.Eliminar un Cliente
     public void opcion10()
     {
-        System.out.print("Digite el codigo de identificacion del cliente:");
-        long codId = ingreso.nextInt();
-        Cliente clienteaux = controlClientes.buscasClienteNI(codId, listaClientes);
+        System.out.print("Digite la cedula del cliente:");
+        long cedula = ingreso.nextInt();
+        Cliente clienteaux = controlClientes.buscasClienteNI(cedula, listaClientes);
         if(clienteaux != null)
         {
-            boolean auxBorrar = ClienteCompra(codId);
+            boolean auxBorrar = ClienteCompra(cedula);
             if(!auxBorrar)
             {
                 System.out.print("¿Esta seguro de borrar el cliente? s/n: ");
@@ -215,9 +215,9 @@ public class ControlGaleria
     public void opcion11()
     {
         long nPedido = 1000;
-        System.out.print("Digite el codigo de identificacion del cliente: ");
-        long codId = ingreso.nextLong();
-        Cliente temp =controlClientes.buscasClienteNI(codId,listaClientes);
+        System.out.print("Digite la cedula del cliente: ");
+        long cedula = ingreso.nextLong();
+        Cliente temp =controlClientes.buscasClienteNI(cedula,listaClientes);
         if(temp!=null)
         {
             System.out.print("Digite el PID de la obra que desea comprar: ");
@@ -225,7 +225,7 @@ public class ControlGaleria
             Obra temp2 = controlObras.buscarObraCodigo(pid,listaObras);
             if(temp2!=null)
             {
-                realizarCompraDeUnaObra(codId, pid, nPedido);
+                realizarCompraDeUnaObra(cedula, pid, nPedido);
             }
             else
             {

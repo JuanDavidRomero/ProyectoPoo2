@@ -10,68 +10,92 @@ public class GestionCliente
     Scanner scan = new Scanner(System.in);
     private Cliente cliente = new Cliente();
 
-    public void modificarDatosDeCliente(Cliente cliente,Map<Long, Cliente> listaClientes)
-    {
-        System.out.println("\n1. Codigo de indentificacion: " + cliente.getCodigoCliente());
-        System.out.println("2. Nombres: " + cliente.getNombres());
-        System.out.println("3. Apellidos : " + cliente.getApellidos());
-        System.out.println("4. Cedula : " + cliente.getCedula());
-        System.out.println("5. Telefono : " + cliente.getTelefono());
-        System.out.println("6. Entrega : " + cliente.getDireccionEntrega());
+    public void modificarDatosDeCliente(Cliente cliente,Map<Long, Cliente> listaClientes) {
+        boolean seguir_modificando = false;
+        do {
+            System.out.println("\n1. Codigo de indentificacion:\t" + cliente.getCodigoCliente());
+            System.out.println("2. Nombres:\t" + cliente.getNombres());
+            System.out.println("3. Apellidos:\t" + cliente.getApellidos());
+            System.out.println("4. Cedula:\t" + cliente.getCedula());
+            System.out.println("5. Telefono:\t" + cliente.getTelefono());
+            System.out.println("6. Direccion de Entrega:\t" + cliente.getDireccionEntrega());
 
-        System.out.print("\nSeleccione el dato que desea modificar: ");
-        int nDato = scan.nextInt();
-        switch (nDato)
-        {
-            case 1:
-                System.out.print("Digite el nuevo codigo de identificacion:");
-                long aux = scan.nextLong();
-                if(buscasClienteNI(aux,listaClientes) == null)
-                {
-                    cliente.setCodigoCliente(aux);
-                    System.out.println("Codigo agregado");
-                }
-                else
-                    System.out.println("Este codigo ya lo tiene asignado otro cliente");
-                System.out.println("No me se pudo modificar el cliente");
-
-                break;
-            case 2:
-                System.out.print("Ingrese nuevo nombre: ");
-                scan = new Scanner(System.in);
-                String nombre= scan.nextLine();
-                cliente.setNombres(nombre);
-                System.out.println("Nombre cliente modificado");
-                break;
-            case 3:
-                System.out.print("Ingrese nuevo apellido: ");
-                scan = new Scanner(System.in);
-                String apellido= scan.nextLine();
-                cliente.setApellidos(apellido);
-                System.out.println("Apellido cliente modificado");
-                break;
-            case 4:
-                System.out.print("Ingrese nueva cedula: ");
-                scan = new Scanner(System.in);
-                cliente.setCedula(scan.nextLong());
-                System.out.println("Cedula cliente modificado");
-                break;
-            case 5:
-                System.out.print("Ingrese nuevo telefono: ");
-                scan = new Scanner(System.in);
-                cliente.setTelefono(scan.nextLong());
-                System.out.println("Telefono cliente modificado");
-                break;
-            case 6:
-                System.out.print("Ingrese nueva direccion: ");
-                scan = new Scanner(System.in);
-                cliente.setDireccionEntrega(scan.nextLine());
-                System.out.println("Direccion cliente modificado");
-                break;
-
-            default:  System.out.println("Opcion no disponible"); break;
-
-        }
+            System.out.print("\nSeleccione el dato que desea modificar: ");
+            int nDato = scan.nextInt();
+            switch (nDato) {
+                case 1:
+                    boolean comprobante = false;
+                    do {
+                        System.out.print("Digite el nuevo Codigo de Identificacion:");
+                        long aux = scan.nextLong();
+                        Cliente unCliente = this.buscasClienteCodigo(aux, listaClientes);
+                        if (unCliente != null) {
+                            comprobante = true;
+                            System.out.println("El codigo de identificacion solicitado ya fue asignado a otro cliente");
+                        } else {
+                            comprobante = false;
+                            cliente.setCodigoCliente(aux);
+                            System.out.println("Codigo de identificacion actualizado exitosamente.");
+                        }
+                    } while (comprobante);
+                    break;
+                case 2:
+                    System.out.print("Ingrese el nuevo nombre: ");
+                    scan = new Scanner(System.in);
+                    String nombre = scan.nextLine();
+                    cliente.setNombres(nombre);
+                    System.out.println("Nombre actualizado exitosamente.");
+                    break;
+                case 3:
+                    System.out.print("Ingrese el nuevo apellido: ");
+                    scan = new Scanner(System.in);
+                    String apellido = scan.nextLine();
+                    cliente.setApellidos(apellido);
+                    System.out.println("Apellido actualizado exitosamente.");
+                    break;
+                case 4:
+                    boolean comprobanteCedula = false;
+                    do {
+                        System.out.print("Digite la nueva cedula: ");
+                        scan = new Scanner(System.in);
+                        long aux = scan.nextLong();
+                        Cliente unCliente = buscasClienteNI(aux, listaClientes);
+                        if (unCliente != null) {
+                            System.out.println("La cedula solicitada pertenece a otro Cliente.");
+                            comprobanteCedula = true;
+                        } else {
+                            comprobanteCedula = false;
+                            cliente.setCedula(aux);
+                            System.out.println("Cedula actualizada exitosamente.");
+                        }
+                    } while (comprobanteCedula);
+                    break;
+                case 5:
+                    System.out.print("Digite el nuevo telefono: ");
+                    scan = new Scanner(System.in);
+                    cliente.setTelefono(scan.nextLong());
+                    System.out.println("Telefono actualizado exitosamente.");
+                    break;
+                case 6:
+                    System.out.print("Ingrese nueva direccion: ");
+                    scan = new Scanner(System.in);
+                    cliente.setDireccionEntrega(scan.nextLine());
+                    System.out.println("Direccion actualizada exitosamente.");
+                    break;
+                default:
+                    System.out.println("Opcion no disponible");
+                    break;
+            }
+            System.out.println("¿Desea modificar otro dato del mismo cliente? s/n");
+            scan = new Scanner(System.in);
+            String entrada = scan.nextLine();
+            if(entrada.equals("n")){
+                seguir_modificando = false;
+            }
+            else{
+                seguir_modificando = true;
+            }
+        }while(seguir_modificando);
     }
 
 
@@ -116,16 +140,22 @@ public class GestionCliente
         return null;
     }
 
-    public Cliente buscasClienteNI(long codigo, Map<Long, Cliente> listaClientes)
+    public Cliente buscasClienteNI(long cedula, Map<Long, Cliente> listaClientes)
     {
-        for (Map.Entry<Long, Cliente> recorrer: listaClientes.entrySet())
-        {
-            if (recorrer.getValue().getCedula() == codigo)
-            {
-                return (Cliente) recorrer;
+        for(Map.Entry <Long, Cliente> entrada_mapa: listaClientes.entrySet()){
+            if(entrada_mapa.getKey().equals(cedula)){
+                return entrada_mapa.getValue();
             }
         }
-        System.out.println("El cliente no existe");
+        return null;
+    }
+
+    public Cliente buscasClienteCodigo(long codigoIdentificacion, Map <Long, Cliente> listaClientes){
+        for(Map.Entry<Long, Cliente> entrada: listaClientes.entrySet()){
+            if(entrada.getValue().getCodigoCliente() == codigoIdentificacion){
+                return entrada.getValue();
+            }
+        }
         return null;
     }
 
@@ -133,15 +163,12 @@ public class GestionCliente
     {
         System.out.println("\n***Ingrese los datos del nuevo cliente***\n");
         System.out.print("Cedula: ");
-        long codigoCliente=scan.nextLong();
+        long cedula=scan.nextLong();
 
-        Cliente temp = new Cliente();
-        temp.setCodigoCliente(codigoCliente);
-
-        if(!listaClientes.containsValue(temp))
+        if(!listaClientes.containsKey(cedula))
         {
-            System.out.print("Codigo: ");
-            long cedula=scan.nextLong();
+            System.out.print("Codigo de cliente: ");
+            long codigoCliente=scan.nextLong();
             System.out.print("Nombre: ");
             scan.nextLine();
             String nombres=scan.nextLine();

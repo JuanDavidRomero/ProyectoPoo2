@@ -328,17 +328,15 @@ public class TestControlGaleria
     public void opcion5Test()
     {
         //5.Eliminar una Obra
-        Obra busqueda1 = controlador.getControlObras().buscarObraCodigo(1234567, controlador.getListaObras());
+        System.out.println("-Realizando la prueba 5");
+        Obra busqueda1 = controlador.getControlObras().buscarObraCodigo(7123456, controlador.getListaObras());
         Obra result1 = controlador.getControlObras().eliminarObra(controlador.getListaObras(),controlador.getListaCompras(),busqueda1);
+        Obra busqueda2 = controlador.getControlObras().buscarObraCodigo(1234567, controlador.getListaObras());
+        Obra result2 = controlador.getControlObras().eliminarObra(controlador.getListaObras(),controlador.getListaCompras(),busqueda2);
 
-        Obra busqueda2 = controlador.getControlObras().buscarObraCodigo(7123456, controlador.getListaObras());
-        Obra result2 = controlador.getControlObras().eliminarObra(controlador.getListaObras(),controlador.getListaCompras(),busqueda1);
-
-        Assert.assertNotNull("La obra con el pib 1234567 no ha sido eliminada",result1);
-        Assert.assertTrue("La obra on el pib 1234567 sigue en la lista de obras",controlador.getListaObras().contains(busqueda1));
-        Assert.assertNotNull("La obra con el pib 7123456 no ha sido eliminada",result2);
-        Assert.assertTrue("La obra con el pib 7123456 sigue en la lista de obras",controlador.getListaObras().contains(busqueda2));
-
+        Assert.assertNotNull("La obra con el pib 7123456 no ha sido eliminada",result1);
+        Assert.assertFalse("La obra con el pib 7123456 sigue en la lista de obras",controlador.getListaObras().contains(busqueda1));
+        Assert.assertNotNull("La obra con el pib 1234567 no ha sido eliminada",result2);
     }
 
     @Test
@@ -347,40 +345,43 @@ public class TestControlGaleria
         //7.Buscar un Cliente
         System.out.println("-Realizando la prueba 7");
         Cliente result1 = controlador.getControlClientes().buscarCliente(876543210,controlador.getListaClientes());
-        Cliente result2 = controlador.getControlClientes().buscarCliente(879685746,controlador.getListaClientes());
+        Cliente result2 = controlador.getControlClientes().buscarCliente(276487214,controlador.getListaClientes());
 
         Assert.assertNotNull("El cliente con la cedula 876543210 no se ha encontrado",result1);
-        Assert.assertNotNull("El cliente con la cedula 879685746 no se ha encontrado",result2);
+        Assert.assertNotNull("El cliente con la cedula 276487214 no se ha encontrado",result2);
     }
 
     @Test
-    public void opcion8Test()
-    {
+    public void opcion8Test() {
         //8.Insertar Cliente
         System.out.println("-Realizando la prueba 8");
+        long cedula=866542123;
 
-        Cliente c1 = new Cliente(4444444, 8665242, "Pablo", "el patron del mal" , "avenida napoles", 311586424);
-
-
-        Cliente temp = new Cliente();
-        temp.setCodigoCliente(c1.getCodigoCliente());
-
-        if(!controlador.getListaClientes().containsValue(temp))
-        {
-            Cliente clienteNuevo=new Cliente(c1.getCodigoCliente(),c1.getCedula(),c1.getNombres(),c1.getApellidos(),c1.getDireccionEntrega(),c1.getTelefono());
-            controlador.getListaClientes().put(c1.getCedula(),clienteNuevo);
+        if(!controlador.getListaClientes().containsKey(cedula)){
+            Cliente clienteNuevo=new Cliente(4444444, cedula, "Pablo", "el patron del mal", "avenida napoles", 311586424);
+            controlador.getListaClientes().put(cedula,clienteNuevo);
             System.out.println("Cliente ingresado");
         }
-        else
-        {
+        else {
             System.out.println("El codigo ya lo tiene registrado otro cliente");
             System.out.println("No se pudo añadir cliente");
         }
 
-        Assert.assertTrue("El cliente con cedula 8665242 no ha sido agregado ",controlador.getListaClientes().containsKey(8665242));
-        Assert.assertTrue("El cliente con cedula 1765242 no ha sido agregado ",controlador.getListaClientes().containsKey(1765242));
+        long cedula1=765432109;
 
+        if(!controlador.getListaClientes().containsKey(cedula1)){
+            Cliente clienteNuevo1=new Cliente(7777777, cedula1, "Emilio", "Escobilla", "Barrios unidos", 320167283);
+            controlador.getListaClientes().put(cedula1,clienteNuevo1);
+            System.out.println("Cliente ingresado");
+        }
+        else {
+            System.out.println("El codigo ya lo tiene registrado otro cliente");
+            System.out.println("No se pudo añadir cliente");
+        }
 
+        Assert.assertTrue("El cliente con cedula 866542123 no se encuentra",controlador.getListaClientes().containsKey(cedula));
+        Assert.assertFalse("El cliente con cedula 866542123 si se encuentra registrado",controlador.getListaClientes().containsKey(cedula));
+        Assert.assertTrue("El cliente con cedula 765432109 no se encuentra",controlador.getListaClientes().containsKey(cedula1));
     }
 
     @Test
@@ -388,6 +389,57 @@ public class TestControlGaleria
     {
         //9.Modificar datos de Cliente
         System.out.println("-Realizando la prueba 9");
+        long codId = 876543210;
+        Cliente clienteaux = controlador.getControlClientes().buscasClienteNI(codId, controlador.getListaClientes());
+        System.out.println("Entro 1");
+        if(clienteaux != null){
+            for(int i=1;i<7;i++){
+                int nDato =i;
+                switch (nDato) {
+                    case 1:
+                        long aux = 1928374;
+                        System.out.println("Entro 1");
+                        if (controlador.getControlClientes().buscasClienteNI(aux, controlador.getListaClientes()) == null) {
+                            clienteaux.setCodigoCliente(aux);
+                        }
+                        break;
+                    case 2:
+                        System.out.println("Entro 1");
+                        String nombre = "Jefferson";
+                        clienteaux.setNombres(nombre);
+                        break;
+                    case 3:
+                        System.out.println("Entro 1");
+                        String apellido = "Gutierritos";
+                        clienteaux.setApellidos(apellido);
+                        break;
+                    case 4:
+                        System.out.println("Entro 1");
+                        clienteaux.setCedula(100134639);
+                        break;
+                    case 5:
+                        System.out.println("Entro 1");
+                        clienteaux.setTelefono(320856618);
+                        break;
+                    case 6:
+                        System.out.println("Entro 1");
+                        clienteaux.setDireccionEntrega("Calle 3A #46-28");
+                        break;
+                }
+            }
+        }
+        Assert.assertEquals(1928374,controlador.getListaClientes().get(1928374).getCedula());
+        Assert.assertEquals("Jefferson",controlador.getListaClientes().get(1928374).getNombres());
+        Assert.assertEquals("Gutierritos",controlador.getListaClientes().get(1928374).getApellidos());
+        Assert.assertEquals(100134639,controlador.getListaClientes().get(1928374).getCedula());
+        Assert.assertEquals(320856618,controlador.getListaClientes().get(1928374).getTelefono());
+        Assert.assertEquals("Calle 3A #46-28",controlador.getListaClientes().get(1928374).getDireccionEntrega());
+        Assert.assertEquals("No se encontro el cliente con el codigo de identificacion",1111111,controlador.getListaClientes().get(1928374).getCedula());
+        Assert.assertEquals("No se encontro el cliente con el nombre","wu",controlador.getListaClientes().get(1928374).getNombres());
+        Assert.assertEquals("No se encontro el cliente con el apellido","zetian",controlador.getListaClientes().get(1928374).getApellidos());
+        Assert.assertEquals("No se encontro el cliente con la cedula",876543210,controlador.getListaClientes().get(1928374).getCedula());
+        Assert.assertEquals("No se encontro el cliente con el telefono",311585424,controlador.getListaClientes().get(1928374).getTelefono());
+        Assert.assertEquals("No se encontro el cliente con la direccion","avenida 13",controlador.getListaClientes().get(1928374).getDireccionEntrega());
     }
 
     @Test
@@ -401,8 +453,6 @@ public class TestControlGaleria
 
         Assert.assertFalse("El cliente con cedula 876543210 eliminado sigue en la lista",listaCliente.containsKey((long)876543210));
         Assert.assertFalse("El cliente con cedula 765432109 eliminado sigue en la lista",listaCliente.containsKey((long)765432109));
-
-
 
     }
 
