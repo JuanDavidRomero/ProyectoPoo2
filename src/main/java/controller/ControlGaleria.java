@@ -123,6 +123,7 @@ public class ControlGaleria
     public void opcion3()
     {
         controlObras.InsertarObra(listaObras,listaArtistas);
+        //listaObras.add(insertar);
         espacio();
     }
     //4.Modificar una Obra

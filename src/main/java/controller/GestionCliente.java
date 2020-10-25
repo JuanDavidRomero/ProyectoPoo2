@@ -137,7 +137,7 @@ public class GestionCliente
     public void agregarCliente(Map<Long, Cliente> listaClientes)
     {
         System.out.println("\n***Ingrese los datos del nuevo cliente***\n");
-        System.out.print("Codigo: ");
+        System.out.print("Cedula: ");
         long codigoCliente=scan.nextLong();
 
         Cliente temp = new Cliente();
@@ -145,7 +145,7 @@ public class GestionCliente
 
         if(!listaClientes.containsValue(temp))
         {
-            System.out.print("Cedula: ");
+            System.out.print("Codigo: ");
             long cedula=scan.nextLong();
             System.out.print("Nombre: ");
             scan.nextLine();

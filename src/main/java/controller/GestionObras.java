@@ -98,10 +98,9 @@ public class GestionObras
         for(Obra obraBuscadora : listaObras)
         {
             // ciclo para mirar los artistas de las obras
-          for(long llave: obraBuscadora.getArtistas().keySet())
+          for(Artista llave: obraBuscadora.getArtistas())
             {
-
-                Artista comparar = obraBuscadora.getArtistas().get(llave);
+                Artista comparar = obraBuscadora.getArtistas().get(obraBuscadora.getArtistas().indexOf(llave));
                 // se une en un string el nombre y apellido del artista
                 String nombre= comparar.getNombres()+" "+comparar.getApellidos();
 
@@ -184,6 +183,12 @@ public class GestionObras
         // ingreso de datos nueva obra
         System.out.println("\n***Ingrese los datos de la nueva obra***");
 
+        System.out.println("¿Que tipo de obra va a ingresar?");
+        System.out.println("1. Escultura ");
+        System.out.println("2. Instalacion ");
+        System.out.println("3. Cuadro ");
+        int tipo = ingreso.nextInt();
+
         // se valida el pid con las codiciones de arriba
         System.out.print("\npid: ");
         long pid = ingreso.nextLong();
@@ -212,10 +217,46 @@ public class GestionObras
         System.out.print("\nDimenciones: ");
         String dimensiones = ingreso.nextLine();
         ingreso = new Scanner(System.in);
+        Obra nueva = new Instalacion();
+
 
         // se crea el objeto Obra
         fecha.set(Calendar.YEAR,ano);
-        Obra nueva = new Instalacion(pid,titulo,fecha,precioRef,dimensiones,"plaza sol");//------->
+        if(tipo == 1){
+            System.out.println("¿Con que tipo de material fue hecha la escultura?");
+            String nE = ingreso.nextLine();
+            System.out.println("De una descripcion del material");
+            String descripcion = ingreso.nextLine();
+            Material material = new Material(nE, descripcion);
+            System.out.println("Ingrese el peso de la escultura");
+            double peso = ingreso.nextDouble();
+            nueva = new Escultura(pid,titulo,fecha,precioRef,dimensiones, material,peso);
+        }
+        else if(tipo == 2){
+            System.out.println("De una breve descripcion del la instalacion");
+            String descripcion = ingreso.nextLine();
+            nueva = new Instalacion(pid,titulo,fecha,precioRef,dimensiones,descripcion);
+        }
+        else if(tipo == 3){
+            System.out.println("Ecriba el tema del cuadro");
+            String tema = ingreso.nextLine();
+            System.out.println("Describa la tecnica del cuadro");
+            String tecnica = ingreso.nextLine();
+            System.out.println("Clasifique el cuadro");
+            System.out.println("1. Obra maestra");
+            System.out.println("2. Obra representativa");
+            int clasificacion = ingreso.nextInt();
+            if(clasificacion == 1){
+                nueva = new Cuadro(pid,titulo,fecha,precioRef,dimensiones, tema, tecnica, Clasificacion.OBRA_MAESTRA);
+            }
+            if(clasificacion == 2){
+                nueva = new Cuadro(pid,titulo,fecha,precioRef,dimensiones, tema, tecnica, Clasificacion.OBRA_MAESTRA);
+            }
+        }
+        else{
+            System.out.println("valor no valido");
+        }
+
 
         boolean artistaDone=false;
 
@@ -244,14 +285,14 @@ public class GestionObras
             {
                 artistaDone=true;
                 selec-=1;
-                if(listaArtistas.get(selec)!=null)
-                {
+                if(selec != 0) {
+                    //System.out.println("entro");
                     Artista elnuevo = listaArtistas.get(selec);
-                    nueva.setArtista(elnuevo);
+                    nueva.setArtistas(elnuevo);
                     elnuevo.setObras(nueva);
                     listaObras.add(nueva);
+                    System.out.println("Obra ingresada\n");
                 }
-                System.out.println("Obra ingresada\n");
             }
 
             else
@@ -260,6 +301,9 @@ public class GestionObras
             }
 
         }while(!artistaDone);
+        for(Obra recorrer: listaObras){
+            System.out.println("titulo: " + recorrer.getTitulo());
+        }
     }
 
     public void modifiObra(long codigo, ArrayList<Obra> listaObras,Map<Long, Artista> listaArtista)
@@ -373,7 +417,7 @@ public class GestionObras
                            // trabajo.getArtista().clear();
                             //asignarle el nuevo artista
                             Artista nuevo = listaArtista.get(selec-1);
-                            trabajo.setArtista(nuevo);
+                            trabajo.setArtistas(nuevo);
                             // añadirle la obra al artista nuevo
                             nuevo.setObras(trabajo);
                         }
@@ -426,7 +470,7 @@ public class GestionObras
 
         // se crea el objeto Artista y se añade a la lista
         Artista nuevo = new Artista(ultimoCod,cedula,nombre,apellidos,fechaNacimineto,telefono);
-        listaArtistas.put(nuevo.getCodigoArtista(), nuevo);
+        listaArtistas.put(nuevo.getCedula(), nuevo);
     }
 
     private boolean checkpid(long pid, ArrayList<Obra> listaObras)
@@ -544,25 +588,25 @@ public class GestionObras
 
         // Asignar artistas y obra
         a1.setObras(o1);
-        o1.setArtista(a1);
+        o1.setArtistas(a1);
         a1.setObras(o2);
-        o2.setArtista(a1);
+        o2.setArtistas(a1);
         a2.setObras(o3);
-        o3.setArtista(a2);
+        o3.setArtistas(a2);
         a3.setObras(o4);
-        o4.setArtista(a3);
+        o4.setArtistas(a3);
         a3.setObras(o5);
-        o5.setArtista(a3);
+        o5.setArtistas(a3);
         a3.setObras(o6);
-        o6.setArtista(a3);
+        o6.setArtistas(a3);
         a4.setObras(o7);
-        o7.setArtista(a4);
+        o7.setArtistas(a4);
         a5.setObras(o8);
-        o8.setArtista(a5);
+        o8.setArtistas(a5);
         a5.setObras(o9);
-        o9.setArtista(a5);
+        o9.setArtistas(a5);
         a6.setObras(o10);
-        o10.setArtista(a6);
+        o10.setArtistas(a6);
 
         //  Añadir a la lista
         listaObras.add(o1);
@@ -576,11 +620,11 @@ public class GestionObras
         listaObras.add(o9);
         listaObras.add(o10);
         listaArtistas.get(a1);
-        listaArtistas.put(a2.getCodigoArtista(), a2);
-        listaArtistas.put(a3.getCodigoArtista(), a3);
-        listaArtistas.put(a4.getCodigoArtista(), a4);
-        listaArtistas.put(a5.getCodigoArtista(), a5);
-        listaArtistas.put(a6.getCodigoArtista(), a6);
+        listaArtistas.put(a2.getCedula(), a2);
+        listaArtistas.put(a3.getCedula(), a3);
+        listaArtistas.put(a4.getCedula(), a4);
+        listaArtistas.put(a5.getCedula(), a5);
+        listaArtistas.put(a6.getCedula(), a6);
 
     }
 

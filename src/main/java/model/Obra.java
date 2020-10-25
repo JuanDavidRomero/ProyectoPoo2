@@ -11,7 +11,7 @@ public abstract class Obra
     protected Calendar fecha;
     protected double precioRef;
     protected String dimenciones;
-    protected HashMap<Long,Artista> artistas= new HashMap<>();
+    protected ArrayList<Artista> artistas= new ArrayList<>();
 
 
     // Constructores
@@ -71,14 +71,12 @@ public abstract class Obra
         this.dimenciones = dimenciones;
     }
 
-    public HashMap<Long, Artista> getArtistas()
-    {
+    public ArrayList<Artista> getArtistas() {
         return artistas;
     }
 
-    public void setArtista(Artista artistas)
-    {
-        this.artistas.put(artistas.getCedula(),artistas);
+    public void setArtistas(Artista artistas) {
+        this.artistas.add(artistas);
     }
 
     //Metodos
