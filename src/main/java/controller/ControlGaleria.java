@@ -23,7 +23,9 @@ public class ControlGaleria
 
     //Constructores
     public ControlGaleria()
-    {  }
+    {
+
+    }
 
     // Acessors
 
@@ -185,11 +187,30 @@ public class ControlGaleria
         {
             boolean auxBorrar = ClienteCompra(codId);
             if(!auxBorrar)
-                controlClientes.eliminarUnCliente(listaClientes, clienteaux);
+            {
+                System.out.print("¿Esta seguro de borrar el cliente? s/n: ");
+
+                ingreso = new Scanner(System.in);
+
+                String borra = ingreso.nextLine();
+                char borrar = borra.charAt(0);
+
+                if(borrar == 's')
+                {
+                    if(listaClientes.containsKey(clienteaux.getCedula()))
+                    {
+                        controlClientes.eliminarUnCliente(listaClientes,clienteaux);
+                    }
+
+                }
+            }
             else System.out.println("No se puede eliminar un cliente vinculado a una compra");
         }
         espacio();
     }
+
+
+
     //11.Realizar compra de una Obra
     public void opcion11()
     {
@@ -367,8 +388,6 @@ public class ControlGaleria
     }
 
 
-
-
     public void VerListadoDeComprasParaUnAño()
     {
         int anno;
@@ -424,7 +443,6 @@ public class ControlGaleria
         }
         return encontradas;
     }
-
 
     public ArrayList<Long> verListadoDeArtistasMasVendidos()
     {

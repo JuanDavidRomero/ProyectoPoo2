@@ -307,6 +307,8 @@ public class TestControlGaleria
         ArrayList<Obra> listaO= controlador.getListaObras();
         Map<Long,Artista> listaA = controlador.getListaArtistas();
 
+
+
         Obra expect1= controlador.getControlObras().insertarObraEscultura(listaO,listaA,123456789,o1.getPid(),o1.getTitulo(),o1.getFecha(),o1.getPrecioRef(),o1.getDimenciones(),m1,(double)30.6);
         Obra expect2= controlador.getControlObras().insertarObraInstalacion(listaO,listaA,123456789,o2.getPid(),o2.getTitulo(),o2.getFecha(),o2.getPrecioRef(),o2.getDimenciones(),"avenida cali");
         Obra expect3= controlador.getControlObras().insertarObraCuadro(listaO,listaA,123456789,o3.getPid(),o3.getTitulo(),o3.getFecha(),o3.getPrecioRef(),o3.getDimenciones(),"sur america","Óleo",1);
@@ -393,6 +395,15 @@ public class TestControlGaleria
     {
         //10.Eliminar un Cliente
         System.out.println("-Realizando la prueba 10");
+
+        Map<Long,Cliente> listaCliente = controlador.getListaClientes();
+        Cliente eliminado = controlador.getControlClientes().eliminarUnCliente(listaCliente,listaCliente.get((long)876543210));
+
+        Assert.assertFalse("El cliente con cedula 876543210 eliminado sigue en la lista",listaCliente.containsKey((long)876543210));
+        Assert.assertFalse("El cliente con cedula 765432109 eliminado sigue en la lista",listaCliente.containsKey((long)765432109));
+
+
+
     }
 
     @Test
@@ -409,6 +420,7 @@ public class TestControlGaleria
 
         Compra buscar = controlador.getListaCompras().get(3);
 
+        Assert.assertTrue("La nueva compra no esta en la lista",controlador.getListaCompras().contains(buscar));
         Assert.assertEquals("El precio esperadado y el actual",1003,buscar.getNumeroPedido());
         Assert.assertEquals("La fecha esperadada y la actual",fecha,buscar.getFechaRecibido());
         Assert.assertEquals("Pago esperado y el actual",true,buscar.isPagado());
@@ -432,7 +444,6 @@ public class TestControlGaleria
         Assert.assertFalse("La obra de numero 1001 no ha sido eliminada",controlador.getListaCompras().contains(activa));
 
     }
-
 
     @Test
     public void opcion14Test()

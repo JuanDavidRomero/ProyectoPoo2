@@ -1,6 +1,8 @@
 package view;
 
 import controller.ControlGaleria;
+import model.Instalacion;
+
 import java.util.Scanner;
 
 public class PantallaGaleria
@@ -67,6 +69,10 @@ public class PantallaGaleria
         }while(seguir);
         System.out.println("Un gusto haberle ayudado");
         System.out.println("Prueba git");
+
+
+
+
     }
 }
 

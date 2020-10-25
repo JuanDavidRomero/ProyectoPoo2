@@ -74,25 +74,16 @@ public class GestionCliente
         }
     }
 
-    public Cliente eliminarUnCliente(Map<Long, Cliente> eliminar , Cliente cliente)
+
+    public Cliente eliminarUnCliente(Map<Long,Cliente> eliminar,Cliente cliente)
     {
-        System.out.print("¿Esta seguro de borrar el cliente? s/n: ");
-
-        String borra = scan.nextLine();
-        char borrar = borra.charAt(0);
-
-        if(borrar == 's')
+        if(eliminar.containsKey(cliente.getCedula()))
         {
-            if(eliminar.containsKey(cliente.getCedula()))
-            {
-                Cliente eliminado = eliminar.remove(cliente.getCedula());
-                System.out.println("Cliente eliminado exitosamente");
-                return eliminado;
-            }
-
+            Cliente eliminado = eliminar.remove(cliente.getCedula());
+            System.out.println("Cliente eliminado exitosamente");
+            return eliminado;
         }
         return null;
-
     }
 
     public void listarClientes(Map<Long, Cliente> listaClientes)
