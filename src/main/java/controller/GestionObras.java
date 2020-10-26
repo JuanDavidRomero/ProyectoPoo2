@@ -77,7 +77,7 @@ public class GestionObras
         System.out.println("\n***Resultados busqueda***\n");
         for(Obra mostar: resultadoBusqueda)
         {
-           // System.out.println("- "+mostar.toString(1));
+            System.out.println("- "+mostar.toString());
             System.out.println();
         }
         if(!hayResultado)
@@ -118,7 +118,7 @@ public class GestionObras
             System.out.println("\n***Resultados busqueda***\n");
             for(Obra mostar: resultadoBusqueda)
             {
-               // System.out.println("- "+mostar.toString(1));
+                System.out.println("- "+mostar.toString());
                 System.out.println();
             }
         }
@@ -364,6 +364,7 @@ public class GestionObras
 
     public void modifiObra(long codigo, ArrayList<Obra> listaObras,Map<Long, Artista> listaArtista)
     {
+        Scanner entrada = new Scanner(System.in);
         Obra trabajo =buscarObraCodigo(codigo,listaObras);
         // condicion para ver si se encontro la obra con el codigo
         if(trabajo!=null)
@@ -374,112 +375,198 @@ public class GestionObras
                     "1.Titulo:"+trabajo.getTitulo()+
                             "\n2.Pid: "+trabajo.getPid()+
                             "\n3.Fecha: " +trabajo.getFecha().get(Calendar.YEAR)+
-                            "\n4.PrecioRef: " +trabajo.getPrecioRef());
-                          //  "\n5.Dimensiones: " +trabajo.getDimensiones());
+                            "\n4.PrecioRef: " +trabajo.getPrecioRef() +
+                            "\n5.Dimensiones: " +trabajo.getDimenciones());
 
             System.out.print("6.Artista: " );
-           // for(Artista impri: trabajo.getArtista())
-            {
-            //    System.out.print(impri.toString(1,1)+".");
+            for(Artista impri: trabajo.getArtistas()) {
+                System.out.print(impri.toString(1,1)+".");
             }
 
-            System.out.print("\n\nDigite el numero de la opcion que quiera modificar: ");
-            Scanner entrada = new Scanner(System.in);
+            if(trabajo.getClass().getSimpleName().equals("Cuadro")){
+                System.out.println("7. tema");
+                System.out.println("8. tecnica");
+                System.out.println("9. clasificacion");
+            }
+            if(trabajo.getClass().getSimpleName().equals("Escultura")){
+                System.out.println("7. material escultura");
+                System.out.println("8. peso escultura");
+            }
+            if(trabajo.getClass().getSimpleName().equals("Instalacion")){
+                System.out.println("7. descripcion instalacion");
+                System.out.println("8. material escultura");
+            }
+
+
+            System.out.print("\nDigite el numero de la opcion que quiera modificar: ");
             int opcion = entrada.nextInt();
 
-            switch (opcion)
-            {
-                case 1:
-                {
-                    System.out.print("Ingrese el nuevo titulo:");
-                    entrada= new Scanner(System.in);
-                    String nuevoT= entrada.nextLine();
-                    trabajo.setTitulo(nuevoT);
-                }break;
-
-                case 2:
-                {
-                    System.out.print("Ingrese el nuevo pid:");
-                    entrada= new Scanner(System.in);
-                    long nuevoP= entrada.nextLong();
-                    // se valida que el pid este dentro de la restricciones
-                    if(this.checkpid(nuevoP,listaObras))
-                    {
-                        trabajo.setPid(nuevoP);
+            if(opcion <=6) {
+                switch (opcion) {
+                    case 1: {
+                        System.out.print("Ingrese el nuevo titulo:");
+                        entrada = new Scanner(System.in);
+                        String nuevoT = entrada.nextLine();
+                        trabajo.setTitulo(nuevoT);
                     }
-                    else
-                    {
-                        System.out.println("Lo sentimos, no se le pudo asignar nuevo pid a la obra");
+                    break;
+
+                    case 2: {
+                        System.out.print("Ingrese el nuevo pid:");
+                        entrada = new Scanner(System.in);
+                        long nuevoP = entrada.nextLong();
+                        // se valida que el pid este dentro de la restricciones
+                        if (this.checkpid(nuevoP, listaObras)) {
+                            trabajo.setPid(nuevoP);
+                        } else {
+                            System.out.println("Lo sentimos, no se le pudo asignar nuevo pid a la obra");
+                        }
                     }
-                }break;
+                    break;
 
-                case 3:
-                {
-                    int ano;
-                    System.out.print("Ingrese el nuevo año");
-                    entrada= new Scanner(System.in);
-                    ano=entrada.nextInt();
-                    Calendar fechaN = Calendar.getInstance();
-                    fechaN.set(Calendar.YEAR,ano);
-                    trabajo.setFecha(fechaN);
-                }break;
+                    case 3: {
+                        int ano;
+                        System.out.print("Ingrese el nuevo año");
+                        entrada = new Scanner(System.in);
+                        ano = entrada.nextInt();
+                        Calendar fechaN = Calendar.getInstance();
+                        fechaN.set(Calendar.YEAR, ano);
+                        trabajo.setFecha(fechaN);
+                    }
+                    break;
 
-                case 4:
-                {
-                    System.out.print("Ingrese el nuevo precio:");
-                    entrada= new Scanner(System.in);
-                    double nuevoPre= entrada.nextDouble();
-                    trabajo.setPrecioRef(nuevoPre);
-                }break;
+                    case 4: {
+                        System.out.print("Ingrese el nuevo precio:");
+                        entrada = new Scanner(System.in);
+                        double nuevoPre = entrada.nextDouble();
+                        trabajo.setPrecioRef(nuevoPre);
+                    }
+                    break;
 
-                case 5:
-                {
-                    System.out.print("Ingrese las nuevas dimensiones:");
-                    entrada= new Scanner(System.in);
-                    String nuevoD= entrada.nextLine();
-                    //trabajo.setDimensiones(nuevoD);
-                }break;
+                    case 5: {
+                        System.out.print("Ingrese las nuevas dimensiones:");
+                        entrada = new Scanner(System.in);
+                        String nuevoD = entrada.nextLine();
+                        trabajo.setDimenciones(nuevoD);
+                    }
+                    break;
 
-                case 6:
-                {
-                    boolean esta=false;
-                    do{
-                        System.out.println("\n***Lista Artistas***\n");
-                        int orden=1;
-                        System.out.println("0.Ingresar nuevo artista");
-                        // se presenta lista de artistas
-                        for(Map.Entry<Long, Artista> impri: listaArtista.entrySet())
-                        {
-                            System.out.println(orden+"."+impri.getValue().toString(1));
-                            orden+=1;
-                        }
-                        entrada = new Scanner((System.in));
-                        System.out.print("\nIngrese el artista de la obra:");
-                        int selec = entrada.nextInt();
-                        // se añade un nuevo artista a la lista
-                        if(selec==0)
-                        {
-                            this.InserArtista(listaArtista);
-                        }
-                        else
-                        {
-                            esta=true;
-                            // quitarle la obra al artista anterior
-                           // for(Artista viejo: trabajo.getArtista())
-                            {
-                               // viejo.getObras().remove(trabajo);
+                    case 6: {
+                        boolean esta = false;
+                        do {
+                            System.out.println("\n***Lista Artistas***\n");
+                            int orden = 1;
+                            System.out.println("0.Ingresar nuevo artista");
+                            // se presenta lista de artistas
+                            for (Map.Entry<Long, Artista> impri : listaArtista.entrySet()) {
+                                System.out.println(orden + "." + impri.getValue().toString(1));
+                                orden += 1;
                             }
-                            // quitarle el artista a la obra
-                           // trabajo.getArtista().clear();
-                            //asignarle el nuevo artista
-                            Artista nuevo = listaArtista.get(selec-1);
-                            trabajo.setArtistas(nuevo);
-                            // añadirle la obra al artista nuevo
-                            nuevo.setObras(trabajo);
-                        }
-                    }while(!esta);
-                }break;
-                default: System.out.println("Esa opcion no esta disponible"); break;
+                            entrada = new Scanner((System.in));
+                            System.out.print("\nIngrese el artista de la obra:");
+                            int selec = entrada.nextInt();
+                            // se añade un nuevo artista a la lista
+                            if (selec == 0) {
+                                this.InserArtista(listaArtista);
+                            } else {
+                                esta = true;
+                                // quitarle la obra al artista anterior
+                                for(Artista viejo: trabajo.getArtistas())
+                                {
+                                    viejo.getObras().remove(trabajo);
+                                }
+                                // quitarle el artista a la obra
+                                 trabajo.getArtistas().clear();
+                                //asignarle el nuevo artista
+                                Artista nuevo = listaArtista.get(selec - 1);
+                                trabajo.setArtistas(nuevo);
+                                // añadirle la obra al artista nuevo
+                                nuevo.setObras(trabajo);
+                            }
+                        } while (!esta);
+                    }
+                    break;
+                    default:
+                        System.out.println("Esa opcion no esta disponible");
+                        break;
+                }
+            }
+
+            if(opcion >6) {
+                if (trabajo instanceof Cuadro) {
+                    switch (opcion) {
+                        case 7:
+                            System.out.println("ingrese el nuevo tema");
+                            String nuevoT = entrada.nextLine();
+                            ((Cuadro) trabajo).setTema(nuevoT);
+                            break;
+                        case 8:
+                            System.out.println("describa la tecnica");
+                            String tencnica = entrada.nextLine();
+                            ((Cuadro) trabajo).setTecnica(tencnica);
+                            break;
+                        case 9:
+                            System.out.println("de la nueva clasificacion");
+                            System.out.println("1. Obra Maestra ");
+                            System.out.println("2. Obra Representativa ");
+                            int select = entrada.nextInt();
+                            if(select == 1)
+                                ((Cuadro) trabajo).setClasificacion(Clasificacion.OBRA_MAESTRA);
+                            if(select == 2)
+                                ((Cuadro) trabajo).setClasificacion(Clasificacion.OBRA_REPRESENTATIVA);
+                            break;
+                        default:
+                            System.out.println("Esa opcion no esta disponible");
+                            break;
+                    }
+                }
+                if (trabajo.getClass().getSimpleName().equals("Escultura")) {
+                    switch (opcion) {
+                        case 7:
+                            System.out.println("digite el nombre del material");
+                            String nombreM = entrada.nextLine();
+                            System.out.println("De la descripcion del material");
+                            String desM = entrada.nextLine();
+                            ((Escultura) trabajo).getMaterial().setDescripion(desM);
+                            ((Escultura) trabajo).getMaterial().setNombre(nombreM);
+                            break;
+                        case 8:
+                            System.out.println("escriba el nuevo peso");
+                            double tencnica = entrada.nextDouble();
+                            ((Escultura) trabajo).setPeso(tencnica);
+                            break;
+                        default:
+                            System.out.println("Esa opcion no esta disponible");
+                            break;
+                    }
+                }
+                if (trabajo.getClass().getSimpleName().equals("Instalacion")) {
+                    switch (opcion) {
+                        case 7:
+                            System.out.println("digite la descripcion de la instalacion");
+                            String descripI = entrada.nextLine();
+                            ((Instalacion) trabajo).setDescripcion(descripI);
+                            break;
+                        case 8:
+                            System.out.println("escriba el nombre del material antiguo");
+                            entrada.nextLine();
+                            String materialA = entrada.nextLine();
+                            for (Material recorrer : ((Instalacion) trabajo).getTipo()) {
+                                if (recorrer.getNombre().equals(materialA)) {
+                                    System.out.println("Digite el nuevo nombre del material");
+                                    String nMaterial = entrada.nextLine();
+                                    System.out.println("Digite la nueva descripcion del matrial");
+                                    String nDescrip = entrada.nextLine();
+                                    recorrer.setNombre(nMaterial);
+                                    recorrer.setDescripion(nDescrip);
+                                }
+                            }
+                            break;
+                        default:
+                            System.out.println("Esa opcion no esta disponible");
+                            break;
+                    }
+                }
             }
         }
         else
@@ -606,6 +693,8 @@ public class GestionObras
         //Obras
         fechaAgregar1.set(Calendar.YEAR,1922);
         Obra o1 = new Instalacion(1234567,"Galerie Bruno Bishofberger",fechaAgregar1,40000.0,"grande", "plaza sol");
+        Material mat1 = new Material("Cuarzo", "Material de color blanco");
+        ((Instalacion)o1).getTipo().add(mat1);
         fechaAgregar2.set(Calendar.YEAR,1950);
         Material m1 = new Material("madera", "Los árboles son una creación asombrosa de la naturaleza");
         Obra o2 = new Escultura(2345671,"autorretrado con chaqueta azul",fechaAgregar2,80000.0,"grande",m1, 15.1);
@@ -615,18 +704,28 @@ public class GestionObras
         Obra o4 = new Cuadro(4567123,"la persistencia de la memoria",fechaAgregar4,1000000.0,"grande","Los relojes blandos o Los relojes derretidos", "Oleo", Clasificacion.OBRA_MAESTRA);
         fechaAgregar5.set(Calendar.YEAR,1651);
         Obra o5 = new Instalacion(5671234,"Esther Arias Galerías de Arte y Taller",fechaAgregar5,200000000.0,"grande","Situado en un antiguo edificio del siglo XVIII");
+        Material mat2 = new Material("madera", "Material con gran resistencia");
+        ((Instalacion)o5).getTipo().add(mat2);
         fechaAgregar6.set(Calendar.YEAR,1946);
         Obra o6 = new Instalacion(6712345,"Hans Mayer",fechaAgregar6,50000000.0,"grande","famoso por ser un espacio que abre sus puertas a otros tipos de arte");
+        Material mat3 = new Material("piedra negra", "Material con gran pureza");
+        ((Instalacion)o6).getTipo().add(mat3);
         fechaAgregar7.set(Calendar.YEAR,1800);
         Material m2 = new Material("marmol", "es una roca metamorfica compacta formada a partir de rocas calizas");
         Obra o7 = new Escultura(7123456,"La Piedad ",fechaAgregar7,34800000.0,"grande",m2,25.7);
         fechaAgregar8.set(Calendar.YEAR,1901);
         Obra o8 = new Instalacion(2345678,"Annely Juda Fine Art ",fechaAgregar8,3000000000.0,"grande"," Artistas de todo el mundo se unen en una composición armónica y delicada que tienes que vivir");
+        ((Instalacion)o8).getTipo().add(mat3);
+        ((Instalacion)o8).getTipo().add(mat1);
         fechaAgregar9.set(Calendar.YEAR,1907);
         Material m3 = new Material("marmol", "es una roca metamorfica compacta formada a partir de rocas calizas");
         Obra o9 = new Escultura(3456789,"Venus de Milo",fechaAgregar9,88000.0,"grande",m3, 34.8);
         fechaAgregar16.set(Calendar.YEAR,1888);
         Obra o10 = new Instalacion(4567890,"Marlborough Fine Art",fechaAgregar16,23400000.0,"grande","está llena de los más reconocidos artistas contemporáneos.");
+        ((Instalacion)o8).getTipo().add(mat3);
+        ((Instalacion)o8).getTipo().add(mat1);
+        ((Instalacion)o8).getTipo().add(mat2);
+
 
         // Artista
         fechaAgregar10.set(1884,1,12);

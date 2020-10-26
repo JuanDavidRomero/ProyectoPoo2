@@ -9,6 +9,14 @@ public class Instalacion extends Obra
     private String descripcion;
     ArrayList<Material> tipo = new ArrayList<>();
 
+    public ArrayList<Material> getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(ArrayList<Material> tipo) {
+        this.tipo = tipo;
+    }
+
     // Constructores
     public Instalacion()
     { }
@@ -26,6 +34,20 @@ public class Instalacion extends Obra
         double porci =0;
         porci=tipo.size()*5;
         return (precioRef*porci)/100+precioRef;
+    }
+
+    @Override
+    public String toString() {
+        for(Material recorrer: tipo){
+            System.out.println(recorrer.toString());
+        }
+        return "Instalacion " +
+                "\n descripcion= " + descripcion +
+                "\n pid= " + pid +
+                "\n titulo= " + titulo +
+                "\n fecha= " + fecha.getTime() +
+                "\n precioRef= " + precioRef +
+                "\n dimenciones= " + dimenciones;
     }
 
     // Accessors

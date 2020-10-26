@@ -61,5 +61,16 @@ public class Cuadro extends Obra
         this.clasificacion = clasificacion;
     }
 
-
+    @Override
+    public String toString() {
+        return "Cuadro" +
+                "\n tema= " + tema +
+                "\n tecnica= " + tecnica +
+                "\n clasificacion= " + clasificacion +
+                "\n pid= " + pid +
+                "\n titulo= " + titulo +
+                "\n fecha= " + fecha.getTime() +
+                "\n precioRef= " + precioRef +
+                "\n dimenciones= " + dimenciones;
+    }
 }

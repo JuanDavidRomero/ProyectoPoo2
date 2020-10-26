@@ -321,7 +321,148 @@ public class TestControlGaleria
     @Test
     public void opcion4Test()
     {
-        //4.Modificar una Obra
+        //4. modificar una Obra
+        System.out.println("Realizando prueba 4");
+        Obra revisar = null;
+        for(Obra recorrer : controlador.getListaObras()){
+            if(recorrer.getPid() == 1234567)
+                revisar = recorrer;
+        }
+        Obra trabajo = controlador.getControlObras().buscarObraCodigo(1234567,controlador.getListaObras());
+        if(trabajo!=null)
+        {
+            int opcion = 4;
+
+            if(opcion <=6) {
+                switch (opcion) {
+                    case 1: {
+                        String nuevoT = "miradas al mas alla";
+                        trabajo.setTitulo(nuevoT);
+                    }
+                    break;
+
+                    case 2: {
+                        long nuevoP = 4433556;
+                        if (controlador.getControlObras().checkpid(nuevoP, controlador.getListaObras())) {
+                            trabajo.setPid(nuevoP);
+                        } else { }
+                    }
+                    break;
+
+                    case 3: {
+                        int ano = 2001;
+                        Calendar fechaN = Calendar.getInstance();
+                        fechaN.set(Calendar.YEAR, ano);
+                        trabajo.setFecha(fechaN);
+                    }
+                    break;
+                    case 4: {
+                        double nuevoPre = 50000;
+                        trabajo.setPrecioRef(nuevoPre);
+                    }
+                    break;
+
+                    case 5: {
+                        String nuevoD = "55x87";
+                        trabajo.setDimenciones(nuevoD);
+                    }
+                    break;
+
+                    case 6: {
+                        boolean esta = false;
+                        do {
+                            int orden = 1;
+                            // se presenta lista de artistas
+                            for (Map.Entry<Long, Artista> impri : controlador.getListaArtistas().entrySet()) {
+                                orden += 1;
+                            }
+                            int selec = 3;
+                            // se añade un nuevo artista a la lista
+                            if (selec == 0) {
+                                controlador.getControlObras().InserArtista(controlador.getListaArtistas());
+                            } else {
+                                esta = true;
+                                // quitarle la obra al artista anterior
+                                for(Artista viejo: trabajo.getArtistas())
+                                {
+                                     viejo.getObras().remove(trabajo);
+                                }
+                                // quitarle el artista a la obra
+                                 trabajo.getArtistas().clear();
+                                //asignarle el nuevo artista
+                                Artista nuevo = controlador.getListaArtistas().get(selec - 1);
+                                trabajo.setArtistas(nuevo);
+                                // añadirle la obra al artista nuevo
+                                nuevo.setObras(trabajo);
+                            }
+                        } while (!esta);
+                    }
+                    break;
+                    default:
+                        break;
+
+                }
+            }
+            if(opcion >6) {
+                if (trabajo instanceof Cuadro) {
+                    switch (opcion) {
+                        case 7:
+                            String nuevoT = "mira al mas alla";
+                            ((Cuadro) trabajo).setTema(nuevoT);
+                            break;
+                        case 8:
+                            String tencnica = "esta tecnica esta basada los lienzos del siglo xx";
+                            ((Cuadro) trabajo).setTecnica(tencnica);
+                            break;
+                        case 9:
+                            ((Cuadro) trabajo).setClasificacion(Clasificacion.OBRA_MAESTRA);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (trabajo.getClass().getSimpleName().equals("Escultura")) {
+                    switch (opcion) {
+                        case 7:
+                            String nombreM = "madera";
+                            String desM = "Un material muy lindo de trabajar ";
+                            ((Escultura) trabajo).getMaterial().setDescripion(desM);
+                            ((Escultura) trabajo).getMaterial().setNombre(nombreM);
+                            break;
+                        case 8:
+                            double tencnica = 14;
+                            ((Escultura) trabajo).setPeso(tencnica);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (trabajo.getClass().getSimpleName().equals("Instalacion")) {
+                    switch (opcion) {
+                        case 7:
+                            String descripI = "queda a 15 mintos de Timesquare";
+                            ((Instalacion) trabajo).setDescripcion(descripI);
+                            break;
+                        case 8:
+                            String materialA = "cuarzo";
+                            for (Material recorrer : ((Instalacion) trabajo).getTipo()) {
+                                if (recorrer.getNombre().equals(materialA)) {
+                                    String nMaterial = "Aluminio";
+                                    String nDescrip = "Un material muy flexible";
+                                    recorrer.setNombre(nMaterial);
+                                    recorrer.setDescripion(nDescrip);
+                                }
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+        else { }
+        Assert.assertTrue("la obra no se pudo modificar",revisar.getPrecioRef() == 50000);
+        Assert.assertTrue("la obra no se pudo modificar",revisar.getPrecioRef() == 70000);
     }
 
     @Test

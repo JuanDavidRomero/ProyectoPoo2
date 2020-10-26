@@ -26,4 +26,11 @@ public class Material{
         this.nombre = nombre;
         this.descripion = descripion;
     }
+
+    @Override
+    public String toString() {
+        return "-Material" +
+                "\n nombre= " + nombre +
+                "\n descripion= " + descripion;
+    }
 }
