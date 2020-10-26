@@ -37,7 +37,7 @@ public class GestionObras
         System.out.println("***Obras Disponibles***\n");
         for(Obra impri: disponibles)
         {
-            //System.out.println("- "+impri.toString(0));
+            System.out.println("- "+impri.toString());
             System.out.println();
         }
 
@@ -154,7 +154,7 @@ public class GestionObras
             System.out.println("\n***Resultados busqueda***\n");
             for(Obra mostar: resultadoBusqueda)
             {
-               // System.out.println("- "+mostar.toString(1)+"\n");
+                System.out.println("- "+mostar.toString()+"\n");
             }
         }
         else
@@ -182,6 +182,7 @@ public class GestionObras
 
         // ingreso de datos nueva obra
 
+        Artista nuevo = null;
         System.out.println("\n***Ingrese los datos de la nueva obra***");
         System.out.println("Ingrese el pid:");
         long pid = ingreso.nextLong();
@@ -228,8 +229,9 @@ public class GestionObras
                     numero+=1;
                 }
 
-                System.out.print("Selecion el artista que le desea registrar a la Obra:  ");
-                int selec = ingreso.nextInt();
+                System.out.print("Selecione el artista que le desea registrar a la Obra con su cedula:  ");
+                System.out.println("digite 0 si quiere ingresar un nuevo artista");
+                long selec = ingreso.nextLong();
 
                 // se ingresa un nuevo artista a la lista
                 if(selec==0)
@@ -238,13 +240,17 @@ public class GestionObras
 
                 }
                 // se seleciona un artista de la lista
-                else if (selec<=listaArtistas.size())
+                else
                 {
                     artistaDone=true;
-                    selec-=1;
                     if(selec != 0)
                     {
-                       Artista nuevo = listaArtistas.get(listaLlaves.indexOf(selec)-1);
+                        for(Map.Entry<Long, Artista> recorrer: listaArtistas.entrySet()){
+                            if(recorrer.getKey().equals(selec)) {
+                                nuevo = recorrer.getValue();
+                            }
+                        }
+
 
                         System.out.println("\n\n¿Que tipo de obra va a ingresar?");
                         System.out.println("1. Escultura ");
@@ -258,6 +264,7 @@ public class GestionObras
                             case 1:
                             {
                                 System.out.println("¿Con que tipo de material fue hecha la escultura?");
+                                ingreso.nextLine();
                                 String nE = ingreso.nextLine();
                                 System.out.println("De una descripcion del material");
                                 String descripcion = ingreso.nextLine();
@@ -271,6 +278,7 @@ public class GestionObras
                             case 2:
                             {
                                 System.out.println("De una breve descripcion del la instalacion");
+                                ingreso.nextLine();
                                 String descripcion = ingreso.nextLine();
                                 insertarObraInstalacion(listaObras,listaArtistas,nuevo.getCedula(),pid,titulo,fecha,precioRef,dimensiones,descripcion);
                             }break;
@@ -279,6 +287,7 @@ public class GestionObras
                             case 3:
                             {
                                 System.out.println("Ecriba el tema del cuadro");
+                                ingreso.nextLine();
                                 String tema = ingreso.nextLine();
                                 System.out.println("Describa la tecnica del cuadro");
                                 String tecnica = ingreso.nextLine();
@@ -316,17 +325,18 @@ public class GestionObras
     {
         if(checkpid(pid,listaObras))
         {
-            if(clasificacion==0)
+            if(clasificacion==1)
             {
                 Obra temp = new Cuadro(pid,titulo,fecha,precioRef,dimensiones,tema,tecnica,Clasificacion.OBRA_MAESTRA);
                 temp.setArtistas(listaArtistas.get(llaveArtista));
                 listaObras.add(temp);
                 return temp;
             }
-            if(clasificacion==1)
+            if(clasificacion==2)
             {
                 Obra temp = new Cuadro(pid,titulo,fecha,precioRef,dimensiones,tema,tecnica,Clasificacion.OBRA_REPRESENTATIVA);
                 temp.setArtistas(listaArtistas.get(llaveArtista));
+                System.out.println(temp.toString());
                 listaObras.add(temp);
                 return temp;
             }
@@ -384,17 +394,20 @@ public class GestionObras
             }
 
             if(trabajo.getClass().getSimpleName().equals("Cuadro")){
-                System.out.println("7. tema");
-                System.out.println("8. tecnica");
-                System.out.println("9. clasificacion");
+                System.out.println("\n7. tema: "+ ((Cuadro)trabajo).getTema());
+                System.out.println("8. tecnica: "+ ((Cuadro)trabajo).getTecnica());
+                System.out.println("9. clasificacion: "+ ((Cuadro)trabajo).getClasificacion());
             }
             if(trabajo.getClass().getSimpleName().equals("Escultura")){
-                System.out.println("7. material escultura");
-                System.out.println("8. peso escultura");
+                System.out.println("7. material escultura{Nombre: " + ((Escultura)trabajo).getMaterial().getNombre()+ ", Descripcion: " + ((Escultura)trabajo).getMaterial().getDescripion());
+                System.out.println("8. peso escultura: " + ((Escultura)trabajo).getPeso());
             }
             if(trabajo.getClass().getSimpleName().equals("Instalacion")){
-                System.out.println("7. descripcion instalacion");
-                System.out.println("8. material escultura");
+                System.out.println("7. descripcion instalacion: "+ ((Instalacion)trabajo).getDescripcion());
+                System.out.println("8. material escultura: ");
+                for(Material recorrer: ((Instalacion) trabajo).getTipo()){
+                    System.out.println(recorrer.toString());
+                }
             }
 
 

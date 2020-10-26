@@ -123,7 +123,6 @@ public class GestionCliente
     {
         if(listaClientes.containsKey(cedula))
         {
-            System.out.println("entra");
             for(long llave : listaClientes.keySet())
             {
                 if(listaClientes.get(llave).getCedula()==cedula)
