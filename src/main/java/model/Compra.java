@@ -97,7 +97,8 @@ public class Compra
     //toString
     public String toString(){
         String nombre_completo_cliente = this.compraCliente.getNombres() + this.compraCliente.getApellidos();
-        return nombre_completo_cliente;
+        return "Nombre: "+nombre_completo_cliente+"\tNumero Pedido: "+this.numeroPedido+"\tNombre Repartidor: "+this.nombreRepartidor
+                +"\tObra: "+this.compraObra.getTitulo()+"\tPrecio: "+this.compraObra.getPrecioRef();
     }
 
     public String toString(int s)

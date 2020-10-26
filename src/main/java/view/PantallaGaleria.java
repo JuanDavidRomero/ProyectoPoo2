@@ -67,12 +67,7 @@ public class PantallaGaleria
                     System.out.println("opcion no disponible");
             }
         }while(seguir);
-        System.out.println("Un gusto haberle ayudado");
-        System.out.println("Prueba git");
-
-
-
-
+        galeria.interaccionObjetos();
     }
 }
 

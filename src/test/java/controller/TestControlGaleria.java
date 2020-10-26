@@ -675,6 +675,14 @@ public class TestControlGaleria
         Assert.assertEquals("La cedula del artista con mas ventas es ",temp1.getCedula(),result.getCedula());
     }
 
+    @Test
+    public void generarObrasEsculturaTest(){
+
+        ArrayList <Obra> obrasEscultura = new ArrayList<>();
+
+
+    }
+
 
 
 }

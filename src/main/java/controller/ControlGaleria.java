@@ -75,9 +75,9 @@ public class ControlGaleria
         Calendar C6= new GregorianCalendar(2006,0,7);
 
 
-        Cliente c1 = listaClientes.get(0);
-        Cliente c2 = listaClientes.get(1);
-        Cliente c3 = listaClientes.get(2);
+        Cliente c1 = listaClientes.get((long)876543210);
+        Cliente c2 = listaClientes.get((long)765432109);
+        Cliente c3 = listaClientes.get((long)543210987);
 
         Obra o1 = listaObras.get(0);
         Obra o2 = listaObras.get(1);
@@ -100,7 +100,6 @@ public class ControlGaleria
         listaCompras.add(cp4);
         listaCompras.add(cp5);
         listaCompras.add(cp6);
-
     }
 
     //1.Ver listado de Obras disponibles
@@ -181,7 +180,7 @@ public class ControlGaleria
     public void opcion10()
     {
         System.out.print("Digite la cedula del cliente:");
-        long cedula = ingreso.nextInt();
+        long cedula = ingreso.nextLong();
         Cliente clienteaux = controlClientes.buscasClienteNI(cedula, listaClientes);
         if(clienteaux != null)
         {
@@ -280,14 +279,16 @@ public class ControlGaleria
         }
     }
 
-    public Boolean ClienteCompra(long codId)
+    public Boolean ClienteCompra(long cedula)
     {
+        boolean aux = false;
         for (Compra recorrer : listaCompras)
         {
-            if (recorrer.getCompraCliente().getCedula() == codId)
-                return true;
+            if (recorrer.getCompraCliente().getCedula() == cedula) {
+                aux = true;
+            }
         }
-        return false;
+        return aux;
     }
 
     // Metodos compras
@@ -539,12 +540,40 @@ public class ControlGaleria
 
     public int gananciaTotalObtenida(){
         int acumulador = 0;
+        double aux = 0;
         for(Compra compra: this.listaCompras){
-            acumulador += compra.getCompraObra().getPrecioRef();
+            aux = compra.getCompraObra().calcularPrecio();
+            acumulador += aux;
         }
         return acumulador;
     }
 
+    public void interaccionObjetos(){
+        System.out.println();
+        System.out.println("Lista de Obras de tipo Escultura:");
+        System.out.println();
+        System.out.println();
+        ArrayList <Obra> obrasEscultura = new ArrayList<>();
+        obrasEscultura = this.generarObrasEscultura();
+        for(Obra obra: obrasEscultura){
+            System.out.println(obra.toString());
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println("Lista de Compras asociadas a un Cuadro:");
+        System.out.println();
+        System.out.println();;
+        ArrayList <Compra> compraCuadros = new ArrayList<>();
+        compraCuadros = this.filtrarCompraCuadro();
+        for(Compra compra: compraCuadros){
+            System.out.println(compra.toString());
+        }
+        System.out.println();
+        System.out.println();
+        int gananciaTotal = this.gananciaTotalObtenida();
+        System.out.println("Ganancia Total Obtenida:\t"+gananciaTotal);
+    }
 
 }
 
