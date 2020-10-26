@@ -520,7 +520,7 @@ public class ControlGaleria
 
     public ArrayList<Obra> generarObrasEscultura(){
         ArrayList <Obra> auxiliar = new ArrayList<>();
-        for(Obra unaObra : this.listaObras){
+        for(Obra unaObra : listaObras){
             if(unaObra instanceof Escultura){
                 auxiliar.add(unaObra);
             }
@@ -530,7 +530,7 @@ public class ControlGaleria
 
     public ArrayList <Compra> filtrarCompraCuadro(){
         ArrayList <Compra> auxiliar = new ArrayList<>();
-        for(Compra compra: this.listaCompras){
+        for(Compra compra: listaCompras){
             if(compra.getCompraObra() instanceof Cuadro){
                 auxiliar.add(compra);
             }
@@ -538,10 +538,10 @@ public class ControlGaleria
         return auxiliar;
     }
 
-    public int gananciaTotalObtenida(){
-        int acumulador = 0;
+    public double gananciaTotalObtenida(){
+        double acumulador = 0;
         double aux = 0;
-        for(Compra compra: this.listaCompras){
+        for(Compra compra: listaCompras){
             aux = compra.getCompraObra().calcularPrecio();
             acumulador += aux;
         }
@@ -554,7 +554,7 @@ public class ControlGaleria
         System.out.println();
         System.out.println();
         ArrayList <Obra> obrasEscultura = new ArrayList<>();
-        obrasEscultura = this.generarObrasEscultura();
+        obrasEscultura = generarObrasEscultura();
         for(Obra obra: obrasEscultura){
             System.out.println(obra.toString());
             System.out.println();
@@ -565,13 +565,13 @@ public class ControlGaleria
         System.out.println();
         System.out.println();;
         ArrayList <Compra> compraCuadros = new ArrayList<>();
-        compraCuadros = this.filtrarCompraCuadro();
+        compraCuadros = filtrarCompraCuadro();
         for(Compra compra: compraCuadros){
             System.out.println(compra.toString());
         }
         System.out.println();
         System.out.println();
-        int gananciaTotal = this.gananciaTotalObtenida();
+        double gananciaTotal = gananciaTotalObtenida();
         System.out.println("Ganancia Total Obtenida:\t"+gananciaTotal);
     }
 

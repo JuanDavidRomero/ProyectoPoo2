@@ -53,6 +53,7 @@ public class Escultura extends Obra
         else if(peso>10)
         {
             opera-=10;
+            this.precioRef=(opera*precioRef)/100+precioRef;
             return (opera*precioRef)/100+precioRef;
         }
 

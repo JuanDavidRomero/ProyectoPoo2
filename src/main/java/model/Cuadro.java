@@ -24,10 +24,12 @@ public class Cuadro extends Obra
     {
         if(clasificacion== Clasificacion.OBRA_MAESTRA)
         {
+            this.precioRef=(precioRef*5)/100+precioRef;
             return (precioRef*5)/100+precioRef;
         }
         if(clasificacion==Clasificacion.OBRA_REPRESENTATIVA)
         {
+            this.precioRef=(precioRef*3)/100+precioRef;
             return (precioRef*3)/100+precioRef;
         }
 

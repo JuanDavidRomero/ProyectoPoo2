@@ -33,6 +33,7 @@ public class Instalacion extends Obra
     {
         double porci =0;
         porci=tipo.size()*5;
+        this.precioRef=(precioRef*porci)/100+precioRef;
         return (precioRef*porci)/100+precioRef;
     }
 

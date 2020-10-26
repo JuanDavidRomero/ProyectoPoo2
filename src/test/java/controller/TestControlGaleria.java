@@ -676,10 +676,24 @@ public class TestControlGaleria
     }
 
     @Test
-    public void generarObrasEsculturaTest(){
-
+    public void interaccionObjetosTest(){
         ArrayList <Obra> obrasEscultura = new ArrayList<>();
+        obrasEscultura = controlador.generarObrasEscultura();
 
+        ArrayList <Compra> compraCuadros = new ArrayList<>();
+        compraCuadros = controlador.filtrarCompraCuadro();
+
+        double gananciaTotal = controlador.gananciaTotalObtenida();
+        double aux = 0;
+        for(Compra compra: controlador.getListaCompras()){
+            aux=compra.getCompraObra().calcularPrecio();
+            gananciaTotal-=aux;
+        }
+
+        Assert.assertTrue("No es una obra de tipo escultura",obrasEscultura.contains(controlador.getListaObras().get(1)));
+        Assert.assertTrue("En la compra no se encuentra una obra de tipo cuadro",compraCuadros.contains(controlador.getListaCompras().get(2)));
+        Assert.assertTrue("En la compra no se encuentra una obra de tipo cuadro",compraCuadros.contains(controlador.getListaCompras().get(0)));
+        Assert.assertEquals("La ganancia total no es acorde a lo vendido",0,gananciaTotal,5000);
 
     }
 
