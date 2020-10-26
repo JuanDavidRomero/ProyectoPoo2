@@ -284,7 +284,7 @@ public class ControlGaleria
     {
         for (Compra recorrer : listaCompras)
         {
-            if (recorrer.getCompraCliente().getCodigoCliente() == codId)
+            if (recorrer.getCompraCliente().getCedula() == codId)
                 return true;
         }
         return false;

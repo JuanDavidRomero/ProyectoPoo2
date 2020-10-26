@@ -385,61 +385,60 @@ public class TestControlGaleria
     }
 
     @Test
-    public void opcion9Test()
-    {
+    public void opcion9Test() {
         //9.Modificar datos de Cliente
         System.out.println("-Realizando la prueba 9");
-        long codId = 876543210;
-        Cliente clienteaux = controlador.getControlClientes().buscasClienteNI(codId, controlador.getListaClientes());
-        System.out.println("Entro 1");
-        if(clienteaux != null){
-            for(int i=1;i<7;i++){
-                int nDato =i;
+        System.out.print("Digite el numero de Cedula del Cliente: ");
+        long cedula = 876543210;
+        Cliente clienteaux = controlador.getControlClientes().buscasClienteNI(cedula, controlador.getListaClientes());
+        if (clienteaux != null) {
+            for (int i = 1; i < 7; i++) {
+                System.out.print("\nSeleccione el dato que desea modificar: ");
+                int nDato = i;
                 switch (nDato) {
                     case 1:
-                        long aux = 1928374;
-                        System.out.println("Entro 1");
-                        if (controlador.getControlClientes().buscasClienteNI(aux, controlador.getListaClientes()) == null) {
-                            clienteaux.setCodigoCliente(aux);
-                        }
+                        boolean comprobante = false;
+                        do {
+                            long aux = 1928374;
+                            Cliente unCliente = controlador.getControlClientes().buscasClienteCodigo(aux, controlador.getListaClientes());
+                            if (unCliente != null) {
+                                comprobante = true;
+                                System.out.println("El codigo de identificacion solicitado ya fue asignado a otro cliente");
+                            } else {
+                                comprobante = false;
+                                clienteaux.setCodigoCliente(aux);
+                                System.out.println("Codigo de identificacion actualizado exitosamente.");
+                            }
+                        } while (comprobante);
                         break;
-                    case 2:
-                        System.out.println("Entro 1");
-                        String nombre = "Jefferson";
-                        clienteaux.setNombres(nombre);
-                        break;
-                    case 3:
-                        System.out.println("Entro 1");
-                        String apellido = "Gutierritos";
-                        clienteaux.setApellidos(apellido);
-                        break;
-                    case 4:
-                        System.out.println("Entro 1");
-                        clienteaux.setCedula(100134639);
-                        break;
-                    case 5:
-                        System.out.println("Entro 1");
-                        clienteaux.setTelefono(320856618);
-                        break;
-                    case 6:
-                        System.out.println("Entro 1");
-                        clienteaux.setDireccionEntrega("Calle 3A #46-28");
-                        break;
+                        case 2:
+                            System.out.print("Ingrese el nuevo nombre: ");
+                            String nombre = "Jefferson";
+                            clienteaux.setNombres(nombre);
+                            System.out.println("Nombre actualizado exitosamente.");
+                            break;
+                        case 3:
+                            System.out.print("Ingrese el nuevo apellido: ");
+                            String apellido = "Gutierritos";
+                            clienteaux.setApellidos(apellido);
+                            System.out.println("Apellido actualizado exitosamente.");
+                            break;
+                        case 5:
+                            System.out.print("Digite el nuevo telefono: ");
+                            clienteaux.setTelefono(320856618);
+                            System.out.println("Telefono actualizado exitosamente.");
+                            break;
+                        case 6:
+                            System.out.print("Ingrese nueva direccion: ");
+                            clienteaux.setDireccionEntrega("Calle 3A #46-28");
+                            System.out.println("Direccion actualizada exitosamente.");
+                            break;
                 }
             }
         }
-        Assert.assertEquals(1928374,controlador.getListaClientes().get(1928374).getCedula());
-        Assert.assertEquals("Jefferson",controlador.getListaClientes().get(1928374).getNombres());
-        Assert.assertEquals("Gutierritos",controlador.getListaClientes().get(1928374).getApellidos());
-        Assert.assertEquals(100134639,controlador.getListaClientes().get(1928374).getCedula());
-        Assert.assertEquals(320856618,controlador.getListaClientes().get(1928374).getTelefono());
-        Assert.assertEquals("Calle 3A #46-28",controlador.getListaClientes().get(1928374).getDireccionEntrega());
-        Assert.assertEquals("No se encontro el cliente con el codigo de identificacion",1111111,controlador.getListaClientes().get(1928374).getCedula());
-        Assert.assertEquals("No se encontro el cliente con el nombre","wu",controlador.getListaClientes().get(1928374).getNombres());
-        Assert.assertEquals("No se encontro el cliente con el apellido","zetian",controlador.getListaClientes().get(1928374).getApellidos());
-        Assert.assertEquals("No se encontro el cliente con la cedula",876543210,controlador.getListaClientes().get(1928374).getCedula());
-        Assert.assertEquals("No se encontro el cliente con el telefono",311585424,controlador.getListaClientes().get(1928374).getTelefono());
-        Assert.assertEquals("No se encontro el cliente con la direccion","avenida 13",controlador.getListaClientes().get(1928374).getDireccionEntrega());
+        Assert.assertNotNull("El cliente con codigo 1111111 no existe",controlador.getListaClientes().containsKey((long)876543210));
+        Assert.assertEquals("El codigo del cliente 1928374 no es el mismo",1928374,controlador.getListaClientes().get((long)876543210).getCodigoCliente());
+        Assert.assertEquals("El codigo del cliente 1111111 no es el mismo",1111111,controlador.getListaClientes().get((long)876543210).getCodigoCliente());
     }
 
     @Test
@@ -463,6 +462,7 @@ public class TestControlGaleria
         System.out.println("-Realizando la prueba 11");
 
         Cliente cli = controlador.getListaClientes().get((long)765432109);
+
         Obra obra = controlador.getControlObras().buscarObraCodigo(7123456, controlador.getListaObras());
         Calendar fecha = Calendar.getInstance();
         fecha.set(Calendar.YEAR,1990);
