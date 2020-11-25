@@ -10,6 +10,8 @@ public class PantallaGaleria
 
     public static void main(String[] args)
     {
+
+        System.out.println("ok si funciona");
         ControlGaleria galeria = new ControlGaleria();
         galeria.datosPrueba();
 
