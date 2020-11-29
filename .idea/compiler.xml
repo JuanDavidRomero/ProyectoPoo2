@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Proyecto#2" />
         <module name="ProyectoPoo2" />
+        <module name="hellofx" />
         <module name="ProyectoParte2" />
       </profile>
     </annotationProcessing>
