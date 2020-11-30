@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clienteArchivo>
+    <cliente>
+        <apellidos>talleyrand</apellidos>
+        <cedula>765432109</cedula>
+        <codigoCliente>2222222</codigoCliente>
+        <direccionEntrega>avenida 14</direccionEntrega>
+        <nombres>charles</nombres>
+        <telefono>311585422</telefono>
+    </cliente>
+    <cliente>
+        <apellidos>zetian</apellidos>
+        <cedula>876543210</cedula>
+        <codigoCliente>1111111</codigoCliente>
+        <direccionEntrega>avenida 13</direccionEntrega>
+        <nombres>wu</nombres>
+        <telefono>311585424</telefono>
+    </cliente>
+    <cliente>
+        <apellidos>lustig</apellidos>
+        <cedula>543210987</cedula>
+        <codigoCliente>3333333</codigoCliente>
+        <direccionEntrega>avenida 15</direccionEntrega>
+        <nombres>victor</nombres>
+        <telefono>311585423</telefono>
+    </cliente>
+</clienteArchivo>

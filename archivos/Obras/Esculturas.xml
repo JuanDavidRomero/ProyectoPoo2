@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<obraEsculturaArchivo>
+    <Escultura>
+        <dimenciones>grande</dimenciones>
+        <fecha>1950-11-30T14:57:58.897-05:00</fecha>
+        <pid>2345671</pid>
+        <precioRef>80000.0</precioRef>
+        <titulo>autorretrado con chaqueta azul</titulo>
+        <material>
+            <descripion>Los árboles son una creación asombrosa de la naturaleza</descripion>
+            <nombre>madera</nombre>
+        </material>
+        <peso>15.1</peso>
+    </Escultura>
+    <Escultura>
+        <dimenciones>grande</dimenciones>
+        <fecha>1800-11-30T14:57:58.898-05:00</fecha>
+        <pid>7123456</pid>
+        <precioRef>3.48E7</precioRef>
+        <titulo>La Piedad </titulo>
+        <material>
+            <descripion>es una roca metamorfica compacta formada a partir de rocas calizas</descripion>
+            <nombre>marmol</nombre>
+        </material>
+        <peso>25.7</peso>
+    </Escultura>
+    <Escultura>
+        <dimenciones>grande</dimenciones>
+        <fecha>1907-11-30T14:57:58.898-04:56</fecha>
+        <pid>3456789</pid>
+        <precioRef>88000.0</precioRef>
+        <titulo>Venus de Milo</titulo>
+        <material>
+            <descripion>es una roca metamorfica compacta formada a partir de rocas calizas</descripion>
+            <nombre>marmol</nombre>
+        </material>
+        <peso>34.8</peso>
+    </Escultura>
+</obraEsculturaArchivo>

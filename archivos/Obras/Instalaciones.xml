@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<obraInstalacionArchivo>
+    <Instalacion>
+        <dimenciones>grande</dimenciones>
+        <fecha>1922-11-30T14:57:58.847-05:00</fecha>
+        <pid>1234567</pid>
+        <precioRef>40000.0</precioRef>
+        <titulo>Galerie Bruno Bishofberger</titulo>
+        <descripcion>plaza sol</descripcion>
+        <tipo>
+            <descripion>Material de color blanco</descripion>
+            <nombre>Cuarzo</nombre>
+        </tipo>
+    </Instalacion>
+    <Instalacion>
+        <dimenciones>grande</dimenciones>
+        <fecha>1651-11-30T14:57:58.898-05:00</fecha>
+        <pid>5671234</pid>
+        <precioRef>2.0E8</precioRef>
+        <titulo>Esther Arias Galerías de Arte y Taller</titulo>
+        <descripcion>Situado en un antiguo edificio del siglo XVIII</descripcion>
+        <tipo>
+            <descripion>Material con gran resistencia</descripion>
+            <nombre>madera</nombre>
+        </tipo>
+    </Instalacion>
+    <Instalacion>
+        <dimenciones>grande</dimenciones>
+        <fecha>1946-11-30T14:57:58.898-05:00</fecha>
+        <pid>6712345</pid>
+        <precioRef>5.0E7</precioRef>
+        <titulo>Hans Mayer</titulo>
+        <descripcion>famoso por ser un espacio que abre sus puertas a otros tipos de arte</descripcion>
+        <tipo>
+            <descripion>Material con gran pureza</descripion>
+            <nombre>piedra negra</nombre>
+        </tipo>
+    </Instalacion>
+    <Instalacion>
+        <dimenciones>grande</dimenciones>
+        <fecha>1901-11-30T14:57:58.898-04:56</fecha>
+        <pid>2345678</pid>
+        <precioRef>3.0E9</precioRef>
+        <titulo>Annely Juda Fine Art </titulo>
+        <descripcion> Artistas de todo el mundo se unen en una composición armónica y delicada que tienes que vivir</descripcion>
+        <tipo>
+            <descripion>Material con gran pureza</descripion>
+            <nombre>piedra negra</nombre>
+        </tipo>
+        <tipo>
+            <descripion>Material de color blanco</descripion>
+            <nombre>Cuarzo</nombre>
+        </tipo>
+        <tipo>
+            <descripion>Material con gran pureza</descripion>
+            <nombre>piedra negra</nombre>
+        </tipo>
+        <tipo>
+            <descripion>Material de color blanco</descripion>
+            <nombre>Cuarzo</nombre>
+        </tipo>
+        <tipo>
+            <descripion>Material con gran resistencia</descripion>
+            <nombre>madera</nombre>
+        </tipo>
+    </Instalacion>
+    <Instalacion>
+        <dimenciones>grande</dimenciones>
+        <fecha>1888-11-30T14:57:58.899-05:00</fecha>
+        <pid>4567890</pid>
+        <precioRef>2.34E7</precioRef>
+        <titulo>Marlborough Fine Art</titulo>
+        <descripcion>está llena de los más reconocidos artistas contemporáneos.</descripcion>
+    </Instalacion>
+</obraInstalacionArchivo>

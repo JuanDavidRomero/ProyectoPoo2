@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controlador.Controlador">
+   <children>
+      <TabPane layoutX="-3.0" layoutY="-1.0" prefHeight="583.0" prefWidth="1080.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Inicio">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+          <Tab text="Obras">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.4397031539888683" prefHeight="547.0" prefWidth="1080.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="447.0">
+                                 <children>
+                                    <TabPane prefHeight="548.0" prefWidth="469.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="Ingresar">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="349.0">
+                                                   <children>
+                                                      <Label layoutX="190.0" layoutY="14.0" text="Ingresar Obra" />
+                                                      <TextField layoutX="11.0" layoutY="43.0" prefHeight="29.0" prefWidth="193.0" promptText="PID" />
+                                                      <TabPane layoutX="11.0" layoutY="249.0" prefHeight="200.0" prefWidth="437.0" tabClosingPolicy="UNAVAILABLE">
+                                                        <tabs>
+                                                          <Tab text="Escultura">
+                                                            <content>
+                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <TextField layoutX="14.0" layoutY="12.0" promptText="Tipo Material" />
+                                                                        <TextField layoutX="14.0" layoutY="55.0" promptText="Descripcion material" />
+                                                                        <TextField layoutX="14.0" layoutY="98.0" promptText="Peso" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                            </content>
+                                                          </Tab>
+                                                          <Tab text="Instalacion">
+                                                            <content>
+                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <TextField alignment="TOP_LEFT" layoutX="7.0" layoutY="13.0" prefHeight="143.0" prefWidth="422.0" promptText="descripcion instalacion" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                            </content>
+                                                          </Tab>
+                                                            <Tab text="Cuadro">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <ChoiceBox layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="195.0" />
+                                                                        <TextField layoutX="14.0" layoutY="55.0" prefHeight="29.0" prefWidth="193.0" promptText="Tecnica" />
+                                                                        <TextField layoutX="14.0" layoutY="98.0" prefHeight="29.0" prefWidth="193.0" promptText="Tema" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </Tab>
+                                                        </tabs>
+                                                      </TabPane>
+                                                      <Button layoutX="186.0" layoutY="454.0" mnemonicParsing="false" text="Ingresar Obra" />
+                                                      <TableView layoutX="218.0" layoutY="40.0" prefHeight="193.0" prefWidth="233.0">
+                                                        <columns>
+                                                          <TableColumn prefWidth="232.0" text="Nombre Artista" />
+                                                        </columns>
+                                                      </TableView>
+                                                      <TextField layoutX="11.0" layoutY="78.0" prefHeight="29.0" prefWidth="193.0" promptText="Dimensiones" />
+                                                      <TextField layoutX="11.0" layoutY="116.0" prefHeight="29.0" prefWidth="193.0" promptText="Titulo" />
+                                                      <TextField layoutX="11.0" layoutY="154.0" prefHeight="29.0" prefWidth="193.0" promptText="Año" />
+                                                      <TextField layoutX="11.0" layoutY="193.0" prefHeight="29.0" prefWidth="193.0" promptText="Precio referencia" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="Modificar">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TextField layoutX="116.0" layoutY="53.0" promptText="PID" />
+                                                      <Label layoutX="197.0" layoutY="14.0" prefHeight="19.0" prefWidth="131.0" text="Modificar" />
+                                                      <Button layoutX="290.0" layoutY="53.0" mnemonicParsing="false" text="buscar" />
+                                                      <SplitMenuButton layoutX="126.0" layoutY="168.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="152.0">
+                                                        <items>
+                                                          <MenuItem mnemonicParsing="false" text="Action 1" />
+                                                          <MenuItem mnemonicParsing="false" text="Action 2" />
+                                                        </items>
+                                                      </SplitMenuButton>
+                                                      <Label layoutX="138.0" layoutY="138.0" prefHeight="19.0" prefWidth="131.0" text="Dato a modificar" />
+                                                      <TextField layoutX="123.0" layoutY="219.0" promptText="Nuevo Dato" />
+                                                      <Button layoutX="309.0" layoutY="219.0" mnemonicParsing="false" text="guardar" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="Eliminar">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TextField layoutX="139.0" layoutY="111.0" promptText="PID" />
+                                                      <Label layoutX="169.0" layoutY="61.0" prefHeight="19.0" prefWidth="131.0" text="Eliminar" />
+                                                      <Button layoutX="313.0" layoutY="111.0" mnemonicParsing="false" text="buscar" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Buscar">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TextField layoutX="99.0" layoutY="92.0" promptText="PID" />
+                                                      <Label layoutX="114.0" layoutY="65.0" prefHeight="19.0" prefWidth="131.0" text="Buscar" />
+                                                      <Button layoutX="275.0" layoutY="92.0" mnemonicParsing="false" text="buscar" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="608.0">
+                                 <children>
+                                    <TableView layoutY="-1.0" prefHeight="547.0" prefWidth="671.0">
+                                      <columns>
+                                        <TableColumn prefWidth="150.0" text="titulo" />
+                                        <TableColumn minWidth="0.0" prefWidth="150.0" text="fecha creacion" />
+                                          <TableColumn prefWidth="150.0" text="precio referencia" />
+                                          <TableColumn prefWidth="150.0" text="dimensiones" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Compras">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Clientes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Artistas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <DatePicker layoutX="-80.0" layoutY="-72.0" />
+   </children>
+</AnchorPane>
