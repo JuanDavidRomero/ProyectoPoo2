@@ -1,5 +1,6 @@
 package view;
 
+import controller.ControlArchivos;
 import controller.ControlGaleria;
 import model.Instalacion;
 
@@ -14,6 +15,15 @@ public class PantallaGaleria
         System.out.println("ok si funciona");
         ControlGaleria galeria = new ControlGaleria();
         galeria.datosPrueba();
+
+        ControlArchivos archivos = new ControlArchivos();
+
+        archivos.escribirDatos(galeria);
+
+        archivos.cargarDatosArchivos(galeria);
+
+        archivos.escribirDatos(galeria);
+        archivos.relacionAO(galeria);
 
         boolean seguir = true;
         do {
