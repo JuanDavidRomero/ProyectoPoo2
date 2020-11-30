@@ -1,8 +1,13 @@
 package model;
 
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+
+@XmlSeeAlso({Cuadro.class,Instalacion.class,Escultura.class})
+@XmlType
 
 public abstract class Obra
 {

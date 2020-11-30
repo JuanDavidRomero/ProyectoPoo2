@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<compraArchivo>
+    <compra>
+        <compraCliente>
+            <apellidos>zetian</apellidos>
+            <cedula>876543210</cedula>
+            <codigoCliente>1111111</codigoCliente>
+            <direccionEntrega>avenida 13</direccionEntrega>
+            <nombres>wu</nombres>
+            <telefono>311585424</telefono>
+        </compraCliente>
+        <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1922-11-30T14:57:58.847-05:00</fecha>
+            <pid>1234567</pid>
+            <precioRef>40000.0</precioRef>
+            <titulo>Galerie Bruno Bishofberger</titulo>
+            <descripcion>plaza sol</descripcion>
+            <tipo>
+                <descripion>Material de color blanco</descripion>
+                <nombre>Cuarzo</nombre>
+            </tipo>
+        </compraObra>
+        <fechaRecibido>2020-12-12T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>andres</nombreRepartidor>
+        <numeroPedido>1000</numeroPedido>
+        <pagado>true</pagado>
+    </compra>
+    <compra>
+        <compraCliente>
+            <apellidos>zetian</apellidos>
+            <cedula>876543210</cedula>
+            <codigoCliente>1111111</codigoCliente>
+            <direccionEntrega>avenida 13</direccionEntrega>
+            <nombres>wu</nombres>
+            <telefono>311585424</telefono>
+        </compraCliente>
+        <compraObra xsi:type="cuadro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>normal</dimenciones>
+            <fecha>1877-11-30T14:57:58.897-05:00</fecha>
+            <pid>3456712</pid>
+            <precioRef>60000.0</precioRef>
+            <titulo>remeros en el yernes</titulo>
+            <clasificacion>OBRA_MAESTRA</clasificacion>
+            <tecnica>Óleo</tecnica>
+            <tema>Marlborough</tema>
+        </compraObra>
+        <fechaRecibido>2012-12-13T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>santi</nombreRepartidor>
+        <numeroPedido>1001</numeroPedido>
+        <pagado>false</pagado>
+    </compra>
+    <compra>
+        <compraCliente>
+            <apellidos>talleyrand</apellidos>
+            <cedula>765432109</cedula>
+            <codigoCliente>2222222</codigoCliente>
+            <direccionEntrega>avenida 14</direccionEntrega>
+            <nombres>charles</nombres>
+            <telefono>311585422</telefono>
+        </compraCliente>
+        <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1950-11-30T14:57:58.897-05:00</fecha>
+            <pid>2345671</pid>
+            <precioRef>80000.0</precioRef>
+            <titulo>autorretrado con chaqueta azul</titulo>
+            <material>
+                <descripion>Los árboles son una creación asombrosa de la naturaleza</descripion>
+                <nombre>madera</nombre>
+            </material>
+            <peso>15.1</peso>
+        </compraObra>
+        <fechaRecibido>2018-05-23T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>kami</nombreRepartidor>
+        <numeroPedido>1002</numeroPedido>
+        <pagado>true</pagado>
+    </compra>
+    <compra>
+        <compraCliente>
+            <apellidos>lustig</apellidos>
+            <cedula>543210987</cedula>
+            <codigoCliente>3333333</codigoCliente>
+            <direccionEntrega>avenida 15</direccionEntrega>
+            <nombres>victor</nombres>
+            <telefono>311585423</telefono>
+        </compraCliente>
+        <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1800-11-30T14:57:58.898-05:00</fecha>
+            <pid>7123456</pid>
+            <precioRef>3.48E7</precioRef>
+            <titulo>La Piedad </titulo>
+            <material>
+                <descripion>es una roca metamorfica compacta formada a partir de rocas calizas</descripion>
+                <nombre>marmol</nombre>
+            </material>
+            <peso>25.7</peso>
+        </compraObra>
+        <fechaRecibido>2002-10-03T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>juan</nombreRepartidor>
+        <numeroPedido>1003</numeroPedido>
+        <pagado>false</pagado>
+    </compra>
+    <compra>
+        <compraCliente>
+            <apellidos>lustig</apellidos>
+            <cedula>543210987</cedula>
+            <codigoCliente>3333333</codigoCliente>
+            <direccionEntrega>avenida 15</direccionEntrega>
+            <nombres>victor</nombres>
+            <telefono>311585423</telefono>
+        </compraCliente>
+        <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1901-11-30T14:57:58.898-04:56</fecha>
+            <pid>2345678</pid>
+            <precioRef>3.0E9</precioRef>
+            <titulo>Annely Juda Fine Art </titulo>
+            <descripcion> Artistas de todo el mundo se unen en una composición armónica y delicada que tienes que vivir</descripcion>
+            <tipo>
+                <descripion>Material con gran pureza</descripion>
+                <nombre>piedra negra</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material de color blanco</descripion>
+                <nombre>Cuarzo</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material con gran pureza</descripion>
+                <nombre>piedra negra</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material de color blanco</descripion>
+                <nombre>Cuarzo</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material con gran resistencia</descripion>
+                <nombre>madera</nombre>
+            </tipo>
+        </compraObra>
+        <fechaRecibido>2006-01-07T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>sofi</nombreRepartidor>
+        <numeroPedido>1004</numeroPedido>
+        <pagado>true</pagado>
+    </compra>
+    <compra>
+        <compraCliente>
+            <apellidos>lustig</apellidos>
+            <cedula>543210987</cedula>
+            <codigoCliente>3333333</codigoCliente>
+            <direccionEntrega>avenida 15</direccionEntrega>
+            <nombres>victor</nombres>
+            <telefono>311585423</telefono>
+        </compraCliente>
+        <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1651-11-30T14:57:58.898-05:00</fecha>
+            <pid>5671234</pid>
+            <precioRef>2.0E8</precioRef>
+            <titulo>Esther Arias Galerías de Arte y Taller</titulo>
+            <descripcion>Situado en un antiguo edificio del siglo XVIII</descripcion>
+            <tipo>
+                <descripion>Material con gran resistencia</descripion>
+                <nombre>madera</nombre>
+            </tipo>
+        </compraObra>
+        <fechaRecibido>2006-01-07T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>adri</nombreRepartidor>
+        <numeroPedido>1005</numeroPedido>
+        <pagado>false</pagado>
+    </compra>
+    <compras>
+        <compraCliente>
+            <apellidos>zetian</apellidos>
+            <cedula>876543210</cedula>
+            <codigoCliente>1111111</codigoCliente>
+            <direccionEntrega>avenida 13</direccionEntrega>
+            <nombres>wu</nombres>
+            <telefono>311585424</telefono>
+        </compraCliente>
+        <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1922-11-30T14:57:58.847-05:00</fecha>
+            <pid>1234567</pid>
+            <precioRef>40000.0</precioRef>
+            <titulo>Galerie Bruno Bishofberger</titulo>
+            <descripcion>plaza sol</descripcion>
+            <tipo>
+                <descripion>Material de color blanco</descripion>
+                <nombre>Cuarzo</nombre>
+            </tipo>
+        </compraObra>
+        <fechaRecibido>2020-12-12T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>andres</nombreRepartidor>
+        <numeroPedido>1000</numeroPedido>
+        <pagado>true</pagado>
+    </compras>
+    <compras>
+        <compraCliente>
+            <apellidos>zetian</apellidos>
+            <cedula>876543210</cedula>
+            <codigoCliente>1111111</codigoCliente>
+            <direccionEntrega>avenida 13</direccionEntrega>
+            <nombres>wu</nombres>
+            <telefono>311585424</telefono>
+        </compraCliente>
+        <compraObra xsi:type="cuadro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>normal</dimenciones>
+            <fecha>1877-11-30T14:57:58.897-05:00</fecha>
+            <pid>3456712</pid>
+            <precioRef>60000.0</precioRef>
+            <titulo>remeros en el yernes</titulo>
+            <clasificacion>OBRA_MAESTRA</clasificacion>
+            <tecnica>Óleo</tecnica>
+            <tema>Marlborough</tema>
+        </compraObra>
+        <fechaRecibido>2012-12-13T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>santi</nombreRepartidor>
+        <numeroPedido>1001</numeroPedido>
+        <pagado>false</pagado>
+    </compras>
+    <compras>
+        <compraCliente>
+            <apellidos>talleyrand</apellidos>
+            <cedula>765432109</cedula>
+            <codigoCliente>2222222</codigoCliente>
+            <direccionEntrega>avenida 14</direccionEntrega>
+            <nombres>charles</nombres>
+            <telefono>311585422</telefono>
+        </compraCliente>
+        <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1950-11-30T14:57:58.897-05:00</fecha>
+            <pid>2345671</pid>
+            <precioRef>80000.0</precioRef>
+            <titulo>autorretrado con chaqueta azul</titulo>
+            <material>
+                <descripion>Los árboles son una creación asombrosa de la naturaleza</descripion>
+                <nombre>madera</nombre>
+            </material>
+            <peso>15.1</peso>
+        </compraObra>
+        <fechaRecibido>2018-05-23T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>kami</nombreRepartidor>
+        <numeroPedido>1002</numeroPedido>
+        <pagado>true</pagado>
+    </compras>
+    <compras>
+        <compraCliente>
+            <apellidos>lustig</apellidos>
+            <cedula>543210987</cedula>
+            <codigoCliente>3333333</codigoCliente>
+            <direccionEntrega>avenida 15</direccionEntrega>
+            <nombres>victor</nombres>
+            <telefono>311585423</telefono>
+        </compraCliente>
+        <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1800-11-30T14:57:58.898-05:00</fecha>
+            <pid>7123456</pid>
+            <precioRef>3.48E7</precioRef>
+            <titulo>La Piedad </titulo>
+            <material>
+                <descripion>es una roca metamorfica compacta formada a partir de rocas calizas</descripion>
+                <nombre>marmol</nombre>
+            </material>
+            <peso>25.7</peso>
+        </compraObra>
+        <fechaRecibido>2002-10-03T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>juan</nombreRepartidor>
+        <numeroPedido>1003</numeroPedido>
+        <pagado>false</pagado>
+    </compras>
+    <compras>
+        <compraCliente>
+            <apellidos>lustig</apellidos>
+            <cedula>543210987</cedula>
+            <codigoCliente>3333333</codigoCliente>
+            <direccionEntrega>avenida 15</direccionEntrega>
+            <nombres>victor</nombres>
+            <telefono>311585423</telefono>
+        </compraCliente>
+        <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1901-11-30T14:57:58.898-04:56</fecha>
+            <pid>2345678</pid>
+            <precioRef>3.0E9</precioRef>
+            <titulo>Annely Juda Fine Art </titulo>
+            <descripcion> Artistas de todo el mundo se unen en una composición armónica y delicada que tienes que vivir</descripcion>
+            <tipo>
+                <descripion>Material con gran pureza</descripion>
+                <nombre>piedra negra</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material de color blanco</descripion>
+                <nombre>Cuarzo</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material con gran pureza</descripion>
+                <nombre>piedra negra</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material de color blanco</descripion>
+                <nombre>Cuarzo</nombre>
+            </tipo>
+            <tipo>
+                <descripion>Material con gran resistencia</descripion>
+                <nombre>madera</nombre>
+            </tipo>
+        </compraObra>
+        <fechaRecibido>2006-01-07T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>sofi</nombreRepartidor>
+        <numeroPedido>1004</numeroPedido>
+        <pagado>true</pagado>
+    </compras>
+    <compras>
+        <compraCliente>
+            <apellidos>lustig</apellidos>
+            <cedula>543210987</cedula>
+            <codigoCliente>3333333</codigoCliente>
+            <direccionEntrega>avenida 15</direccionEntrega>
+            <nombres>victor</nombres>
+            <telefono>311585423</telefono>
+        </compraCliente>
+        <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <dimenciones>grande</dimenciones>
+            <fecha>1651-11-30T14:57:58.898-05:00</fecha>
+            <pid>5671234</pid>
+            <precioRef>2.0E8</precioRef>
+            <titulo>Esther Arias Galerías de Arte y Taller</titulo>
+            <descripcion>Situado en un antiguo edificio del siglo XVIII</descripcion>
+            <tipo>
+                <descripion>Material con gran resistencia</descripion>
+                <nombre>madera</nombre>
+            </tipo>
+        </compraObra>
+        <fechaRecibido>2006-01-07T00:00:00-05:00</fechaRecibido>
+        <nombreRepartidor>adri</nombreRepartidor>
+        <numeroPedido>1005</numeroPedido>
+        <pagado>false</pagado>
+    </compras>
+</compraArchivo>
