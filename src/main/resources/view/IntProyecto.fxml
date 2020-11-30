@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controlador.Controlador">
+   <children>
+      <TabPane prefHeight="521.0" prefWidth="908.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Inicio">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="454.0" prefWidth="744.0">
+                     <children>
+                        <ImageView fitHeight="491.0" fitWidth="505.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../../Desktop/Loving-Vincent-Vincent-van-Gogh.jpg" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="titulo2" layoutX="616.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Layete" wrappingWidth="119.21630859375">
+                           <font>
+                              <Font name="Times New Roman Italic" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="titulo1" layoutX="453.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Galeria De Arte" wrappingWidth="280.21630859375">
+                           <font>
+                              <Font name="Times New Roman Italic" size="40.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="parrafo" layoutX="549.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sin el arte, la crudeza de la realidad haria que el mundo fuese insoportable. " wrappingWidth="179.21630859375">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="fuente" layoutX="609.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- George bernard shaw" wrappingWidth="150.445556640625">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="58.0" fitWidth="68.0" layoutX="847.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../Desktop/unknown.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Obras">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5012919896640827" orientation="VERTICAL" prefHeight="488.0" prefWidth="358.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="185.0">
+                                 <children>
+                                    <Text layoutX="126.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESAR OBRA" wrappingWidth="99.21630859375" />
+                                    <TextField fx:id="pidddd" layoutX="16.0" layoutY="29.0" promptText="PID" />
+                                    <TextField layoutX="189.0" layoutY="29.0" prefHeight="5.0" prefWidth="161.0" promptText="PID" />
+                                    <TextField layoutX="16.0" layoutY="67.0" promptText="PID" />
+                                    <TextField layoutX="189.0" layoutY="67.0" prefHeight="5.0" prefWidth="161.0" promptText="PID" />
+                                    <TextField layoutX="17.0" layoutY="107.0" promptText="PID" />
+                                    <TextField layoutX="190.0" layoutY="107.0" prefHeight="5.0" prefWidth="161.0" promptText="PID" />
+                                    <TextField layoutX="18.0" layoutY="146.0" promptText="PID" />
+                                    <TextField layoutX="191.0" layoutY="146.0" prefHeight="5.0" prefWidth="161.0" promptText="PID" />
+                                    <TextField layoutX="17.0" layoutY="184.0" promptText="PID" />
+                                    <TextField layoutX="190.0" layoutY="184.0" prefHeight="5.0" prefWidth="161.0" promptText="PID" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="245.0" prefWidth="193.0">
+                                 <children>
+                                    <Text layoutX="108.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR OBRA" wrappingWidth="105.21630859375" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                        <TextField layoutX="417.0" layoutY="16.0" prefHeight="15.0" prefWidth="397.0" promptText="PID" />
+                        <Button layoutX="362.0" layoutY="16.0" mnemonicParsing="false" text="Button" />
+                        <TableView layoutX="358.0" layoutY="52.0" prefHeight="441.0" prefWidth="550.0">
+                          <columns>
+                            <TableColumn prefWidth="153.0" text="Titulo" />
+                            <TableColumn prefWidth="172.0" text="Fecha de creacion" />
+                              <TableColumn prefWidth="136.0" text="Precio" />
+                              <TableColumn prefWidth="88.0" text="Dimenciones" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Clientes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="501.0" prefWidth="908.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Eliminar">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="908.0" />
+                              </content>
+                            </Tab>
+                            <Tab text="Modificar">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="463.0" prefWidth="544.0">
+                                            <columns>
+                                              <TableColumn prefWidth="100.0" text="Cedula" />
+                                              <TableColumn prefWidth="200.0" text="Nombre" />
+                                                <TableColumn prefWidth="100.0" text="Telefono" />
+                                                <TableColumn prefWidth="144.0" text="Numero identificacion" />
+                                            </columns>
+                                          </TableView>
+                                          <Text fontSmoothingType="LCD" layoutX="544.0" layoutY="30.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR CLIENTE" textAlignment="CENTER" wrappingWidth="362.8046875">
+                                             <font>
+                                                <Font size="28.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField layoutX="627.0" layoutY="66.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Cedula">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <Text layoutX="544.0" layoutY="60.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente que quiere modificar:" wrappingWidth="347.248046875">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Text>
+                                          <ChoiceBox layoutX="627.0" layoutY="156.0" prefHeight="31.0" prefWidth="207.0" />
+                                          <Text layoutX="544.0" layoutY="150.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione la opcion a modificar:" wrappingWidth="347.248046875">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField layoutX="627.0" layoutY="246.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Nuevo dato">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <Text layoutX="544.0" layoutY="240.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el nuevo dato: " wrappingWidth="347.248046875">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="593.0" layoutY="330.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Modificar">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Ingresar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="463.0" prefWidth="544.0">
+                                            <columns>
+                                              <TableColumn prefWidth="100.0" text="Cedula" />
+                                              <TableColumn prefWidth="200.0" text="Nombre" />
+                                                <TableColumn prefWidth="100.0" text="Telefono" />
+                                                <TableColumn prefWidth="144.0" text="Numero identificacion" />
+                                            </columns>
+                                          </TableView>
+                                          <Text fontSmoothingType="LCD" layoutX="544.0" layoutY="30.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESAR CLIENTE" textAlignment="CENTER" wrappingWidth="362.8046875">
+                                             <font>
+                                                <Font size="28.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField layoutX="619.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Codigo cliente">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField layoutX="619.0" layoutY="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Cedula">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField layoutX="619.0" layoutY="150.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Nombres">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField layoutX="619.0" layoutY="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Apellidos">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField layoutX="619.0" layoutY="250.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Direccion entrega">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField layoutX="619.0" layoutY="300.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Telefono">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button layoutX="593.0" layoutY="350.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Ingresar">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Buscar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="463.0" prefWidth="544.0">
+                                             <columns>
+                                                <TableColumn prefWidth="100.0" text="Cedula" />
+                                                <TableColumn prefWidth="200.0" text="Nombre" />
+                                                <TableColumn prefWidth="100.0" text="Telefono" />
+                                                <TableColumn prefWidth="144.0" text="Numero identificacion" />
+                                             </columns>
+                                          </TableView>
+                                          <Text fontSmoothingType="LCD" layoutX="544.0" layoutY="30.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR CLIENTE" textAlignment="CENTER" wrappingWidth="362.8046875">
+                                             <font>
+                                                <Font size="28.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField layoutX="619.0" layoutY="66.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="207.0" promptText="Cedula">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button layoutX="593.0" layoutY="150.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Buscar">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="755.0" layoutY="246.0" text="Label" />
+                                          <Text layoutX="544.0" layoutY="60.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente que quiere buscar:" wrappingWidth="347.248046875">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Compras">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="208.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Artistas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

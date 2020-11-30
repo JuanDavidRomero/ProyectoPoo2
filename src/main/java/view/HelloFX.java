@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 
 public class HelloFX extends Application {
-    private final static String MAIN_FXML_NAME = "sample.fxml";
+    private final static String MAIN_FXML_NAME = "IntProyecto.fxml";
     private final static String STYLE_SHEET_NAME = "styles.css";
     private final static String WINDOW_NAME = "JavaFX and Maven";
 
