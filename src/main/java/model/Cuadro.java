@@ -17,6 +17,7 @@ public class Cuadro extends Obra
         this.tecnica = tecnica;
         this.clasificacion = clasificacion;
     }
+    public Cuadro(){}
 
     // Metodos
     @Override

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<obraCuadroArchivo>
+    <cuadro>
+        <dimenciones>normal</dimenciones>
+        <fecha>1877-11-30T14:57:58.897-05:00</fecha>
+        <pid>3456712</pid>
+        <precioRef>60000.0</precioRef>
+        <titulo>remeros en el yernes</titulo>
+        <clasificacion>OBRA_MAESTRA</clasificacion>
+        <tecnica>Óleo</tecnica>
+        <tema>Marlborough</tema>
+    </cuadro>
+    <cuadro>
+        <dimenciones>grande</dimenciones>
+        <fecha>1931-11-30T14:57:58.897-05:00</fecha>
+        <pid>4567123</pid>
+        <precioRef>1000000.0</precioRef>
+        <titulo>la persistencia de la memoria</titulo>
+        <clasificacion>OBRA_MAESTRA</clasificacion>
+        <tecnica>Oleo</tecnica>
+        <tema>Los relojes blandos o Los relojes derretidos</tema>
+    </cuadro>
+</obraCuadroArchivo>
