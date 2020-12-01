@@ -2,7 +2,7 @@
 <obraEsculturaArchivo>
     <Escultura>
         <dimenciones>grande</dimenciones>
-        <fecha>1950-11-30T14:57:58.897-05:00</fecha>
+        <fecha>1950-11-30T19:17:25.196-05:00</fecha>
         <pid>2345671</pid>
         <precioRef>80000.0</precioRef>
         <titulo>autorretrado con chaqueta azul</titulo>
@@ -14,7 +14,7 @@
     </Escultura>
     <Escultura>
         <dimenciones>grande</dimenciones>
-        <fecha>1800-11-30T14:57:58.898-05:00</fecha>
+        <fecha>1800-11-30T19:17:25.196-05:00</fecha>
         <pid>7123456</pid>
         <precioRef>3.48E7</precioRef>
         <titulo>La Piedad </titulo>
@@ -26,7 +26,7 @@
     </Escultura>
     <Escultura>
         <dimenciones>grande</dimenciones>
-        <fecha>1907-11-30T14:57:58.898-04:56</fecha>
+        <fecha>1907-11-30T19:17:25.196-04:56</fecha>
         <pid>3456789</pid>
         <precioRef>88000.0</precioRef>
         <titulo>Venus de Milo</titulo>

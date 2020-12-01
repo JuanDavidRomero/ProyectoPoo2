@@ -4,7 +4,7 @@
         <apellidos>klimt</apellidos>
         <cedula>567890123</cedula>
         <codigoArtista>5</codigoArtista>
-        <fechaNacimiento>1862-06-14T14:57:58.899-05:00</fechaNacimiento>
+        <fechaNacimiento>1862-06-14T19:17:25.196-05:00</fechaNacimiento>
         <nombres>gustav</nombres>
         <telefono>311585425</telefono>
     </artista>
@@ -12,7 +12,7 @@
         <apellidos>van gogh</apellidos>
         <cedula>678901234</cedula>
         <codigoArtista>6</codigoArtista>
-        <fechaNacimiento>1853-03-30T14:57:58.899-05:00</fechaNacimiento>
+        <fechaNacimiento>1853-03-30T19:17:25.196-05:00</fechaNacimiento>
         <nombres>vincent</nombres>
         <telefono>311585426</telefono>
     </artista>
@@ -20,7 +20,7 @@
         <apellidos>caillebotte</apellidos>
         <cedula>234567890</cedula>
         <codigoArtista>2</codigoArtista>
-        <fechaNacimiento>1848-08-19T14:57:58.898-05:00</fechaNacimiento>
+        <fechaNacimiento>1848-08-19T19:17:25.196-05:00</fechaNacimiento>
         <nombres>gustave</nombres>
         <telefono>311585422</telefono>
     </artista>
@@ -28,7 +28,7 @@
         <apellidos>de goya</apellidos>
         <cedula>456789012</cedula>
         <codigoArtista>4</codigoArtista>
-        <fechaNacimiento>1746-03-30T14:57:58.899-05:00</fechaNacimiento>
+        <fechaNacimiento>1746-03-30T19:17:25.196-05:00</fechaNacimiento>
         <nombres>francisco</nombres>
         <telefono>311585424</telefono>
     </artista>
@@ -36,7 +36,7 @@
         <apellidos>dali</apellidos>
         <cedula>345678901</cedula>
         <codigoArtista>3</codigoArtista>
-        <fechaNacimiento>1904-05-11T14:57:58.899-04:56</fechaNacimiento>
+        <fechaNacimiento>1904-05-11T19:17:25.196-04:56</fechaNacimiento>
         <nombres>salvador</nombres>
         <telefono>311585423</telefono>
     </artista>

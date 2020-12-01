@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitMenuButton?>
@@ -13,6 +14,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -25,12 +28,48 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ButtonBar layoutX="665.0" layoutY="419.0" prefHeight="40.0" prefWidth="200.0">
-                          <buttons>
-                            <Button mnemonicParsing="false" text="Button" />
-                          </buttons>
-                        </ButtonBar>
-                     </children></AnchorPane>
+                        <ButtonBar layoutX="665.0" layoutY="419.0" prefHeight="40.0" prefWidth="200.0" />
+                        <ImageView fitHeight="558.0" fitWidth="756.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Loving-Vincent-Vincent-van-Gogh.jpg" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#0f0d36" layoutX="438.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Galeria De Arte ">
+                           <font>
+                              <Font name="Book Antiqua" size="63.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#0f0d36" layoutX="669.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Layette.">
+                           <font>
+                              <Font name="Book Antiqua" size="63.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="74.0" fitWidth="84.0" layoutX="975.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/unknown.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#0f0d36" fontSmoothingType="LCD" layoutX="780.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sin el arte, la crudeza de&#10;la realidad haria que  &#10;el mundo fuese &#10;insoportable." textAlignment="JUSTIFY" wrappingWidth="214.009765625">
+                           <font>
+                              <Font name="MV Boli" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#0f0d36" fontSmoothingType="LCD" layoutX="835.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- George Bernard Shaw" textAlignment="JUSTIFY" wrappingWidth="214.009765625">
+                           <font>
+                              <Font name="MV Boli" size="11.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="984.0" layoutY="492.0" mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/84459.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                </content>
             </Tab>
             <Tab text="Obras">
@@ -110,34 +149,57 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
+                                                      <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
                                                       <SplitMenuButton layoutX="130.0" layoutY="160.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="190.0">
                                                          <items>
                                                             <MenuItem mnemonicParsing="false" text="Action 1" />
                                                             <MenuItem mnemonicParsing="false" text="Action 2" />
                                                          </items>
                                                       </SplitMenuButton>
-                                                      <TextField layoutX="130.0" layoutY="250.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
-                                                      <Button layoutX="338.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Guardar">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
+                                                      <TextField layoutX="130.0" layoutY="255.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el dato que desea modificar:">
+                                                      <Text layoutX="76.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el dato que desea modificar:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
+                                                      <Text layoutX="76.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el PID de la obra que quiere modificar:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text layoutX="76.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el nuevo dato:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Button layoutX="337.0" layoutY="63.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Button layoutX="337.0" layoutY="253.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/69539.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <ImageView fitHeight="192.0" fitWidth="179.0" layoutX="135.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/unknown.png" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -146,14 +208,40 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
+                                                      <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
+                                                      <Button layoutX="338.0" layoutY="63.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELIMINAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                      <Button layoutX="338.0" layoutY="105.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Eliminar" />
+                                                      <Button layoutX="188.0" layoutY="105.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/64-512.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Text layoutX="76.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el PID de la obra que quiere eliminar:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ImageView fitHeight="297.0" fitWidth="277.0" layoutX="87.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/unknown.png" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -162,13 +250,42 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
+                                                      <Text layoutX="70.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione por cual dato quiere buscar la obra:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <SplitMenuButton layoutX="129.0" layoutY="65.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="190.0">
+                                                         <items>
+                                                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                                                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                                                         </items>
+                                                      </SplitMenuButton>
+                                                      <Label layoutX="198.0" layoutY="150.0" text="Ingrese:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField layoutX="129.0" layoutY="175.0" prefHeight="29.0" prefWidth="190.0" promptText="Dato a buscar" />
+                                                      <Button layoutX="338.0" layoutY="173.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <ImageView fitHeight="297.0" fitWidth="277.0" layoutX="86.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/unknown.png" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -221,27 +338,27 @@
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el PID de la obra que desea comprar:">
+                                                      <Text layoutX="76.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el PID de la obra que desea comprar:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente:">
+                                                      <Text layoutX="76.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la fecha de recibido:">
+                                                      <Text layoutX="76.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la fecha de recibido:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿La obra esta pagada?:">
+                                                      <Text layoutX="76.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿La obra esta pagada?:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el nombre del repartidor:">
+                                                      <Text layoutX="76.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el nombre del repartidor:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
@@ -258,14 +375,40 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Numero de pedido de la compra" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
+                                                      <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELIMINAR COMPRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                      <Button layoutX="338.0" layoutY="105.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Eliminar" />
+                                                      <Text layoutX="18.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el numero de pedido de la compra que quiere eliminar:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Button layoutX="338.0" layoutY="63.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Button layoutX="188.0" layoutY="109.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/64-512.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <ImageView fitHeight="297.0" fitWidth="277.0" layoutX="87.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/unknown.png" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -274,7 +417,6 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <Button layoutX="188.0" layoutY="183.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR COMPRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
@@ -282,16 +424,30 @@
                                                       </Text>
                                                       <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="Año" />
                                                       <TextField layoutX="130.0" layoutY="130.0" prefHeight="29.0" prefWidth="190.0" promptText="(1-12)" />
-                                                      <Text layoutX="94.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el mes que desea consultar:">
+                                                      <Text layoutX="76.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el mes que desea consultar:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
-                                                      <Text layoutX="94.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el año que desea consultar:">
+                                                      <Text layoutX="76.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el año que desea consultar:">
                                                          <font>
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
+                                                      <Button layoutX="195.0" layoutY="181.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <ImageView fitHeight="297.0" fitWidth="277.0" layoutX="87.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/unknown.png" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -331,61 +487,22 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="450.0">
                                                    <children>
-                                                      <TextField layoutX="10.0" layoutY="40.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <TabPane layoutY="260.0" prefHeight="225.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
-                                                         <tabs>
-                                                            <Tab text="Escultura">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="450.0">
-                                                                     <children>
-                                                                        <TextField layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" promptText="Tipo Material" />
-                                                                        <TextField layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Descripcion material" />
-                                                                        <TextField layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Peso" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                               </content>
-                                                            </Tab>
-                                                            <Tab text="Instalacion">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <TextField alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="143.0" prefWidth="422.0" promptText="Descripcion de la instalacion" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                               </content>
-                                                            </Tab>
-                                                            <Tab text="Cuadro">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <ChoiceBox layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" />
-                                                                        <TextField layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Tecnica" />
-                                                                        <TextField layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Tema" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                               </content>
-                                                            </Tab>
-                                                         </tabs>
-                                                      </TabPane>
-                                                      <Button layoutX="176.0" layoutY="471.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar Obra">
+                                                      <TextField layoutX="130.0" layoutY="50.0" prefHeight="29.0" prefWidth="190.0" promptText="Codigo cliente" />
+                                                      <Button layoutX="172.0" layoutY="470.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar cliente">
                                                          <font>
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <TableView layoutX="209.0" layoutY="38.0" prefHeight="193.0" prefWidth="233.0">
-                                                         <columns>
-                                                            <TableColumn prefWidth="232.0" text="Nombre Artista" />
-                                                         </columns>
-                                                      </TableView>
-                                                      <TextField layoutX="10.0" layoutY="80.0" prefHeight="29.0" prefWidth="190.0" promptText="Dimensiones" />
-                                                      <TextField layoutX="10.0" layoutY="120.0" prefHeight="29.0" prefWidth="190.0" promptText="Titulo" />
-                                                      <TextField layoutX="10.0" layoutY="160.0" prefHeight="29.0" prefWidth="190.0" promptText="Año" />
-                                                      <TextField layoutX="10.0" layoutY="200.0" prefHeight="29.0" prefWidth="190.0" promptText="Precio referencia" />
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
+                                                      <TextField layoutX="130.0" layoutY="100.0" prefHeight="29.0" prefWidth="190.0" promptText="Cedula" />
+                                                      <TextField layoutX="130.0" layoutY="150.0" prefHeight="29.0" prefWidth="190.0" promptText="Nombres" />
+                                                      <TextField layoutX="130.0" layoutY="200.0" prefHeight="29.0" prefWidth="190.0" promptText="Apellidos" />
+                                                      <TextField layoutX="130.0" layoutY="250.0" prefHeight="29.0" prefWidth="190.0" promptText="Direccion entrega" />
+                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESAR CLIENTE" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
+                                                      <TextField layoutX="130.0" layoutY="300.0" prefHeight="29.0" prefWidth="190.0" promptText="Telefono" />
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -394,25 +511,15 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
+                                                      <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="Cedula del cliente" />
                                                       <SplitMenuButton layoutX="130.0" layoutY="160.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="190.0">
                                                          <items>
                                                             <MenuItem mnemonicParsing="false" text="Action 1" />
                                                             <MenuItem mnemonicParsing="false" text="Action 2" />
                                                          </items>
                                                       </SplitMenuButton>
-                                                      <TextField layoutX="130.0" layoutY="250.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
-                                                      <Button layoutX="338.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Guardar">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
+                                                      <TextField layoutX="130.0" layoutY="255.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
+                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR CLIENTE" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
@@ -422,6 +529,34 @@
                                                             <Font size="15.0" />
                                                          </font>
                                                       </Text>
+                                                      <Text layoutX="94.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente que quiere modificar:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text layoutX="94.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el nuevo dato:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Button layoutX="338.0" layoutY="63.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Button layoutX="338.0" layoutY="253.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/69539.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -430,14 +565,35 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELIMINAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
+                                                      <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="Cedula" />
+                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELIMINAR CLIENTE" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                      <Button layoutX="338.0" layoutY="105.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Eliminar" />
+                                                      <Text layoutX="70.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente que quiere eliminar:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Button layoutX="338.0" layoutY="63.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Button layoutX="187.0" layoutY="109.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/64-512.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -446,13 +602,26 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
+                                                      <TextField layoutX="129.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
+                                                      <Text layoutX="74.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la cedula del cliente que quiere buscar:">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Button layoutX="338.0" layoutY="63.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0">
+                                                         <graphic>
+                                                            <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/92455.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -465,10 +634,10 @@
                                  <children>
                                     <TableView prefHeight="547.0" prefWidth="594.0">
                                        <columns>
-                                          <TableColumn prefWidth="148.5" text="Titulo" />
-                                          <TableColumn prefWidth="148.5" text="Fecha creacion" />
-                                          <TableColumn prefWidth="148.5" text="Precio referencia" />
-                                          <TableColumn prefWidth="148.5" text="Dimensiones" />
+                                          <TableColumn prefWidth="120.0" text="Cedula" />
+                                          <TableColumn prefWidth="202.0" text="Nombre" />
+                                          <TableColumn minWidth="6.0" prefWidth="122.0" text="Telefono" />
+                                          <TableColumn prefWidth="150.0" text="Numero identificacion" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -483,156 +652,71 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <SplitPane dividerPositions="0.4202226345083488" prefHeight="547.0" prefWidth="1080.0">
+                        <SplitPane prefHeight="547.0" prefWidth="1080.0">
                            <items>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="447.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="597.0">
                                  <children>
-                                    <TabPane prefHeight="548.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+                                    <TabPane prefHeight="545.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE">
                                        <tabs>
-                                          <Tab text="Ingresar">
+                                          <Tab text="Agregar">
                                              <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="450.0">
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="1050.0">
                                                    <children>
-                                                      <TextField layoutX="10.0" layoutY="40.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <TabPane layoutY="260.0" prefHeight="225.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
-                                                         <tabs>
-                                                            <Tab text="Escultura">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="450.0">
-                                                                     <children>
-                                                                        <TextField layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" promptText="Tipo Material" />
-                                                                        <TextField layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Descripcion material" />
-                                                                        <TextField layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Peso" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                               </content>
-                                                            </Tab>
-                                                            <Tab text="Instalacion">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <TextField alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="143.0" prefWidth="422.0" promptText="Descripcion de la instalacion" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                               </content>
-                                                            </Tab>
-                                                            <Tab text="Cuadro">
-                                                               <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <ChoiceBox layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" />
-                                                                        <TextField layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Tecnica" />
-                                                                        <TextField layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Tema" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                               </content>
-                                                            </Tab>
-                                                         </tabs>
-                                                      </TabPane>
-                                                      <Button layoutX="176.0" layoutY="471.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar Obra">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <TableView layoutX="209.0" layoutY="38.0" prefHeight="193.0" prefWidth="233.0">
+                                                      <TableView layoutX="249.0" layoutY="-1.0" prefHeight="518.0" prefWidth="801.0">
                                                          <columns>
-                                                            <TableColumn prefWidth="232.0" text="Nombre Artista" />
+                                                            <TableColumn prefWidth="150.0" text="Codigo de artista" />
+                                                            <TableColumn prefWidth="150.0" text="Cedula" />
+                                                            <TableColumn prefWidth="200.0" text="Nombre" />
+                                                            <TableColumn prefWidth="150.0" text="Fecha de nacimiento" />
+                                                            <TableColumn prefWidth="150.0" text="Telefono" />
                                                          </columns>
                                                       </TableView>
-                                                      <TextField layoutX="10.0" layoutY="80.0" prefHeight="29.0" prefWidth="190.0" promptText="Dimensiones" />
-                                                      <TextField layoutX="10.0" layoutY="120.0" prefHeight="29.0" prefWidth="190.0" promptText="Titulo" />
-                                                      <TextField layoutX="10.0" layoutY="160.0" prefHeight="29.0" prefWidth="190.0" promptText="Año" />
-                                                      <TextField layoutX="10.0" layoutY="200.0" prefHeight="29.0" prefWidth="190.0" promptText="Precio referencia" />
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
+                                                      <Text layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AGREGAR ARTISTA" textAlignment="CENTER" wrappingWidth="249.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                   </children>
-                                                </AnchorPane>
-                                             </content>
-                                          </Tab>
-                                          <Tab text="Modificar">
-                                             <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                   <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar">
+                                                      <TextField layoutX="30.0" layoutY="50.0" prefHeight="29.0" prefWidth="190.0" promptText="Codigo artista" />
+                                                      <TextField layoutX="30.0" layoutY="100.0" prefHeight="29.0" prefWidth="190.0" promptText="Cedula" />
+                                                      <TextField layoutX="30.0" layoutY="150.0" prefHeight="29.0" prefWidth="190.0" promptText="Nombre" />
+                                                      <TextField layoutX="30.0" layoutY="200.0" prefHeight="29.0" prefWidth="190.0" promptText="Apellido" />
+                                                      <TextField layoutX="30.0" layoutY="300.0" prefHeight="29.0" prefWidth="190.0" promptText="Telefono" />
+                                                      <DatePicker layoutX="30.0" layoutY="250.0" prefHeight="29.0" prefWidth="190.0" promptText="Fecha de nacimiento" />
+                                                      <Button layoutX="73.0" layoutY="473.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar artista">
                                                          <font>
                                                             <Font size="13.0" />
                                                          </font>
                                                       </Button>
-                                                      <SplitMenuButton layoutX="130.0" layoutY="160.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="190.0">
-                                                         <items>
-                                                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                                                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                                                         </items>
-                                                      </SplitMenuButton>
-                                                      <TextField layoutX="130.0" layoutY="250.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
-                                                      <Button layoutX="338.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Guardar">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
-                                                         <font>
-                                                            <Font size="20.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text layoutX="94.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el dato que desea modificar:">
-                                                         <font>
-                                                            <Font size="15.0" />
-                                                         </font>
-                                                      </Text>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
                                           </Tab>
-                                          <Tab text="Eliminar">
+                                          <Tab text="Artistas mas vendidos">
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELIMINAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
+                                                      <TableView layoutX="249.0" prefHeight="518.0" prefWidth="801.0">
+                                                         <columns>
+                                                            <TableColumn prefWidth="500.0" text="Nombre" />
+                                                            <TableColumn prefWidth="301.0" text="Numero de compras" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Text layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ARTISTAS MAS VENDIDOS" textAlignment="CENTER" wrappingWidth="249.13671875">
                                                          <font>
                                                             <Font size="20.0" />
                                                          </font>
                                                       </Text>
-                                                      <Button layoutX="338.0" layoutY="105.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Eliminar" />
-                                                   </children>
-                                                </AnchorPane>
-                                             </content>
-                                          </Tab>
-                                          <Tab text="Buscar">
-                                             <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                   <children>
-                                                      <TextField layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <Button layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
-                                                      <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
-                                                         <font>
-                                                            <Font size="20.0" />
-                                                         </font>
-                                                      </Text>
+                                                      <ImageView fitHeight="438.0" fitWidth="246.0" layoutX="2.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/2017-10-11-09-19-45.jpg" />
+                                                         </image>
+                                                      </ImageView>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
                                           </Tab>
                                        </tabs>
                                     </TabPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="597.0">
-                                 <children>
-                                    <TableView prefHeight="547.0" prefWidth="594.0">
-                                       <columns>
-                                          <TableColumn prefWidth="148.5" text="Titulo" />
-                                          <TableColumn prefWidth="148.5" text="Fecha creacion" />
-                                          <TableColumn prefWidth="148.5" text="Precio referencia" />
-                                          <TableColumn prefWidth="148.5" text="Dimensiones" />
-                                       </columns>
-                                    </TableView>
                                  </children>
                               </AnchorPane>
                            </items>

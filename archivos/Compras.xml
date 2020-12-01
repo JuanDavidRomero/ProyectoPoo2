@@ -11,7 +11,7 @@
         </compraCliente>
         <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1922-11-30T14:57:58.847-05:00</fecha>
+            <fecha>1922-11-30T19:17:25.176-05:00</fecha>
             <pid>1234567</pid>
             <precioRef>40000.0</precioRef>
             <titulo>Galerie Bruno Bishofberger</titulo>
@@ -37,7 +37,7 @@
         </compraCliente>
         <compraObra xsi:type="cuadro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>normal</dimenciones>
-            <fecha>1877-11-30T14:57:58.897-05:00</fecha>
+            <fecha>1877-11-30T19:17:25.196-05:00</fecha>
             <pid>3456712</pid>
             <precioRef>60000.0</precioRef>
             <titulo>remeros en el yernes</titulo>
@@ -61,7 +61,7 @@
         </compraCliente>
         <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1950-11-30T14:57:58.897-05:00</fecha>
+            <fecha>1950-11-30T19:17:25.196-05:00</fecha>
             <pid>2345671</pid>
             <precioRef>80000.0</precioRef>
             <titulo>autorretrado con chaqueta azul</titulo>
@@ -87,7 +87,7 @@
         </compraCliente>
         <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1800-11-30T14:57:58.898-05:00</fecha>
+            <fecha>1800-11-30T19:17:25.196-05:00</fecha>
             <pid>7123456</pid>
             <precioRef>3.48E7</precioRef>
             <titulo>La Piedad </titulo>
@@ -113,7 +113,7 @@
         </compraCliente>
         <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1901-11-30T14:57:58.898-04:56</fecha>
+            <fecha>1901-11-30T19:17:25.196-04:56</fecha>
             <pid>2345678</pid>
             <precioRef>3.0E9</precioRef>
             <titulo>Annely Juda Fine Art </titulo>
@@ -155,7 +155,7 @@
         </compraCliente>
         <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1651-11-30T14:57:58.898-05:00</fecha>
+            <fecha>1651-11-30T19:17:25.196-05:00</fecha>
             <pid>5671234</pid>
             <precioRef>2.0E8</precioRef>
             <titulo>Esther Arias Galerías de Arte y Taller</titulo>
@@ -181,7 +181,7 @@
         </compraCliente>
         <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1922-11-30T14:57:58.847-05:00</fecha>
+            <fecha>1922-11-30T19:17:25.176-05:00</fecha>
             <pid>1234567</pid>
             <precioRef>40000.0</precioRef>
             <titulo>Galerie Bruno Bishofberger</titulo>
@@ -207,7 +207,7 @@
         </compraCliente>
         <compraObra xsi:type="cuadro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>normal</dimenciones>
-            <fecha>1877-11-30T14:57:58.897-05:00</fecha>
+            <fecha>1877-11-30T19:17:25.196-05:00</fecha>
             <pid>3456712</pid>
             <precioRef>60000.0</precioRef>
             <titulo>remeros en el yernes</titulo>
@@ -231,7 +231,7 @@
         </compraCliente>
         <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1950-11-30T14:57:58.897-05:00</fecha>
+            <fecha>1950-11-30T19:17:25.196-05:00</fecha>
             <pid>2345671</pid>
             <precioRef>80000.0</precioRef>
             <titulo>autorretrado con chaqueta azul</titulo>
@@ -257,7 +257,7 @@
         </compraCliente>
         <compraObra xsi:type="escultura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1800-11-30T14:57:58.898-05:00</fecha>
+            <fecha>1800-11-30T19:17:25.196-05:00</fecha>
             <pid>7123456</pid>
             <precioRef>3.48E7</precioRef>
             <titulo>La Piedad </titulo>
@@ -283,7 +283,7 @@
         </compraCliente>
         <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1901-11-30T14:57:58.898-04:56</fecha>
+            <fecha>1901-11-30T19:17:25.196-04:56</fecha>
             <pid>2345678</pid>
             <precioRef>3.0E9</precioRef>
             <titulo>Annely Juda Fine Art </titulo>
@@ -325,7 +325,7 @@
         </compraCliente>
         <compraObra xsi:type="instalacion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <dimenciones>grande</dimenciones>
-            <fecha>1651-11-30T14:57:58.898-05:00</fecha>
+            <fecha>1651-11-30T19:17:25.196-05:00</fecha>
             <pid>5671234</pid>
             <precioRef>2.0E8</precioRef>
             <titulo>Esther Arias Galerías de Arte y Taller</titulo>
