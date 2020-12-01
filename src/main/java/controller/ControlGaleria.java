@@ -118,7 +118,7 @@ public class ControlGaleria
         espacio();
     }
     //3.Insertar una Obra
-    public void opcion3()
+    public void opcion3(Long pid, String dimenciones, String titulo, int anno, double precio)
     {
         controlObras.InsertarObra(listaObras,listaArtistas);
        // listaObras.add(insertar);

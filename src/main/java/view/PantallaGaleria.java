@@ -58,7 +58,7 @@ public class PantallaGaleria
             {
                 case 1:{galeria.opcion1();}break;
                 case 2:{galeria.opcion2();}break;
-                case 3:{galeria.opcion3(); }break;
+                //case 3:{galeria.opcion3(); }break;
                 case 4:{galeria.opcion4();}break;
                 case 5:{galeria.opcion5();}break;
                 case 6:{galeria.opcion6();}break;
