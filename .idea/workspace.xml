@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73b89af7-2c68-4ae3-afcd-4810cff5e577" name="Default Changelist" comment="Interfaces definidas alv">
+    <list default="true" id="d9c8fefa-8d8c-4e8a-926e-bfce2b4f18fc" name="Default Changelist" comment="otro intento">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_3.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_3.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_3.xml" afterDir="false" />
@@ -32,29 +32,14 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_3.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_13.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivos/Artistas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/Artistas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivos/Compras.xml" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/Compras.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivos/Obras/Cuadros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/Obras/Cuadros.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivos/Obras/Esculturas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/Obras/Esculturas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivos/Obras/Instalaciones.xml" beforeDir="false" afterPath="$PROJECT_DIR$/archivos/Obras/Instalaciones.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hellofx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hellofx.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlGaleria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlGaleria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PantallaGaleria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PantallaGaleria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/controlador/Controlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/IntProyecto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/IntProyecto.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,11 +53,11 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1l2SSE0nCaVZLg2ETEglr6Uba0t" />
+  <component name="ProjectId" id="1l1zv0RJ0BWZBX0gXKp1SW5ndMB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,6 +65,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -95,6 +89,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
@@ -104,13 +111,25 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="73b89af7-2c68-4ae3-afcd-4810cff5e577" name="Default Changelist" comment="" />
-      <created>1606793704819</created>
+      <changelist id="d9c8fefa-8d8c-4e8a-926e-bfce2b4f18fc" name="Default Changelist" comment="" />
+      <created>1606779611358</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606793704819</updated>
+      <updated>1606779611358</updated>
+      <workItem from="1606779614078" duration="6439000" />
     </task>
+    <task id="LOCAL-00001" summary="otro intento">
+      <created>1606779733790</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606779733790</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -124,33 +143,37 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Interfaces definidas alv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interfaces definidas alv" />
+    <MESSAGE value="otro intento" />
+    <option name="LAST_COMMIT_MESSAGE" value="otro intento" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1780" y="-135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606794370242">
-      <screen x="1366" y="-310" width="1920" height="1040" />
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom" timestamp="1606786282727">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state x="1780" y="-135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-310.1920.1040@1366.-310.1920.1040" timestamp="1606794370242" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606795052215">
-      <screen x="1366" y="-310" width="1920" height="1040" />
+    <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1606786282727" />
+    <state width="1398" height="205" key="GridCell.Tab.0.center" timestamp="1606786282727">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-310.1920.1040@1366.-310.1920.1040" timestamp="1606795052215" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606795052214">
-      <screen x="1366" y="-310" width="1920" height="1040" />
+    <state width="1398" height="205" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1606786282727" />
+    <state width="1398" height="205" key="GridCell.Tab.0.left" timestamp="1606786282727">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1366.728/1366.-310.1920.1040@1366.-310.1920.1040" timestamp="1606795052214" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606795052214">
-      <screen x="1366" y="-310" width="1920" height="1040" />
+    <state width="1398" height="205" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1606786282727" />
+    <state width="1398" height="205" key="GridCell.Tab.0.right" timestamp="1606786282727">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1366.728/1366.-310.1920.1040@1366.-310.1920.1040" timestamp="1606795052214" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606795052215">
-      <screen x="1366" y="-310" width="1920" height="1040" />
+    <state width="1398" height="205" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1606786282727" />
+    <state x="144" y="92" key="MergeDialog" timestamp="1606780097034">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1366.728/1366.-310.1920.1040@1366.-310.1920.1040" timestamp="1606795052215" />
-    <state x="2143" y="124" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606793934415">
-      <screen x="1366" y="-310" width="1920" height="1040" />
+    <state x="144" y="92" key="MergeDialog/0.25.1440.805@0.25.1440.805" timestamp="1606780097034" />
+    <state x="358" y="193" key="MultipleFileMergeDialog" timestamp="1606780097059">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state x="2143" y="124" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.-310.1920.1040@1366.-310.1920.1040" timestamp="1606793934415" />
+    <state x="358" y="193" key="MultipleFileMergeDialog/0.25.1440.805@0.25.1440.805" timestamp="1606780097059" />
+    <state x="320" y="164" key="Vcs.Push.Dialog.v2" timestamp="1606780118648">
+      <screen x="0" y="25" width="1440" height="805" />
+    </state>
+    <state x="320" y="164" key="Vcs.Push.Dialog.v2/0.25.1440.805@0.25.1440.805" timestamp="1606780118648" />
   </component>
 </project>

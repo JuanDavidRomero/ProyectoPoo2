@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controlador.Controlador">
    <children>
       <TabPane layoutY="-1.0" prefHeight="583.0" prefWidth="1050.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
@@ -70,6 +70,13 @@
                         </Button>
                      </children>
                   </AnchorPane>
+                        <ButtonBar layoutX="665.0" layoutY="419.0" prefHeight="40.0" prefWidth="200.0">
+                           <buttons>
+                              <Button mnemonicParsing="false" text="Button" />
+                           </buttons>
+                        </ButtonBar>
+                     </children>
+                  </AnchorPane>
                </content>
             </Tab>
             <Tab text="Obras">
@@ -86,56 +93,73 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="293.0" prefWidth="450.0">
                                                    <children>
-                                                      <TextField layoutX="10.0" layoutY="40.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
-                                                      <TabPane layoutY="260.0" prefHeight="225.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+                                                      <TextField fx:id="IngPid" layoutX="10.0" layoutY="40.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
+                                                      <TabPane layoutY="260.0" prefHeight="255.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
                                                          <tabs>
                                                             <Tab text="Escultura">
                                                                <content>
                                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="450.0">
                                                                      <children>
-                                                                        <TextField layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" promptText="Tipo Material" />
-                                                                        <TextField layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Descripcion material" />
-                                                                        <TextField layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Peso" />
+                                                                        <TextField fx:id="IngMaterialE" layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" promptText="Tipo Material" />
+                                                                        <TextField fx:id="IngDescripM" layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Descripcion material" />
+                                                                        <TextField fx:id="IngPeso" layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Peso" />
+                                                                        <Button fx:id="IngObra" layoutX="276.0" layoutY="68.0" mnemonicParsing="false" onAction="#ingresarObra" prefHeight="29.0" text="Ingresar Obra">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                        </Button>
                                                                      </children>
                                                                   </AnchorPane>
                                                                </content>
                                                             </Tab>
                                                             <Tab text="Instalacion">
                                                                <content>
-                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="226.0" prefWidth="450.0">
                                                                      <children>
-                                                                        <TextField alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="143.0" prefWidth="422.0" promptText="Descripcion de la instalacion" />
+                                                                        <TextField fx:id="IngDescripcion" alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="66.0" prefWidth="422.0" promptText="Descripcion de la instalacion" />
+                                                                        <Button fx:id="IngObraI" layoutX="180.0" layoutY="83.0" mnemonicParsing="false" onAction="#ingresarObra" prefHeight="29.0" text="Ingresar Obra">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                        </Button>
+                                                                        <TextField fx:id="IngMNombre" layoutX="39.0" layoutY="139.0" promptText="Nombre" />
+                                                                        <TextField fx:id="IngMdescrip" layoutX="256.0" layoutY="140.0" promptText="Descripcion" />
+                                                                        <Button fx:id="IngMaterial" layoutX="172.0" layoutY="175.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar Material">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                        </Button>
                                                                      </children>
                                                                   </AnchorPane>
                                                                </content>
                                                             </Tab>
-                                                            <Tab text="Cuadro">
+                                                            <Tab onSelectionChanged="#ingresarObra" text="Cuadro">
                                                                <content>
                                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                      <children>
-                                                                        <ChoiceBox layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" />
-                                                                        <TextField layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Tecnica" />
-                                                                        <TextField layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Tema" />
+                                                                        <ChoiceBox fx:id="IngClasificacion" layoutX="10.0" layoutY="15.0" prefHeight="29.0" prefWidth="190.0" />
+                                                                        <TextField fx:id="IngTecnica" layoutX="10.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="Tecnica" />
+                                                                        <TextField fx:id="IngTema" layoutX="10.0" layoutY="95.0" prefHeight="29.0" prefWidth="190.0" promptText="Tema" />
+                                                                        <Button fx:id="IngObraC" layoutX="276.0" layoutY="68.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar Obra">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                        </Button>
                                                                      </children>
                                                                   </AnchorPane>
                                                                </content>
                                                             </Tab>
                                                          </tabs>
                                                       </TabPane>
-                                                      <Button layoutX="176.0" layoutY="471.0" mnemonicParsing="false" prefHeight="29.0" text="Ingresar Obra">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Button>
-                                                      <TableView layoutX="209.0" layoutY="38.0" prefHeight="193.0" prefWidth="233.0">
+                                                      <TableView fx:id="IngLista" layoutX="209.0" layoutY="38.0" prefHeight="193.0" prefWidth="233.0">
                                                          <columns>
                                                             <TableColumn prefWidth="232.0" text="Nombre Artista" />
                                                          </columns>
                                                       </TableView>
-                                                      <TextField layoutX="10.0" layoutY="80.0" prefHeight="29.0" prefWidth="190.0" promptText="Dimensiones" />
-                                                      <TextField layoutX="10.0" layoutY="120.0" prefHeight="29.0" prefWidth="190.0" promptText="Titulo" />
-                                                      <TextField layoutX="10.0" layoutY="160.0" prefHeight="29.0" prefWidth="190.0" promptText="Año" />
-                                                      <TextField layoutX="10.0" layoutY="200.0" prefHeight="29.0" prefWidth="190.0" promptText="Precio referencia" />
+                                                      <TextField fx:id="IngDimenciones" layoutX="10.0" layoutY="80.0" prefHeight="29.0" prefWidth="190.0" promptText="Dimensiones" />
+                                                      <TextField fx:id="IngTitulo" layoutX="10.0" layoutY="120.0" prefHeight="29.0" prefWidth="190.0" promptText="Titulo" />
+                                                      <TextField fx:id="IngAnno" layoutX="10.0" layoutY="160.0" prefHeight="29.0" prefWidth="190.0" promptText="Año" />
+                                                      <TextField fx:id="IngPrecio" layoutX="10.0" layoutY="200.0" prefHeight="29.0" prefWidth="190.0" promptText="Precio referencia" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
@@ -151,12 +175,25 @@
                                                    <children>
                                                       <TextField layoutX="130.0" layoutY="65.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
                                                       <SplitMenuButton layoutX="130.0" layoutY="160.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="190.0">
+                                                      <TextField fx:id="ModPid" layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
+                                                      <Button fx:id="ModBuscar" layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <SplitMenuButton fx:id="ModTipoDato" layoutX="130.0" layoutY="160.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="190.0">
                                                          <items>
                                                             <MenuItem mnemonicParsing="false" text="Action 1" />
                                                             <MenuItem mnemonicParsing="false" text="Action 2" />
                                                          </items>
                                                       </SplitMenuButton>
                                                       <TextField layoutX="130.0" layoutY="255.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
+                                                      <TextField fx:id="ModNuevoD" layoutX="130.0" layoutY="250.0" prefHeight="29.0" prefWidth="190.0" promptText="Nuevo Dato" />
+                                                      <Button fx:id="ModGuardar" layoutX="338.0" layoutY="250.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Guardar">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Button>
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
@@ -218,6 +255,8 @@
                                                             </ImageView>
                                                          </graphic>
                                                       </Button>
+                                                      <TextField fx:id="ElimPid" layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
+                                                      <Button fx:id="ElimBuscar" layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELIMINAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
@@ -242,6 +281,7 @@
                                                             <Image url="@../images/unknown.png" />
                                                          </image>
                                                       </ImageView>
+                                                      <Button fx:id="Eliminar" layoutX="338.0" layoutY="105.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Eliminar" />
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -250,6 +290,8 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
+                                                      <TextField fx:id="BusPid" layoutX="130.0" layoutY="55.0" prefHeight="29.0" prefWidth="190.0" promptText="PID" />
+                                                      <Button fx:id="BusBuscar" layoutX="338.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" text="Buscar" />
                                                       <Text layoutX="59.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUSCAR OBRA" textAlignment="CENTER" wrappingWidth="331.13671875">
                                                          <font>
                                                             <Font size="20.0" />
